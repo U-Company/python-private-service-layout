@@ -6,11 +6,19 @@ We build template for services of python. We use [FastAPI](https://github.com/ti
 [tamplar](https://github.com/hedgehogues/tamplar). This tool can init repo, control dependencies and publish docker and 
 packages.  
 
+![](docs/structure.png)
+
+Red is not public source. Green is public source. Package consists public and not public sources. 
+
 ## Project structure:
   
 ### configs/ 
 
 Configuration file templates or default configs.
+
+### docs/
+
+Design and user documents.
 
 ### data/
 
@@ -71,7 +79,8 @@ We save `cmd` into package therefore `cmd` must be include into package to cli w
 
 ### service/
  
-Implementation of service with unit tests for internal functions
+Implementation of service with unit tests for internal functions. We think that service is not part of package, 
+therefore we exclude this folder from package. But this 
 
 ### service/internal/
 
