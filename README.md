@@ -17,7 +17,7 @@ Configuration file templates or default configs.
 This folder must consists the data of service and library. We think to a large data file must dumps to any storage (
 databases, file storage, git LFS and other). Most part of these data is test's data.
 
-### deployments/
+### [deployments/](deployments/)
 
 IaaS, PaaS, system and container orchestration deployment configurations and templates (docker-compose, kubernetes/helm,
 mesos, terraform, bosh).
@@ -49,7 +49,7 @@ for use by others.
 
 This package's name has the same name as repo name (_ instead of -). This package (folder) publish to pypi-registry.
 
-### python_service_layout/cmd/
+### [python_service_layout/cmd/](python_service_layout/cmd/)
  
 Main applications for this project.
 
@@ -81,7 +81,7 @@ Internal functions and utils (for example, models of REST API), transformers dat
 
 Unit tests of your service's functions.
 
-### tests/
+### [tests/](tests)
 
 This directory consists only integration tests. In this directory cannot import files from another directories except 
 package directory (python_service_layout). We tests our service as block box method. Therefore we cannot use common 
