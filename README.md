@@ -12,7 +12,12 @@ packages.
 
 Configuration file templates or default configs.
 
-### /deployments
+### data/
+
+This folder must consists the data of service and library. We think to a large data file must dumps to any storage (
+databases, file storage, git LFS and other). Most part of these data is test's data.
+
+### deployments/
 
 IaaS, PaaS, system and container orchestration deployment configurations and templates (docker-compose, kubernetes/helm,
 mesos, terraform, bosh).
@@ -30,11 +35,11 @@ We have environment file into `./.envs` directory.
 
 You can read about publishing packages [here](deployments).
 
-### logs 
+### logs/
 
 Folder for logs files 
 
-### python_service_layout 
+### python_service_layout/ 
  
 Library code that's ok to use by external applications (e.g., /python_service_layout/mypubliclib). Other projects will 
 import these libraries expecting them to work, so think twice before you put something here :-) Note that the internal
@@ -44,7 +49,7 @@ for use by others.
 
 This package's name has the same name as repo name (_ instead of -). This package (folder) publish to pypi-registry.
 
-### python_service_layout/cmd
+### python_service_layout/cmd/
  
 Main applications for this project.
 
@@ -63,19 +68,20 @@ and nothing else.
 See the `/cmd` directory for examples.
 
 We save `cmd` into package therefore `cmd` must be include into package to cli works. But cmd is not part of library.
-### service
+
+### service/
  
 Implementation of service with unit tests for internal functions
 
-### service/internal
+### service/internal/
 
 Internal functions and utils (for example, models of REST API), transformers data etc.
 
-### service/tests
+### service/tests/
 
 Unit tests of your service's functions.
 
-### tests
+### tests/
 
 This directory consists only integration tests. In this directory cannot import files from another directories except 
 package directory (python_service_layout). We tests our service as block box method. Therefore we cannot use common 
