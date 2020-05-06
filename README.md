@@ -84,7 +84,7 @@ Each service works with data. Therefore a good practice is build generators for 
 ### service/
  
 Implementation of service with unit tests for internal functions. We think that service is not part of package, 
-therefore we exclude this folder from package. But this 
+therefore we exclude this folder from package.
 
 ### service/internal/
 
