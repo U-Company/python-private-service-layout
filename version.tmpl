@@ -1,4 +1,9 @@
-app_name = 'python-service-layout'
-pkg_name = 'python_service_layout'
-app_version = '0.1.0'
-app_description = 'This is template of service'
+__name = 'python-service-layout'
+version = '0.1.0'
+description = 'This is template of service'
+
+app_name():
+    return __name
+
+pkg_name():
+    return __name.replace('-', '_')
