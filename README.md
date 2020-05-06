@@ -77,6 +77,10 @@ See the `/cmd` directory for examples.
 
 We save `cmd` into package therefore `cmd` must be include into package to cli works. But cmd is not part of library.
 
+### [python_service_layout/generators/](python_service_layout/generators/)
+
+Each service works with data. Therefore a good practice is build generators for data creation of each method. This generators is part of package for using in tests of other packages.
+
 ### service/
  
 Implementation of service with unit tests for internal functions. We think that service is not part of package, 
