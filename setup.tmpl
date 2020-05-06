@@ -1,6 +1,6 @@
 import setuptools
 
-import version
+import info
 
 
 def parse_requirements(filename):
@@ -16,14 +16,14 @@ install_reqs = parse_requirements('./requirements')
 print(install_reqs)
 
 setuptools.setup(
-    name=version.app_name,
-    version=version.app_version,
+    name=info.name,
+    version=info.version,
     author="Urvanov Egor",
     author_email="hedgehogues@bk.ru",
-    description=version.app_description,
+    description=info.description,
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Hedgehogues/python-service-layout",
+    url=f'https://github.com/Hedgehogues/name',
     packages=setuptools.find_packages(exclude=['tests', 'service']),
     classifiers=[
         "Programming Language :: Python :: 3.7",
