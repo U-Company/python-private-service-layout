@@ -1,6 +1,7 @@
 PYTHONPATH=.
 SCRIPTS=scripts/
-TESTS=tests/
+TESTS_UNIT=tamplar/tests/
+TESTS_INTEGRATION=tests/
 
 ifndef PYTHON
 	PYTHON=python
@@ -21,15 +22,23 @@ run:
 	$(info storage starting...)
 	$(info $(ENVS))
 	$(info ${STORAGE_ENV_FILE})
-	$(ENVS) $(PYTHON) app.py
+	$(ENVS) $(PYTHON) service/internal/server.py
 
-test:
+test-integration:
 	$(info waiting server...)
 	$(ENVS) $(PYTHON) ${SCRIPTS}waiting.py
 	$(info integration tests running...)
 	$(info $(ENVS))
 	$(info ${TESTS}${TEST_SUBFOLDER})
-	$(ENVS) $(PYTEST) -v -l --disable-warnings ${TESTS}${TEST_SUBFOLDER}
+	$(ENVS) $(PYTEST) -v -l --disable-warnings ${TESTS_INTEGRATION}${TEST_SUBFOLDER}
+
+test-unit:
+	$(info waiting server...)
+	$(ENVS) $(PYTHON) ${SCRIPTS}waiting.py
+	$(info integration tests running...)
+	$(info $(ENVS))
+	$(info ${TESTS}${TEST_SUBFOLDER})
+	$(ENVS) $(PYTEST) -v -l --disable-warnings ${TESTS_UNIT}${TEST_SUBFOLDER}
 
 deps:
 	$(info dependencies installing...)
