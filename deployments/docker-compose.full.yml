@@ -1,15 +1,14 @@
-version: '2'
+version: '3'
 services:
-    repo_name-external_image_name:
+    mongo:
         image: "mongo:4.0.2"
-        ports:
-            - "27017:27017"
-    repo_name:
-        args:
-            - ENV_FILE=.deploy/.envs/full.env
-        build:
-            context: ../../tamplar
-            dockerfile: Dockerfile
-        depends_on:
-            - dependency-service
         network_mode: host
+    {{prj_name}}:
+      volumes:
+        - .envs/local.env:/app/deployments/.envs/local.env
+      build:
+        context: ..
+        dockerfile: .deploy/Dockerfile
+      depends_on:
+        - mongo
+      network_mode: host
