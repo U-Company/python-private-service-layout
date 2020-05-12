@@ -20,6 +20,7 @@ files:
 - makefile
 - deployments/.secrets/pip.conf
 - deployments/.envs/local.env
+- deployments/docker-compose.full.yml
 
 tamplar can work with:
 
