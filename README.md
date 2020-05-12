@@ -8,7 +8,37 @@ packages.
 
 ![](docs/structure.png)
 
-Red is not public source. Green is public source. Package consists public and not public sources. 
+Red is not public source. Green is public source. Package consists public and not public sources.
+
+## Usage
+
+If you want to use our layout, you can try [tamplar](https://github.com/u-company/tamplar) or you must change some 
+files:
+
+- info.py
+- setup.py
+- makefile
+- deployments/.secrets/pip.conf
+- deployments/.envs/local.env
+
+tamplar can work with:
+
+- python setup
+- pip
+- publishing package to pypi registry
+- publishing docker to docker registry
+- docker-compose for local development
+
+## Service
+
+Our service has:
+
+- [prometheus endpoint](https://github.com/prometheus/client_python)
+- [vault-client](https://github.com/Flesspro/vault-client)
+- healthcheck
+- docker-compose for local development
+- loguru for logging
+- FastAPI as service
 
 ## Project structure:
   
@@ -57,11 +87,11 @@ for use by others.
 
 This package's name has the same name as repo name (_ instead of -). This package (folder) publish to pypi-registry.
 
-### [python_service_layout/cmd/](python_service_layout/cmd/)
+### [python_service_layout/__cmd/](python_service_layout/__cmd/)
  
 Main applications for this project.
 
-The directory name for each application should match the name of the executable you want to have (e.g., /cmd/cli.py).
+The directory name for each application should match the name of the executable you want to have (e.g., /__cmd/cli.py).
 
 For example, you have service (`http.py`), CLI runner `cli.py`.
 
@@ -73,9 +103,9 @@ your intentions!
 It's common to have a small main function that imports and invokes the code from the `/internal` and `/pkg` directories 
 and nothing else.
 
-See the `/cmd` directory for examples.
+See the `/__cmd` directory for examples.
 
-We save `cmd` into package therefore `cmd` must be include into package to cli works. But cmd is not part of library.
+We save `__cmd` into package therefore `__cmd` must be include into package to cli works. But cmd is not part of library.
 
 ### [python_service_layout/generators/](python_service_layout/generators/)
 

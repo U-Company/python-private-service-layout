@@ -1,16 +1,16 @@
 import fastapi
 from starlette.middleware import cors
 
-import version
+import info
 
 
 class App:
     def __init__(self, env, allow_origins):
-        self.app = fastapi.FastAPI(version=version.app_version, title=' '.join(version.app_name.split('_')))
+        self.app = fastapi.FastAPI(version=info.version, title=' '.join(info.name.split('_')))
         if env not in ['LOCAL', 'STAGE', 'ISOLATED']:
             self.app = fastapi.FastAPI(
-                version=version.app_version,
-                title=' '.join(version.app_name.split('_')),
+                version=info.version,
+                title=' '.join(info.name.split('_')),
                 openapi_url=None,
                 redoc_url=None,
                 docs_url=None,
