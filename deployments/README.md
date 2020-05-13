@@ -103,4 +103,8 @@ Or concrete versions:
 
     http://<private-docker-registry>/v2/<image-name>/tags/list
     
+If you want remove specific version, you can do this:
+
+    curl --form ":action=remove_pkg" --form "name=$mypackage" --form "version=0.0.0"
+    
 **Notice**: while docker image building, we fix all environment variables includes ports and endpoints. After that, you cannot to change them. We will fix it in the future
