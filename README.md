@@ -40,6 +40,8 @@ Our service has:
 - docker-compose for local development
 - loguru for logging
 - FastAPI as service
+- console server
+- console cli with [Fire](https://github.com/google/python-fire) framework for google
 
 ## Project structure:
 
