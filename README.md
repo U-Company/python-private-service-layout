@@ -18,6 +18,7 @@ files:
 - info.py.tmpl
 - setup.py.tmpl
 - makefile.tmpl
+- python_service_layout/__cmd/http_.py.tmpl
 - deployments/.secrets/pip.conf
 - deployments/.envs/local.env.tmpl
 - deployments/docker-compose.full.yml.tmpl
