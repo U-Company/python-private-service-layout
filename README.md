@@ -6,7 +6,7 @@ We build template for services of python. We use [FastAPI](https://github.com/ti
 [tamplar](https://github.com/hedgehogues/tamplar). This tool can init repo, control dependencies and publish docker and 
 packages.  
 
-![](docs/structure.png)
+![](data/docs/structure.png)
 
 Red is not public source. Green is public source. Package consists public and not public sources.
 
@@ -15,12 +15,12 @@ Red is not public source. Green is public source. Package consists public and no
 If you want to use our layout, you can try [tamplar](https://github.com/u-company/tamplar) or you must change some 
 files:
 
-- info.py
-- setup.py
-- makefile
+- info.py.tmpl
+- setup.py.tmpl
+- makefile.tmpl
 - deployments/.secrets/pip.conf
-- deployments/.envs/local.env
-- deployments/docker-compose.full.yml
+- deployments/.envs/local.env.tmpl
+- deployments/docker-compose.full.yml.tmpl
 
 tamplar can work with:
 
@@ -42,19 +42,15 @@ Our service has:
 - FastAPI as service
 
 ## Project structure:
-  
-### configs/ 
-
-Configuration file templates or default configs.
-
-### docs/
-
-Design and user documents.
 
 ### data/
 
 This folder must consists the data of service and library. We think to a large data file must dumps to any storage (
-databases, file storage, git LFS and other). Most part of these data is test's data.
+databases, file storage, git LFS, docs and other). Most part of these data is test's data.
+
+### data/docs/
+
+Design and user documents.
 
 ### [deployments/](deployments/)
 
@@ -74,7 +70,7 @@ We have environment file into `./.envs` directory.
 
 You can read about publishing packages [here](deployments).
 
-### logs/
+### data/logs/
 
 Folder for logs files 
 
@@ -108,22 +104,21 @@ See the `/__cmd` directory for examples.
 
 We save `__cmd` into package therefore `__cmd` must be include into package to cli works. But cmd is not part of library.
 
+### [python_service_layout/tests/](python_service_layout/tests/)
+
+This repo consists unit tests. Unit tests is used to test functions
+
 ### [python_service_layout/generators/](python_service_layout/generators/)
 
 Each service works with data. Therefore a good practice is build generators for data creation of each method. This generators is part of package for using in tests of other packages.
 
 ### service/
  
-Implementation of service with unit tests for internal functions. We think that service is not part of package, 
-therefore we exclude this folder from package.
+Implementation of service with unit tests for internal functions. We think that service is part of package, 
+therefore we include this folder from package. But you must not import this module. We save service and cli here to add 
+availability to them from console  
 
-### service/internal/
-
-Internal functions and utils (for example, models of REST API), transformers data etc.
-
-### service/tests/
-
-Unit tests of your service's functions.
+Internal functions, models of REST API, server, data transformers, utils etc.
 
 ### [tests/](tests)
 

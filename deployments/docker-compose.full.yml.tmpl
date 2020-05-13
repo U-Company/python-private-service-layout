@@ -3,7 +3,7 @@ services:
     mongo:
         image: "mongo:4.0.2"
         network_mode: host
-    {{prj_name}}:
+    {{pkg_name}}:
       volumes:
         - .envs/local.env:/app/deployments/.envs/local.env
       build:

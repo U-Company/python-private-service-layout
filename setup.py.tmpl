@@ -31,4 +31,11 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=install_reqs,
+    package_data={'': ['{{pkg_name}}/__cmd/*', '{{pkg_name}}/__service/*']},
+    entry_points={
+        'console_scripts': [
+            '{{pkg_name}}_cli={{pkg_name}}.__cmd.cli:main',
+            '{{pkg_name}}_http={{pkg_name}}.__cmd.http_:main',
+        ],
+    },
 )
