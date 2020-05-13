@@ -22,7 +22,7 @@ run:
 	$(info storage starting...)
 	$(info $(ENVS))
 	$(info ${STORAGE_ENV_FILE})
-	$(ENVS) $(PYTHON) {{pkg_name}}/cmd/http_.py
+	$(ENVS) $(PYTHON) {{pkg_name}}/__cmd/http_.py
 
 test-integration:
 	$(info waiting server...)
