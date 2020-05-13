@@ -1,7 +1,7 @@
 import uvicorn
 from loguru import logger
 
-from python_service_layout.__service import server, config
+from {{pkg_name}}.__service import server, config
 
 from prometheus_client import start_http_server
 
