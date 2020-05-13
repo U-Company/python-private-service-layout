@@ -8,7 +8,7 @@ services:
         - .envs/local.env:/app/deployments/.envs/local.env
       build:
         context: ..
-        dockerfile: .deploy/Dockerfile
+        dockerfile: deployments/Dockerfile
       depends_on:
         - mongo
       network_mode: host
