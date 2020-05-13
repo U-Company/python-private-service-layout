@@ -103,7 +103,7 @@ Or concrete versions:
 
     http://<private-docker-registry>/v2/<image-name>/tags/list
     
-If you want remove specific version, you can do this:
+If you want remove specific version from pypi-registry, you can do this:
 
     curl --form ":action=remove_pkg" --form "name=$mypackage" --form "version=0.0.0"
     
