@@ -105,6 +105,7 @@ Or concrete versions:
     
 If you want remove specific version from pypi-registry, you can do this:
 
-    curl --form ":action=remove_pkg" --form "name=$mypackage" --form "version=0.0.0"
+    curl --form ":action=remove_pkg" --form "name=pkg" --form "version=0.0.0" 0.0.0.0:1234 -H "Authorization: Basic <base64-string>"
+
     
 **Notice**: while docker image building, we fix all environment variables includes ports and endpoints. After that, you cannot to change them. We will fix it in the future
