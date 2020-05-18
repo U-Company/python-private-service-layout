@@ -24,12 +24,10 @@ ENVS=PYTHONPATH=${PYTHONPATH} ENV_FILE=${ENV_FILE}
 run:
 	$(info storage starting...)
 	$(info $(ENVS))
-	$(info ${STORAGE_ENV_FILE})
 	$(ENVS) $(PYTHON) {{pkg_name}}/__cmd/http_.py
 
 test-integration:
 	$(info waiting server...)
-	$(ENVS) $(PYTHON) ${SCRIPTS}waiting.py
 	$(info integration tests running...)
 	$(info $(ENVS))
 	$(info ${TESTS}${TEST_SUBFOLDER})
@@ -37,7 +35,6 @@ test-integration:
 
 test-unit:
 	$(info waiting server...)
-	$(ENVS) $(PYTHON) ${SCRIPTS}waiting.py
 	$(info integration tests running...)
 	$(info $(ENVS))
 	$(info ${TESTS}${TEST_SUBFOLDER})
