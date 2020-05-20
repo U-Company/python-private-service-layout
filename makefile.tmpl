@@ -27,18 +27,18 @@ run:
 	$(ENVS) $(PYTHON) {{pkg_name}}/__cmd/http_.py
 
 test-integration:
-	$(info waiting server...)
 	$(info integration tests running...)
 	$(info $(ENVS))
 	$(info ${TESTS}${TEST_SUBFOLDER})
 	$(ENVS) $(PYTEST) -v -l --disable-warnings ${TESTS_INTEGRATION}${TEST_SUBFOLDER}
 
 test-unit:
-	$(info waiting server...)
 	$(info unit tests running...)
 	$(info $(ENVS))
 	$(info ${TESTS}${TEST_SUBFOLDER})
 	$(ENVS) $(PYTEST) -v -l --disable-warnings ${TESTS_UNIT}${TEST_SUBFOLDER}
+
+test: test-unit test-integration
 
 deps:
 	$(info dependencies installing...)
