@@ -72,7 +72,7 @@ Now, you must set tag for image:
 Please, add insecure-registry parameters to `/etc/docker/daemon.json` (first time):
 
     {
-        "insecure-registries" : [ "<private-docker-registry>" ]
+        "insecure-registries" : [ "<private-docker-registry-schema>://<private-docker-registry-host>:<private-docker-registry-port>" ]
     }
     
 And restart docker (first time):
