@@ -14,7 +14,7 @@ For each docker-compose we have environment file into `./.envs` directory.
 
 # Prepare config for pip (Ubuntu)
 
-Before publishing, you need to create file .pypirc like this:
+Before publishing, you need to create file `~/.pypirc` like this:
 
     [distutils]
     index-servers=
@@ -50,7 +50,7 @@ You must lay the config file `pip.conf` into `~/.pip/`:
     index-url = http://<login>:<password>@<your-host>:<your-port>
     trusted-host = pypi.python.org
                    pypi.org
-                   <your-host>:<your-port>
+                   <your-host>
 
 # Publish image into docker registry (for local development and testing)
 
