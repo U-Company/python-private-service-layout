@@ -10,3 +10,5 @@ Type of docker files:
 For each docker-compose we have environment file into `./.envs` directory.
 
 **Notice**: we configure compose with `network_mode: host` (in) therefore, our image links with localhost (no mapping ports, for example)
+
+More about deployments you can read in this [notice](https://github.com/U-Company/notes/tree/master/deployments)
