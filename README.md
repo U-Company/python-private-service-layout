@@ -15,7 +15,7 @@ Red is not public source. Green is public source. Package consists public and no
 If you want to use our layout, you must use [cookiecutter](https://github.com/cookiecutter/cookiecutter). This is a very simple:
 
     cookiecutter https://github.com/U-Company/python-service-layout.git
-    cookiecutter python-service-layout.git
+    cookiecutter python-service-layout
 
 ## Service
 
