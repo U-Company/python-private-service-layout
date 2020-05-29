@@ -16,6 +16,8 @@ If you want to use our layout, you must use [cookiecutter](https://github.com/co
 
     cookiecutter https://github.com/U-Company/python-service-layout.git
     cookiecutter python-service-layout
+    
+More about our approaches, you can read [here](https://github.com/U-Company/notes).
 
 ## Service
 
