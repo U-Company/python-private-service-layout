@@ -6,7 +6,7 @@ We build template for services of python. We use [FastAPI](https://github.com/ti
 [cookiecutter](https://github.com/cookiecutter/cookiecutter). This tool can init repo, control dependencies and publish docker and 
 packages.  
 
-![](%7B%7B%20cookiecutter.service%20%7D%7D/data/docs/structure.png)
+![](docs/structure.png)
 
 Red is not public source. Green is public source. Package consists public and not public sources.
 
