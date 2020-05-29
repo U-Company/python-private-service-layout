@@ -20,7 +20,7 @@ setuptools.setup(
     name=info.name,
     version=info.version,
     author=info.author,
-    author_email=info.author_email,
+    author_email=info.email,
     description=info.description,
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -31,11 +31,11 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=install_reqs,
-    package_data={'': ['{{pkg_name}}/__cmd/*', '{{pkg_name}}/__service/*']},
+    package_data={'': ['{{ cookiecutter.service }}/__cmd/*', '{{ cookiecutter.service }}/__service/*']},
     entry_points={
         'console_scripts': [
-            '{{pkg_name}}_cli={{pkg_name}}.__cmd.cli:main',
-            '{{pkg_name}}_http={{pkg_name}}.__cmd.http_:main',
+            '{{ cookiecutter.service }}_cli={{ cookiecutter.service }}.__cmd.cli:main',
+            '{{ cookiecutter.service }}_http={{ cookiecutter.service }}.__cmd.http_:main',
         ],
     },
 )

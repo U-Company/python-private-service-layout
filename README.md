@@ -1,35 +1,21 @@
-# python-service-layout
+# Template for python service
 
 This repository is inspired by the repository of [layout-golang](https://github.com/golang-standards/project-layout). 
-We build template for services of python. We use [FastAPI](https://github.com/tiangolo/fastapi) and 
-[uvicorn](https://www.uvicorn.org/) for service creation. For automation we create 
-[tamplar](https://github.com/hedgehogues/tamplar). This tool can init repo, control dependencies and publish docker and 
+We build template for services of python. We use [FastAPI](https://github.com/tiangolo/fastapi), 
+[faker](https://faker.readthedocs.io/en/master/), [uvicorn](https://www.uvicorn.org/) for service creation. For automation we create 
+[cookiecutter](https://github.com/cookiecutter/cookiecutter). This tool can init repo, control dependencies and publish docker and 
 packages.  
 
-![](data/docs/structure.png)
+![](%7B%7B%20cookiecutter.service%20%7D%7D/data/docs/structure.png)
 
 Red is not public source. Green is public source. Package consists public and not public sources.
 
 ## Usage
 
-If you want to use our layout, you can try [tamplar](https://github.com/u-company/tamplar) or you must change some 
-files:
+If you want to use our layout, you must use [cookiecutter](https://github.com/cookiecutter/cookiecutter). This is a very simple:
 
-- info.py.tmpl
-- setup.py.tmpl
-- makefile.tmpl
-- python_service_layout/__cmd/http_.py.tmpl
-- deployments/.secrets/pip.conf
-- deployments/.envs/local.env.tmpl
-- deployments/docker-compose.full.yml.tmpl
-
-tamplar can work with:
-
-- python setup
-- pip
-- publishing package to pypi registry
-- publishing docker to docker registry
-- docker-compose for local development
+    cookiecutter https://github.com/U-Company/python-service-layout.git
+    cookiecutter python-service-layout.git
 
 ## Service
 
@@ -71,7 +57,7 @@ We have environment file into `./.envs` directory.
 
 **Notice**: we configure compose with `network_mode: host` (in) therefore, our image links with localhost (no mapping ports, for example)
 
-You can read about publishing packages [here](deployments).
+You can read about publishing packages [here](%7B%7B%20cookiecutter.service%20%7D%7D/deployments).
 
 ### data/logs/
 
@@ -87,7 +73,7 @@ for use by others.
 
 This package's name has the same name as repo name (_ instead of -). This package (folder) publish to pypi-registry.
 
-### [python_service_layout/__cmd/](python_service_layout/__cmd/)
+### [python_service_layout/__cmd/](%7B%7B%20cookiecutter.service%20%7D%7D/__cmd/)
  
 Main applications for this project.
 
@@ -107,11 +93,11 @@ See the `/__cmd` directory for examples.
 
 We save `__cmd` into package therefore `__cmd` must be include into package to cli works. But cmd is not part of library.
 
-### [python_service_layout/tests/](python_service_layout/tests/)
+### [python_service_layout/tests/](%7B%7B%20cookiecutter.service%20%7D%7D/tests/)
 
 This repo consists unit tests. Unit tests is used to test functions
 
-### [python_service_layout/generators/](python_service_layout/generators/)
+### [python_service_layout/generators/](%7B%7B%20cookiecutter.service%20%7D%7D/generators/)
 
 Each service works with data. Therefore a good practice is build generators for data creation of each method. This generators is part of package for using in tests of other packages.
 
@@ -123,7 +109,7 @@ availability to them from console
 
 Internal functions, models of REST API, server, data transformers, utils etc.
 
-### [tests/](tests)
+### [tests/](%7B%7B%20cookiecutter.service%20%7D%7D/tests)
 
 This directory consists only integration tests. In this directory cannot import files from another directories except 
 package directory (python_service_layout). We tests our service as block box method. Therefore we cannot use common 

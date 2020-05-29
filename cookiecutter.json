@@ -1,0 +1,17 @@
+{
+  "author": null,
+  "email": null,
+  "description": null,
+  "service": null,
+
+  "pypi_alias": null,
+  "pypi_host": null,
+  "pypi_port": null,
+  "pypi_login": null,
+  "pypi_password": null,
+
+  "docker_host": null,
+  "docker_port": null,
+  "docker_login": null,
+  "docker_password": null
+}

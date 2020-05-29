@@ -1,0 +1,5 @@
+name = '{{ cookiecutter.service }}'
+version = '0.1.0'
+description = '{{ cookiecutter.description }}'
+author = '{{ cookiecutter.author }}'
+email = '{{ cookiecutter.email }}'

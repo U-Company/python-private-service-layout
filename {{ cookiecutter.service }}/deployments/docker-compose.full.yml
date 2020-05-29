@@ -1,14 +1,10 @@
 version: '3'
 services:
-    mongo:
-        image: "mongo:4.0.2"
-        network_mode: host
-    {{pkg_name}}:
+    {{ cookiecutter.service }}:
       volumes:
         - .envs/local.env:/app/deployments/.envs/local.env
       build:
         context: ..
         dockerfile: deployments/Dockerfile
-      depends_on:
-        - mongo
+      depends_on: []
       network_mode: host

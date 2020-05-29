@@ -1,0 +1,14 @@
+[distutils]
+index-servers=
+    pypi
+    {{ cookiecutter.pypi_alias }}
+
+[{{ cookiecutter.pypi_alias }}]
+repository: http://{{ cookiecutter.pypi_host }}:{{ cookiecutter.pypi_port }}
+username: {{ cookiecutter.pypi_login }}
+password: {{ cookiecutter.pypi_password }}
+
+[pypi]
+repository: https://upload.pypi.org/legacy/
+username: <your-login>
+password: <your-password>

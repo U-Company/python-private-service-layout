@@ -1,4 +1,4 @@
-# python_service_layout
+# {{ cookiecutter.service }}
 
 This module consists:
 

@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a0daa1bd-7404-45bc-bca5-7006b55f25fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/python-service-layout.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cookiecutter.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/.editconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.envs/local.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/.pypirc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/.pypirc_mixed" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/daemon.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/daemon.json_mixed" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/pip.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/pip.conf_mixed" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/docker-compose.env.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/tests/test_health.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__service/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/methods.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/tests/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/tests/test_unit_example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/data/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/docs/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/data/docs/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/docs/structure.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/data/docs/structure.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/docs/structure.png" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/data/docs/structure.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/logs/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/data/logs/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployments/.envs/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.envs/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployments/.envs/local.env.tmpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployments/.secrets/pip.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployments/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployments/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployments/docker-compose.env.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployments/docker-compose.full.yml.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/docker-compose.full.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info.py.tmpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefile.tmpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_service_layout/__cmd/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__cmd/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_service_layout/__cmd/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__cmd/cli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_service_layout/__cmd/http_.py.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__cmd/http_.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_service_layout/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__cmd/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_service_layout/__service/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__service/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_service_layout/__service/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__service/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_service_layout/generators/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/generators/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_service_layout/tests/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/requirements" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/tests/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/{{ cookiecutter.pkg_name }}/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/README.md" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/setup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="357">
+                <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/makefile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="945">
+              <caret line="45" column="81" selection-start-line="45" selection-start-column="81" selection-end-line="45" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="562">
+              <caret line="105" column="30" selection-start-line="105" selection-start-column="30" selection-end-line="105" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cookiecutter.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/requirements">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/tests/test_unit_example.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/daemon.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="1" column="99" selection-start-line="1" selection-start-column="99" selection-end-line="1" selection-end-column="99" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/.pypirc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/.pypirc_mixed">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>cmd</find>
+      <find>health</find>
+      <find>check</find>
+      <find>heal</find>
+      <find>debug</find>
+      <find>configs</find>
+      <find># service</find>
+      <find>{{</find>
+      <find>pkg_name</find>
+      <find>package</find>
+      <find>.package</find>
+      <find>{{ cookiecutter.package }}</find>
+      <find>pypi</find>
+      <find>password_private_pipy_registry</find>
+      <find>build</find>
+      <find>dist/</find>
+      <find>.pytest_cache/</find>
+      <find>*.pyc</find>
+      <find>~lock*</find>
+      <find>your-</find>
+      <find>coockiecuttercookiecutter</find>
+      <find>coockiecutter</find>
+      <find>cookiecutter</find>
+      <find />
+      <find>pri</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>service</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/{{ cookiecutter.service }}</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/service/internal/config.py" />
+        <option value="$PROJECT_DIR$/service/server.py" />
+        <option value="$PROJECT_DIR$/service/config.py" />
+        <option value="$PROJECT_DIR$/info.py.tmpl" />
+        <option value="$PROJECT_DIR$/makefile.tmpl" />
+        <option value="$PROJECT_DIR$/deployments/docker-compose.full.yml.tmpl" />
+        <option value="$PROJECT_DIR$/deployments/.envs/local.env.tmpl" />
+        <option value="$PROJECT_DIR$/python_service_layout/README.md" />
+        <option value="$PROJECT_DIR$/python_service_layout/__cmd/cli.py" />
+        <option value="$PROJECT_DIR$/setup.py.tmpl" />
+        <option value="$PROJECT_DIR$/python_service_layout/__cmd/http_.py" />
+        <option value="$PROJECT_DIR$/deployments/docker-compose.env.yml" />
+        <option value="$PROJECT_DIR$/deployments/.envs/local.env" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.pkg_name }}/README.md" />
+        <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/makefile" />
+        <option value="$PROJECT_DIR$/info.py" />
+        <option value="$PROJECT_DIR$/deployments/docker-compose.full.yml" />
+        <option value="$PROJECT_DIR$/deployments/.secrets/pip.conf" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.package }}/README.md" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.package }}/__cmd/http_.py" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.package }}/deployments/.envs/local.env" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.package }}/{{ cookiecutter.package }}/README.md" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/.editconfig" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/pip.conf_mixed" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/daemon.json" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/daemon.json_mixed" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/clients/__init__.py" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/generators/handler.py" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/generators/sum.py" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/clients/methods.py" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/generators/__init__.py" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__init__.py" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__service/server.py" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/docker-compose.full.yml" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/.gitignore" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/pip.conf" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/tests/health.py" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__service/config.py" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/README.md" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/setup.py" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__cmd/http_.py" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.envs/local.env" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/tests/__init__.py" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/methods.py" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/requirements" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/.pypirc" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/.pypirc_mixed" />
+        <option value="$PROJECT_DIR$/{{ cookiecutter.service }}/makefile" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/cookiecutter.json" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="993" />
+    <option name="y" value="25" />
+    <option name="width" value="927" />
+    <option name="height" value="1055" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="python-service-layout" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-service-layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python-service-layout" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python-service-layout" type="462c0819:PsiDirectoryNode" />
+              <item name="{{ cookiecutter.service }}" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/a" />
+      <recent name="$PROJECT_DIR$/python_service_layout" />
+      <recent name="$PROJECT_DIR$/service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/tests" />
+      <recent name="$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets" />
+      <recent name="$PROJECT_DIR$/{{ cookiecutter.service }}" />
+      <recent name="$PROJECT_DIR$/deployments/.envs" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="http_" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="python-service-layout" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_service_layout/__cmd/http_.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.http_" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a0daa1bd-7404-45bc-bca5-7006b55f25fe" name="Default Changelist" comment="" />
+      <created>1589316761175</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589316761175</updated>
+      <workItem from="1589316763557" duration="989000" />
+      <workItem from="1589317809920" duration="3434000" />
+      <workItem from="1589322927100" duration="89000" />
+      <workItem from="1589354797885" duration="2584000" />
+      <workItem from="1589358084245" duration="602000" />
+      <workItem from="1590754111203" duration="4009000" />
+      <workItem from="1590759197761" duration="10873000" />
+      <workItem from="1590772484733" duration="1436000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="24016000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27006087" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.25161988" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39956802" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.26349893" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__service/server.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/python_service_layout$server.coverage" NAME="server Coverage Results" MODIFIED="1589317836168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/service/internal" />
+    <SUITE FILE_PATH="coverage/python_service_layout$http.coverage" NAME="http_ Coverage Results" MODIFIED="1589322403366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_service_layout$http_.coverage" NAME="http_ Coverage Results" MODIFIED="1589355330150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/anaconda3/envs/python-service-layout/lib/python3.7/site-packages/vault_client/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/python-service-layout/lib/python3.7/site-packages/uvicorn/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1113">
+          <caret line="80" column="12" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/python-service-layout/lib/python3.7/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#1189#1260#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/data/docs/structure.drawio">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/data/docs/.gitkeep">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.envs/.gitkeep">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python_service_layout/__service/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__cmd/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="84">
+            <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/tests/.gitkeep">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="147">
+            <caret line="7" selection-start-line="7" selection-end-line="7" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/.editconfig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/tests/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/generators/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/generators/sum.py" />
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/clients/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/generators/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__cmd/cli.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" selection-start-column="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/docker-compose.env.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/daemon.json_mixed">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/docker-compose.full.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/.gitkeep">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/pip.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/pip.conf_mixed">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="31" selection-start-column="31" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__service/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/tests/test_health.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.envs/local.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="46" selection-start-column="46" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="420">
+            <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/tests/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="25" column="69" selection-start-line="25" selection-start-column="69" selection-end-line="25" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__service/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/__cmd/http_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="20" column="84" selection-start-line="20" selection-start-column="84" selection-end-line="20" selection-end-column="84" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/methods.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="105" column="30" selection-start-line="105" selection-start-column="30" selection-end-line="105" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/requirements">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/{{ cookiecutter.service }}/tests/test_unit_example.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/daemon.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="99" selection-start-line="1" selection-start-column="99" selection-end-line="1" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/.pypirc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/deployments/.secrets/.pypirc_mixed">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="45" column="81" selection-start-line="45" selection-start-column="81" selection-end-line="45" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="357">
+            <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/{{ cookiecutter.service }}/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cookiecutter.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
