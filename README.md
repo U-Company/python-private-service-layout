@@ -41,6 +41,10 @@ More about our approaches, you can read [here](https://github.com/U-Company/note
 
 ## Usability
 
+Before usage, you need to install:
+
+    sudo apt-get install make docker.io docker-compose
+
 Create conda environment
 
     make config
