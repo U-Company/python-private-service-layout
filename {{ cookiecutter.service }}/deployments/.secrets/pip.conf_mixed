@@ -1,6 +1,8 @@
-[global]
-index-url = http://{{ cookiecutter.pypi_login }}:{{ cookiecutter.pypi_password }}@{{ cookiecutter.pypi_host }}:{{ cookiecutter.pypi_port }}
+[global]	
+timeout = 3
+retries = 0
 extra-index-url =
+	http://{{ cookiecutter.pypi_login }}:{{ cookiecutter.pypi_password }}@{{ cookiecutter.pypi_host }}:{{ cookiecutter.pypi_port }}
 	http://<pypi-registry-login>:<pypi-registry-password>@<pypi-registry-host-1>:<pypi-registry-port>
 	http://<pypi-registry-login>:<pypi-registry-password>@<pypi-registry-host-2>:<pypi-registry-port>
 trusted-host = pypi.python.org
