@@ -4,8 +4,9 @@ from clients import http
 from vault_client.client import VaultClient
 
 
-environ = os.environ.get('VAULT_ENV', 'LOCAL')
-client = VaultClient(environ=environ, env_file='deployments/.envs/local.env')
+VAULT_ENV = os.environ.get('VAULT_ENV')
+VAULT_ENV_FILE = os.environ.get('VAULT_ENV_FILE')
+client = VaultClient(environ=VAULT_ENV, env_file=VAULT_ENV_FILE)
 
 assert client.is_authenticated, 'Vault client not authenticated'
 assert client.is_initialized, 'Vault client not initialized'
