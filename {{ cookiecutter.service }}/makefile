@@ -10,7 +10,7 @@ ifndef PYTHON
 	PYTHON=python
 endif
 ifndef DOCKER_COMPOSE
-	DOCKER_COMPOSE=docker-comp#ose
+	DOCKER_COMPOSE=docker-compose
 endif
 ifndef DOCKER
 	DOCKER=DOCKER
