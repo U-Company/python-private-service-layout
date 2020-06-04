@@ -119,7 +119,7 @@ We have three mode of testing:
 - integration testing
 - all: unit and integration testing
 
-**NOTICE**: before start tests, set envs: `VAULT_ENV=LOCAL`, `VAULT_ENV_PATH=deployments/.envs/test.env`. `VAULT_ENV` says to Vault client takes envs from file. `VAULT_ENV_PATH` sets path to this file.
+**NOTICE**: before start tests, set envs: `VAULT_ENV=LOCAL`, `VAULT_ENV_PATH=deployments/.envs/test.env`. `VAULT_ENV` says to Vault client takes envs from file. `VAULT_ENV_PATH` sets path to this file. If you use make file, you need to use, only `TEST=yes`. Makefile configure test environment automatically
 
 We have three commands:
 
