@@ -57,7 +57,7 @@ Publish python package and docker container
 
     VERSION=a.b.c TAG=<docker-container-tag> make publish
     
-Clean source of python package
+Clean source of python package after building and all temporary files
 
     make clean
     
