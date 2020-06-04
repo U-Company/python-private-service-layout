@@ -81,7 +81,7 @@ Rebuild docker container
 
     make run-rebuild
 
-Run integration tests (you must run service and environments before running tests: `make run-full`):
+Run integration tests (you must run service and environments before running tests: `TEST=yes make run-full`):
 
     make test-integration
     
