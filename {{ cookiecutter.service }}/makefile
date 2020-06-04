@@ -38,7 +38,7 @@ endif
 .PHONY: config build publish clean deps run run-env run-full run-rebuild test-integration test-unit test
 
 ENVS=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE} VAULT_ENV=${VAULT_ENV}
-
+ENVS_TEST=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE_TEST} VAULT_ENV=${VAULT_ENV}
 
 
 config:
@@ -76,9 +76,9 @@ run-rebuild:
 	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.service }} up --build
 
 test-integration:
-	$(ENVS) VAULT_ENV_FILE_TEST=${VAULT_ENV_FILE_TEST} $(PYTEST) -v -l --disable-warnings ${TESTS_INTEGRATION}${TEST_SUBFOLDER}
+	$(ENVS_TEST) $(PYTEST) -v -l --disable-warnings ${TESTS_INTEGRATION}${TEST_SUBFOLDER}
 
 test-unit:
-	$(ENVS) VAULT_ENV_FILE_TEST=${VAULT_ENV_FILE_TEST} $(PYTEST) -v -l --disable-warnings ${TESTS_UNIT}${TEST_SUBFOLDER}
+	$(ENVS_TEST) $(PYTEST) -v -l --disable-warnings ${TESTS_UNIT}${TEST_SUBFOLDER}
 
 test: test-unit test-integration
