@@ -23,7 +23,7 @@ namespace = '{{ cookiecutter.service }}'
 def set_auth(m):
     if m.headers is None:
         m.headers = {}
-    m.headers['Authorization'] = f'Basic '+{{ cookiecutter.service }}_backend_url+'_token'
+    m.headers['Authorization'] = f'Basic '+{{ cookiecutter.service }}_token
     return m
 
 
