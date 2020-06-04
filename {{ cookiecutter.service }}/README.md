@@ -125,7 +125,9 @@ We have three commands:
  
 Before starting integration tests (above) you need to start environment:
 
-    make run-env
+    TEST=yes make run-env
+    
+Environment `TEST=yes` change env file to `deployments/tests/test.env`
       
 Unit tests:
 
