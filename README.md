@@ -108,7 +108,7 @@ Files for tests
 
 Design and user documents.
 
-### deployments/
+### [deployments/](https://github.com/U-Company/python-service-layout/tree/master/%7B%7B%20cookiecutter.service%20%7D%7D/deployments)
 
 IaaS, PaaS, system and container orchestration deployment configurations and templates (docker-compose, kubernetes/helm,
 mesos, terraform, bosh).
