@@ -104,3 +104,11 @@ cookiecutter-pypackage-env/
 # Secrets deploying
 deployments/.secrets/*
 !deployments/.secrets/.gitkeep
+
+# Application logs
+data/logs
+!data/logs/.gitkeep
+
+# Application test's temporary files
+data/test/temp
+!data/test/temp/.gitkeep
