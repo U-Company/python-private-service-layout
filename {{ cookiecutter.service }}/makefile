@@ -5,6 +5,7 @@ TESTS_INTEGRATION=tests/
 REQUIREMENTS=requirements
 DOCKER_COMPOSE_FULL=deployments/docker-compose.full.yml
 DOCKER_COMPOSE_ENV=deployments/docker-compose.env.yml
+VAULT_ENV_FILE_TEST=deployments/.envs/test.env
 VAULT_ENV_FILE=deployments/.envs/local.env
 CONDA=conda
 
@@ -30,7 +31,7 @@ ifndef VAULT_ENV
 	VAULT_ENV=LOCAL
 endif
 ifeq ($(TEST),yes)
-	VAULT_ENV_FILE=deployments/.envs/test.env
+	VAULT_ENV_FILE=${VAULT_ENV_FILE_TEST}
 endif
 
 
@@ -74,9 +75,9 @@ run-rebuild:
 	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.service }} up --build
 
 test-integration:
-	$(ENVS) $(PYTEST) -v -l --disable-warnings ${TESTS_INTEGRATION}${TEST_SUBFOLDER}
+	$(ENVS) VAULT_ENV_FILE_TEST=${VAULT_ENV_FILE_TEST} $(PYTEST) -v -l --disable-warnings ${TESTS_INTEGRATION}${TEST_SUBFOLDER}
 
 test-unit:
-	$(ENVS) $(PYTEST) -v -l --disable-warnings ${TESTS_UNIT}${TEST_SUBFOLDER}
+	$(ENVS) VAULT_ENV_FILE_TEST=${VAULT_ENV_FILE_TEST} $(PYTEST) -v -l --disable-warnings ${TESTS_UNIT}${TEST_SUBFOLDER}
 
 test: test-unit test-integration
