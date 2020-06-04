@@ -28,7 +28,6 @@ ifndef VAULT_ENV
 	VAULT_ENV=LOCAL
 endif
 
-ENVS=PYTHONPATH=${PYTHONPATH}
 
 .PHONY: config build publish clean deps run run-env run-full run-rebuild test-integration test-unit test
 
