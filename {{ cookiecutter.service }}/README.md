@@ -59,7 +59,7 @@ Copy tag from console:
     
 ## Clean
 
-You can clean python package after building:
+You can clean python package after building and all temporary files:
 
     make clean
 
