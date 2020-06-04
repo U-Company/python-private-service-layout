@@ -5,6 +5,7 @@ TESTS_INTEGRATION=tests/
 REQUIREMENTS=requirements
 DOCKER_COMPOSE_FULL=deployments/docker-compose.full.yml
 DOCKER_COMPOSE_ENV=deployments/docker-compose.env.yml
+CONDA=conda
 
 ifndef PYTHON
 	PYTHON=python
@@ -31,20 +32,22 @@ endif
 
 .PHONY: config build publish clean deps run run-env run-full run-rebuild test-integration test-unit test
 
+ENVS=PYTHONPATH=${PYTHONPATH}
+
 
 
 config:
-	conda create --name {{ cookiecutter.service }} python=3.7
+	$(ENVS) $(CONDA) create --name {{ cookiecutter.service }} python=3.7
 
 build:
-	$(PYTHON) setup.py bdist_wheel
-	$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) build
+	$(ENVS) $(PYTHON) setup.py bdist_wheel
+	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) build
 
 publish:
-	$(PYTHON) setup.py bdist_wheel upload -r {{ cookiecutter.pypi_alias }}
-	$(DOCKER) login {{ cookiecutter.docker_host }}:{{ cookiecutter.docker_port }}
-	$(DOCKER) tag $(TAG) {{ cookiecutter.docker_host }}:{{ cookiecutter.docker_port }}/{{ cookiecutter.service }}:$(VERSION)
-	$(DOCKER) push {{ cookiecutter.docker_host }}:{{ cookiecutter.docker_port }}/{{ cookiecutter.service }}:$(VERSION)
+	$(ENVS) $(PYTHON) setup.py bdist_wheel upload -r {{ cookiecutter.pypi_alias }}
+	$(ENVS) $(DOCKER) login {{ cookiecutter.docker_host }}:{{ cookiecutter.docker_port }}
+	$(ENVS) $(DOCKER) tag $(TAG) {{ cookiecutter.docker_host }}:{{ cookiecutter.docker_port }}/{{ cookiecutter.service }}:$(VERSION)
+	$(ENVS) $(DOCKER) push {{ cookiecutter.docker_host }}:{{ cookiecutter.docker_port }}/{{ cookiecutter.service }}:$(VERSION)
 
 clean:
 	rm -rf build/
@@ -52,26 +55,24 @@ clean:
 	rm -rf {{ cookiecutter.service }}.egg-info
 
 deps:
-	$(PIP) install -r $(REQUIREMENTS)
+	$(ENVS) $(PIP) install -r $(REQUIREMENTS)
 
 run:
-	$(PYTHON) {{ cookiecutter.service }}/__cmd/http_.py
+	$(ENVS) $(PYTHON) {{ cookiecutter.service }}/__cmd/http_.py
 
 run-full:
-	$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.service }} up
+	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.service }} up
 
 run-env:
-	$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_ENV) -p local_{{ cookiecutter.service }} up
+	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_ENV) -p local_{{ cookiecutter.service }} up
 
 run-rebuild:
-	$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.service }} up --build
+	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.service }} up --build
 
 test-integration:
-	$(info ${TESTS}${TEST_SUBFOLDER})
-	$(PYTEST) -v -l --disable-warnings ${TESTS_INTEGRATION}${TEST_SUBFOLDER}
+	$(ENVS) $(PYTEST) -v -l --disable-warnings ${TESTS_INTEGRATION}${TEST_SUBFOLDER}
 
 test-unit:
-	$(info ${TESTS}${TEST_SUBFOLDER})
-	$(PYTEST) -v -l --disable-warnings ${TESTS_UNIT}${TEST_SUBFOLDER}
+	$(ENVS) $(PYTEST) -v -l --disable-warnings ${TESTS_UNIT}${TEST_SUBFOLDER}
 
 test: test-unit test-integration
