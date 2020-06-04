@@ -9,7 +9,7 @@ We build template for services of python. We use [FastAPI](https://github.com/ti
 
 ![](docs/structure.png)
 
-Red is not public source. Green is public source. Package consists public and not public sources.
+Upper you see struct of modules. Red is not public source. Green is public source. Package consists public and not public sources.
 
 ## Service
 
