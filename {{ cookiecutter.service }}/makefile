@@ -58,6 +58,7 @@ clean:
 	rm -rf build/
 	rm -rf dist/
 	rm -rf {{ cookiecutter.service }}.egg-info
+	rm -rf data/test/temp/
 
 deps:
 	$(ENVS) $(PIP) install -r $(REQUIREMENTS)
