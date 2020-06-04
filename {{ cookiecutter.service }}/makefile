@@ -5,6 +5,7 @@ TESTS_INTEGRATION=tests/
 REQUIREMENTS=requirements
 DOCKER_COMPOSE_FULL=deployments/docker-compose.full.yml
 DOCKER_COMPOSE_ENV=deployments/docker-compose.env.yml
+VAULT_ENV_FILE=deployments/.envs/local.env
 CONDA=conda
 
 ifndef PYTHON
@@ -28,11 +29,14 @@ endif
 ifndef VAULT_ENV
 	VAULT_ENV=LOCAL
 endif
+ifeq ($(TEST),yes)
+	VAULT_ENV_FILE=deployments/.envs/test.env
+endif
 
 
 .PHONY: config build publish clean deps run run-env run-full run-rebuild test-integration test-unit test
 
-ENVS=PYTHONPATH=${PYTHONPATH}
+ENVS=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE} VAULT_ENV=${VAULT_ENV}
 
 
 
