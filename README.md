@@ -95,10 +95,14 @@ Run all tests
 
 ## [Project structure](https://github.com/U-Company/python-service-layout/tree/master/%7B%7B%20cookiecutter.service%20%7D%7D)
 
-### data/
+### [data/](https://github.com/U-Company/python-service-layout/tree/master/%7B%7B%20cookiecutter.service%20%7D%7D/data)
 
 This folder must consists the data of service. We think to a large data file must dumps to any storage (
 databases, file storage, git LFS, docs and other). Most part of data here is test's data.
+
+### data/tests/
+
+Files for tests
 
 ### data/docs/
 
