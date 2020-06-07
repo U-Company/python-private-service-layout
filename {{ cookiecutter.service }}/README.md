@@ -49,7 +49,7 @@ Now, login in docker registry with your login and password (first time):
     
 ## Dependencies
 
-Install all package dependencies. We suppose that you have not more two registry: [public PyPi-registry](https://pypi.org/project/registry/) and maybe your private pypi-registry, but it is not required. This command install from both or only public. Command make deps do this:
+Install all package dependencies. We suppose that you have not more two registry: [public PyPi-registry](https://pypi.org/project/registry/) and maybe your private pypi-registry, but it is not required. This command install from both or only public. This command does this:
 
     make deps
     
