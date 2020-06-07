@@ -10,9 +10,7 @@
   "pypi_login": null,
   "pypi_password": null,
 
-  "docker_host_or_hub": "#",
-  "docker_port": "-",
-  "docker_registry_login": "-",
-  "docker_registry_password": "-"
+  "docker_host_or_hub": "-",
+  "docker_port": "-"
 }
 
