@@ -26,8 +26,8 @@ Our service has:
 - console cli with [Fire](https://github.com/google/python-fire) framework for google
 - templates for unit and integration tests
 - interface for control your service via makefile
-- completely to publishing package (only private)
-- completely to publishing dockerfile (private or public)
+- completely to publishing package (custom or common pypi-registry)
+- completely to publishing dockerfile (custom or common docker-registry/docker-hub)
 
 ## Usage
 
@@ -36,6 +36,8 @@ If you want to use our layout, you must use [cookiecutter](https://github.com/co
     pip install cookiecutter
     cookiecutter https://github.com/U-Company/python-service-layout.git
     cookiecutter python-service-layout
+    
+While installing, cookiecutter ask you with default some values: `-`. It means to ignore this parameter.
     
 More about our approaches, you can read [here](https://github.com/U-Company/notes).
 
