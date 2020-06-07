@@ -31,8 +31,7 @@ such file, you need to mix it like [this](deployments/.secrets/.pypirc_mixed).
     
 ### Installing package from private pypi repository
 
-You must lay the config file [this](deployments/.secrets/pip.conf) into `~/.pip/`. If you already have 
-such file, you need to mix it like [this](deployments/.secrets/pip.conf_mixed).
+We automatically create file to work with one [private](https://github.com/U-Company/python-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/deployments/.secrets/pip_private.conf) (optional) repository. Public repository you can use as default. If your repo is [common](https://pypi.org/), then set cookiecutter's default settings while init procedure. Othercase set your custom repositroy.
                    
 ### Configure docker
 
