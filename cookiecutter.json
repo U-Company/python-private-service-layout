@@ -4,14 +4,16 @@
   "description": null,
   "service": null,
 
-  "pypi_alias": null,
-  "pypi_host": null,
-  "pypi_port": null,
+  "is_need_to_init_pypi": true,
+  "pypi_alias": "#",
+  "pypi_host": "#",
+  "pypi_port": "#",
   "pypi_login": null,
   "pypi_password": null,
 
-  "docker_host": null,
-  "docker_port": null,
+  "is_need_to_init_docker": true,
+  "docker_host": "#",
+  "docker_port": "#",
   "docker_login": null,
   "docker_password": null
 }
