@@ -6,7 +6,7 @@ RUN python3.7 -m pip install --upgrade pip
 COPY . /app
 WORKDIR /app
 
-ENV PIP_CONFIG_FILE /app/deployments/.secrets/pip.conf
+ENV PIP_CONFIG_FILE /app/deployments/.secrets/pip_private.conf
 ENV VAULT_ENV ${VAULT_ENV}
 
 RUN PIP=pip PYTHON=python3.7 make deps
