@@ -3,18 +3,16 @@
   "email": null,
   "description": null,
   "service": null,
-
-  "is_need_to_init_pypi": true,
-  "pypi_alias": "#",
-  "pypi_host": "#",
-  "pypi_port": "#",
+  
+  "pypi_alias": "default",
+  "pypi_host": "https://pypi.org/simple",
+  "pypi_port": "-",
   "pypi_login": null,
   "pypi_password": null,
 
-  "is_need_to_init_docker": true,
-  "docker_host": "#",
-  "docker_port": "#",
-  "docker_login": null,
-  "docker_password": null
+  "docker_host_or_hub": "#",
+  "docker_port": "-",
+  "docker_registry_login": "-",
+  "docker_registry_password": "-"
 }
 
