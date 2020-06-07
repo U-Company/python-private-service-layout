@@ -35,7 +35,7 @@ We automatically create file to work with one [private](https://github.com/U-Com
                    
 ### Configure docker
 
-You must lay the config file [this](deployments/.secrets/daemon.json) into `~/.pip/`. If you already have 
+You must lay the config file [this](deployments/.secrets/daemon.json) into `/etc/docker/daemon.json`. If you already have 
 such file, you need to mix it like [this](deployments/.secrets/daemon.json_mixed).
     
 After that, you must restart docker (first time):
@@ -45,6 +45,8 @@ After that, you must restart docker (first time):
 Now, login in docker registry with your login and password (first time):
 
     docker login http://{{ cookiecutter.docker_host }}:{{ cookiecutter.docker_port }} -u="<username>" -p="<password>"
+    
+While pulling or pushing, make automatically ask you login.
     
 ## Dependencies
 
