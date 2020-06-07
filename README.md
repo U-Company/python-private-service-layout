@@ -61,7 +61,7 @@ Clean source of python package after building and all temporary files
 
     make clean
     
-Install all packages dependencies. We suppose that you have not more two registry: [public PyPi-registry](https://pypi.org/project/registry/) and maybe your private pypi-registry, but not required. This command install from both or only public
+Install all packages dependencies. We suppose that you have not more two registry: [public PyPi-registry](https://pypi.org/project/registry/) and maybe your private pypi-registry (optional). This command install from both or only public
 
     make deps
     
