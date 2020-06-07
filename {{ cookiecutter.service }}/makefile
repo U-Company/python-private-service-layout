@@ -52,9 +52,9 @@ build:
 
 publish:
 	$(ENVS) $(PYTHON) setup.py bdist_wheel upload -r {{ cookiecutter.pypi_alias }}
-	$(ENVS) $(DOCKER) login {{ cookiecutter.docker_host }}:{{ cookiecutter.docker_port }}
-	$(ENVS) $(DOCKER) tag $(TAG) {{ cookiecutter.docker_host }}:{{ cookiecutter.docker_port }}/{{ cookiecutter.service }}:$(VERSION)
-	$(ENVS) $(DOCKER) push {{ cookiecutter.docker_host }}:{{ cookiecutter.docker_port }}/{{ cookiecutter.service }}:$(VERSION)
+	$(ENVS) $(DOCKER) login {{ cookiecutter.docker_host_or_hub }}:{{ cookiecutter.docker_port }}
+	$(ENVS) $(DOCKER) tag $(TAG) {{ cookiecutter.docker_host_or_hub }}:{{ cookiecutter.docker_port }}/{{ cookiecutter.service }}:$(VERSION)
+	$(ENVS) $(DOCKER) push {{ cookiecutter.docker_host_or_hub }}:{{ cookiecutter.docker_port }}/{{ cookiecutter.service }}:$(VERSION)
 
 clean:
 	rm -rf build/
