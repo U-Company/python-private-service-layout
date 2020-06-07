@@ -150,4 +150,3 @@ If you want to configure testing environment, you need change file `deployments/
 
 We use makefile as interface for communicate our application with our systems by command line while development and
 deployments
-    
