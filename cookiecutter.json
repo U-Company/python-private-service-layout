@@ -8,7 +8,7 @@
   "pypi_schema": "http",
   "pypi_host": null,
   "pypi_port": null,
-  "pypi_registry": "{{ cookiecutter.pypi_schema + '://' + cookiecutter.pypi_host + if cookiecutter.pypi_port }}",
+  "pypi_registry": "{{ cookiecutter.pypi_schema + '://' + cookiecutter.pypi_host + cookiecutter.pypi_port }}",
   "pypi_alias": "{{ cookiecutter.python_package }}",
   "pypi_login": null,
   "pypi_password": null,
