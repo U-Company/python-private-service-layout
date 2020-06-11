@@ -11,7 +11,8 @@
   "pypi_password": null,
 
   "docker_schema": "-",
-  "docker_host_or_hub": null,
+  "docker_host": "-",
+  "docker_hub": "-",
   "docker_port": "-"
 }
 
