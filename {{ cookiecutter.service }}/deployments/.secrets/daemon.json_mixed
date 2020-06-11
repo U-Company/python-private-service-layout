@@ -1,6 +1,6 @@
 {
     "insecure-registries" : [
-        "{{ cookiecutter.docker_repository }}",
+        "{{ cookiecutter.docker_registry }}",
         "<docker-schema>://<docker-host>:<docker-port>"
     ]
 }
