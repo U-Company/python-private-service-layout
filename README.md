@@ -36,8 +36,6 @@ If you want to use our layout, you must use [cookiecutter](https://github.com/co
     pip install cookiecutter
     cookiecutter https://github.com/U-Company/python-service-layout.git
     
-While installing, cookiecutter ask you with default some values: `-`. It means to ignore this parameter.
-    
 More about our approaches, you can read [here](https://github.com/U-Company/notes).
 
 Tutorial service creating lays [here](https://github.com/U-Company/python-service-layout/blob/master/docs/tutorial.md).
