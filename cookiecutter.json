@@ -1,4 +1,6 @@
 {
+  "docker_schema": "",
+  "docker_x": "{{cookiecutter.docker_schema}}+1",
   "author": null,
   "email": null,
   "description": null,
@@ -10,7 +12,6 @@
   "pypi_login": null,
   "pypi_password": null,
 
-  "docker_schema": "",
   "docker_host": "-",
   "docker_port": "-",
   "docker_registry": "1",
