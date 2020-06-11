@@ -1,6 +1,4 @@
 {
-  "docker_schema": "",
-  "docker_x": "{{1 if cookiecutter.docker_schema == '' else 2}}+1",
   "author": null,
   "email": null,
   "description": null,
@@ -11,10 +9,11 @@
   "pypi_port": "-",
   "pypi_login": null,
   "pypi_password": null,
-
+  
+  "docker_schema": "-",
   "docker_host": "-",
   "docker_port": "-",
-  "docker_registry": "1",
+  "docker_registry": "{{'' if cookiecutter.docker_schema in ['', '-'] else cookiecutter.docker_schema+'://'}}"+"2",
   "docker_hub": "-"
 }
 
