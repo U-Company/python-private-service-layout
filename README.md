@@ -26,8 +26,8 @@ Our service has:
 - console cli with [Fire](https://github.com/google/python-fire) framework for google
 - templates for unit and integration tests
 - interface for control your service via makefile
-- completely to publishing package (custom or common pypi-registry)
-- completely to publishing dockerfile (custom or common docker-registry/docker-hub)
+- completely to publishing package (private pypi-registry)
+- completely to publishing dockerfile (private docker-registry)
 
 ## Usage
 
