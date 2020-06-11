@@ -1,6 +1,6 @@
 # Not secured connection
 
-Probably you don't set `TAG` or `VERSION` before make. Please, add `daemon.json` to `/etc/docker/daemon.json`. You can read more [here](https://github.com/U-Company/python-private-service-layout/tree/master/%7B%7B%20cookiecutter.service%20%7D%7D) or [here](https://github.com/U-Company/notes/tree/master/deployments)
+Probably you don't set `TAG` or `VERSION` before `make publish-image`. Please, add `daemon.json` to `/etc/docker/daemon.json`. You can read more [here](https://github.com/U-Company/python-private-service-layout/tree/master/%7B%7B%20cookiecutter.service%20%7D%7D) or [here](https://github.com/U-Company/notes/tree/master/deployments)
 
     The push refers to repository [84.201.149.110:443/l]
     Get https://84.201.149.110:443/v2/: http: server gave HTTP response to HTTPS client
@@ -30,7 +30,9 @@ Probably you don't set `TAG` or `VERSION` before `make publish-image`. You can s
     makefile:53: recipe for target 'publish-image' failed
     make: *** [publish-image] Error 1
 
-# Tag or version not set
+# .pypirc file configuration
+
+Probably you run the `make publish-package`
 
 Cases:
 
@@ -60,3 +62,14 @@ Error:
     AssertionError: unsupported schema 
     makefile:58: recipe for target 'publish-package' failed
     make: *** [publish-package] Error 1
+    
+# Duplicate package
+
+Probably you run the `make publish-package` and get this error:
+
+    Upload failed (409): Conflict
+    error: Upload failed (409): Conflict
+    makefile:58: recipe for target 'publish-package' failed
+    make: *** [publish-package] Error 1
+
+It means that, this package already exists. Please change version or remove old version. You can remove by [this](https://github.com/U-Company/notes/tree/master/deployments#publish-image-into-docker-registry-for-local-development-and-testing) way.
