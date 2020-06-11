@@ -44,7 +44,7 @@ After that, you must restart docker (first time):
 
 Now, login in docker registry with your login and password (first time):
 
-    docker login http://{{ cookiecutter.docker_host }}:{{ cookiecutter.docker_port }} -u="<username>" -p="<password>"
+    docker login http://{{ cookiecutter.docker_host_or_hub }}:{{ cookiecutter.docker_port }} -u="<username>" -p="<password>"
     
 While pulling or pushing, make automatically ask you login.
     
