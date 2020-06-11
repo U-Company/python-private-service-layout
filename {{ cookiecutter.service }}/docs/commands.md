@@ -8,9 +8,13 @@ Build python docker container. Package is built while publishing
 
     make build-image
 
-Publish python package and docker container
+Publish docker image. You can get docker container tag from console, after running `make build-image`
 
-    VERSION=a.b.c TAG=<docker-container-tag> make publish
+    VERSION=a.b.c TAG=<docker-container-tag> make publish-image
+
+Publish python package
+
+    make publish-package
     
 Clean source of python package after building and all temporary files
 
