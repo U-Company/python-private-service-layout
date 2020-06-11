@@ -34,7 +34,7 @@ Our service has:
 If you want to use our layout, you must use [cookiecutter](https://github.com/cookiecutter/cookiecutter). This is a very simple:
 
     pip install cookiecutter
-    cookiecutter https://github.com/U-Company/python-service-layout.git
+    cookiecutter https://github.com/U-Company/python-private-service-layout.git
     
 More about our approaches, you can read [here](https://github.com/U-Company/notes).
 
