@@ -4,10 +4,12 @@
   "description": null,
   "service": null,
   "python_package": "{{cookiecutter.service.lower().replace(' ', '_').replace('-', '_')}}",
-  
-  "pypi_alias": "default",
-  "pypi_host": "https://pypi.org/simple",
+ 
+  "pypi_schema": "https",
+  "pypi_host_and_path": "pypi.org/simple",
   "pypi_port": "-",
+  "docker_registry": "{{('' if cookiecutter.pypi_schema in ['', '-'] else cookiecutter.pypi_schema+'://') + cookiecutter.pypi_host_and_path + ('' if cookiecutter.docker_port in ['', '-'] else (':'+cookiecutter.pypi_port))}}",
+  "pypi_alias": "default",
   "pypi_login": null,
   "pypi_password": null,
   
