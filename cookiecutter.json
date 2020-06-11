@@ -13,7 +13,9 @@
   "docker_schema": "-",
   "docker_host": "-",
   "docker_port": "-",
-  "docker_registry": "{{'' if cookiecutter.docker_schema in ['', '-'] else cookiecutter.docker_schema+'://'}}"+"2",
+  "docker_registry": "
+    {{'' if cookiecutter.docker_schema in ['', '-'] else cookiecutter.docker_schema+'://'}}
+  ",
   "docker_hub": "-"
 }
 
