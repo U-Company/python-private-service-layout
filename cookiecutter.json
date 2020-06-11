@@ -5,20 +5,18 @@
   "service": null,
   "python_package": "{{cookiecutter.service.lower().replace(' ', '_').replace('-', '_')}}",
  
-  "pypi_schema": "https",
-  "pypi_host_and_path": "upload.pypi.org/legacy/",
-  "pypi_port": "-",
-  "pypi_registry": "{{('' if cookiecutter.pypi_schema in ['', '-'] else cookiecutter.pypi_schema+'://') + cookiecutter.pypi_host_and_path + ('' if cookiecutter.pypi_port in ['', '-'] else (':'+cookiecutter.pypi_port))}}",
-  "pypi_alias": "default",
-  "pypi_private": "yes",
+  "pypi_schema": "http",
+  "pypi_host": null,
+  "pypi_port": null,
+  "pypi_registry": "{{ cookiecutter.pypi_schema + '://' + cookiecutter.pypi_host + if cookiecutter.pypi_port }}",
+  "pypi_alias": "{{ cookiecutter.python_package }}",
   "pypi_login": null,
   "pypi_password": null,
   
-  "docker_schema": "-",
-  "docker_host": "-",
-  "docker_port": "-",
-  "docker_username": null,
-  "docker_registry": "{{('' if cookiecutter.docker_schema in ['', '-'] else cookiecutter.docker_schema+'://') + ('' if cookiecutter.docker_host in ['', '-'] else cookiecutter.docker_host) + ('' if cookiecutter.docker_port in ['', '-'] else (':'+cookiecutter.docker_port))}}",
-  "docker_image": "{{(cookiecutter.docker_host if cookiecutter.docker_username in ['', '-'] else cookiecutter.docker_username) + '/' + cookiecutter.python_package}}"
+  "docker_schema": "http",
+  "docker_host": null,
+  "docker_port": null,
+  "docker_registry": "{{ cookiecutter.docker_schema + '://' + cookiecutter.docker_host + ':' + cookiecutter.docker_port}}",
+  "docker_image": "{{ cookiecutter.docker_host + '/' + cookiecutter.python_package }}"
 }
 
