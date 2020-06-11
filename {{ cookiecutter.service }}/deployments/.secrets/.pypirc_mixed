@@ -4,7 +4,7 @@ index-servers=
     {{ cookiecutter.pypi_alias }}
 
 [{{ cookiecutter.pypi_alias }}]
-repository: {{ cookiecutter.pypi_schema }}://{{ cookiecutter.pypi_host }}:{{ cookiecutter.pypi_port }}
+repository: {{ cookiecutter.pypi_schema }}://{{ cookiecutter.pypi_host_and_path }}:{{ cookiecutter.pypi_port }}
 username: {{ cookiecutter.pypi_login }}
 password: {{ cookiecutter.pypi_password }}
 
