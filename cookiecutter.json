@@ -6,7 +6,7 @@
   "python_package": "{{cookiecutter.service.lower().replace(' ', '_').replace('-', '_')}}",
  
   "pypi_schema": "https",
-  "pypi_host_and_path": "pypi.org/simple",
+  "pypi_host_and_path": "upload.pypi.org/legacy/",
   "pypi_port": "-",
   "pypi_registry": "{{('' if cookiecutter.pypi_schema in ['', '-'] else cookiecutter.pypi_schema+'://') + cookiecutter.pypi_host_and_path + ('' if cookiecutter.pypi_port in ['', '-'] else (':'+cookiecutter.pypi_port))}}",
   "pypi_alias": "default",
