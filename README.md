@@ -54,13 +54,17 @@ If you said `yes`, cookicutter clonning repo with replace. Othercase (`no`), you
     
 If you said `no`, cookiecutter is finished.
 
-Now, cookiecutter ask you some questions about your environment (`-` donotes not skip variable):    
+Now, cookiecutter ask you some questions about your environment (`-` donotes not skip variable).
+
+The first block:
 
 1. `author`. Enter your name
 2. `email`. Enter your email
 3. `description`. Enter description your service's name
 4. `service`. Enter your service's name
 5. `python_package`. Compiled python package's name
+
+The second block:
 
 6. `pypi_schema`. Enter your pypi registry's schema
 7. `pypi_host_and_path`. Enter your pypi registry's host and path (for example `pypi.org/simple` or `192.168.0.1`)
@@ -70,14 +74,8 @@ Now, cookiecutter ask you some questions about your environment (`-` donotes not
 11. `pypi_login`: login to pypi registry (for publishing and installing)
 12. `pypi_password`: password to pypi registry (for publishing and installing)
 
-6. `docker_schema`. Enter your python registry's schema
-7. `pypi_host_and_path`. Enter your python registry's host and path (for example `pypi.org/simple` or `192.168.0.1`)
-8. `pypi_port`. Enter your pypi registry's port (**not required**)
-9. `pypi_registry`. Compiled python registry's name
-10. `pypi_alias`. Enter alias to pypi registry
-11. `pypi_login`. Enter login to pypi registry (for publishing and installing)
-12. `pypi_password`: Enter password to pypi registry (for publishing and installing)
-  
+The third block:
+
 13. `docker_schema`. Enter your docker registry's schema (**not required**)
 14. `docker_host`. Enter your docker registry's host. For example `192.168.0.1` (**not required**)
 16. `docker_port`. Enter your docker registry's port. For example `8000` (**not required**)
