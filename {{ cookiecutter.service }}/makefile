@@ -63,7 +63,8 @@ clean:
 	rm -rf data/test/temp/
 
 deps:
-	$(ENVS) $(PIP) install -r $(REQUIREMENTS)
+	$(ENVS) $(PIP) install -r $(REQ)
+	$(ENVS) $(PIP) install -r $(REQ_PRIVATE)
 
 run:
 	$(ENVS) $(PYTHON) {{ cookiecutter.python_package }}/__cmd/http_.py
