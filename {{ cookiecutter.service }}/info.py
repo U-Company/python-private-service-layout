@@ -1,4 +1,4 @@
-name = '{{ cookiecutter.service }}'
+name = '{{ cookiecutter.package_name }}'
 version = '0.1.0'
 description = '{{ cookiecutter.description }}'
 author = '{{ cookiecutter.author }}'
