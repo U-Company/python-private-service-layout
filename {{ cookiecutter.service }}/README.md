@@ -148,3 +148,8 @@ If you want to configure testing environment, you need change file `deployments/
 
 We use makefile as interface for communicate our application with our systems by command line while development and
 deployments
+
+## Common errors
+
+If you have some errors, you can read [this](
+[Common errors](https://github.com/U-Company/python-private-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/docs/errors.md)) doc. Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru
