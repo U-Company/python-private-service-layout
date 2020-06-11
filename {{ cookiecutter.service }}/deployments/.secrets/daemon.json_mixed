@@ -1,5 +1,0 @@
-{
-    "insecure-registries" : [
-        "http://{{ cookiecutter.docker_host_or_hub }}:{{ cookiecutter.docker_port }}"
-    ]
-}
