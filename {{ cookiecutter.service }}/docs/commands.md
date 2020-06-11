@@ -4,9 +4,9 @@ Create conda environment
 
     make config
     
-Build python package and docker container
+Build python docker container. Package is built while publishing
 
-    make build
+    make build-image
 
 Publish python package and docker container
 
