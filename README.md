@@ -42,7 +42,7 @@ More about our approaches, you can read [here](https://github.com/U-Company/note
 
 ## Init cookiecutter
 
-Tutorial service creating lays [here](https://github.com/U-Company/python-service-layout/new/master).
+Tutorial service creating lays [here](https://github.com/U-Company/python-service-layout/blob/master/docs/tutorial.md).
 
 ## Usability
 
