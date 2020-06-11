@@ -4,7 +4,7 @@ TESTS_UNIT={{ cookiecutter.python_package }}/tests/
 TESTS_INTEGRATION=tests/
 REQ=requirements
 REQ_PRIVATE=requirements.private
-SECRETS_PRIVATE=deployments/.secrets/pip_private.conf
+PIP_CONFIG_FILE=deployments/.secrets/pip_private.conf
 DOCKER_COMPOSE_FULL=deployments/docker-compose.full.yml
 DOCKER_COMPOSE_ENV=deployments/docker-compose.env.yml
 VAULT_ENV_FILE_TEST=deployments/.envs/test.env
@@ -39,7 +39,7 @@ endif
 
 .PHONY: config build publish clean deps run run-env run-full run-rebuild test-integration test-unit test
 
-ENVS=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE} VAULT_ENV=${VAULT_ENV}
+ENVS=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE} VAULT_ENV=${VAULT_ENV} PIP_CONFIG_FILE=${PIP_CONFIG_FILE}
 ENVS_TEST=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE_TEST} VAULT_ENV=${VAULT_ENV}
 
 
