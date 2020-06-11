@@ -20,18 +20,13 @@ or, you can do this:
     
 After that, you get project name's environment
     
-## Configuration
+## Configuration for publishing
 
-If you want to configuration, you need configure docker and PyPi. More detail [here](https://github.com/U-Company/notes/tree/master/deployments)
+If you want to publish images and packages, you need configure docker and PyPi. You can read short instruction below, or full instruction [here](https://github.com/U-Company/notes/tree/master/deployments).
 
 ### Prepare config for pip (Ubuntu)
 
-Before publishing, you need to create file `~/.pypirc` like [this](deployments/.secrets/.pypirc). If you already have 
-such file, you need to mix it like [this](deployments/.secrets/.pypirc_mixed).
-    
-### Installing package from private pypi repository
-
-We automatically create file to work with one [private](https://github.com/U-Company/python-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/deployments/.secrets/pip_private.conf) (optional) repository. Public repository you can use as default. If your repo is [common](https://pypi.org/), then set cookiecutter's default settings while init procedure. Othercase set your custom repositroy.
+Before publishing, you need to create file `~/.pypirc`. Copy [this file](deployments/.secrets/.pypirc) to `~/.pypirc`. If you already have such file, you need to mix it like [this](deployments/.secrets/.pypirc_mixed). `.pypirc` is required for publishing python packages.
                    
 ### Configure docker
 
@@ -53,6 +48,8 @@ If you don't login, while pulling or pushing, make automatically ask you login.
 Install all package dependencies. We suppose that you have not more two registry: [public PyPi-registry](https://pypi.org/project/registry/) and maybe your private pypi-registry, but not required. This command install from both or only public:
 
     make deps
+    
+We automatically create file to installing packages from repository (private or public). You can see this file [here](https://github.com/U-Company/python-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/deployments/.secrets/pip_private.conf). If your repo is [common](https://pypi.org/), then set cookiecutter's default settings while init procedure. Othercase set your custom repositroy.
     
 ## Publishing
     
@@ -82,15 +79,14 @@ We have three mode of starting:
 - development
 - make
 
-### docker-compose full
+### Running
 
 We use docker-compose for local development and starting you service and environment. If you want to start full 
 subsystem, you need to do this:
 
     make run-full 
     
-After that our service and environment is started. If you want to start our service the first time, docker container 
-with service is built. Other container is pulled.
+After that our service and environment is started. If you want to start our service the first time, docker container with service is built. Other container is pulled.
  
 If you want to start service not first time, maybe you need rebuilt service for apply last changes:
 
@@ -132,9 +128,9 @@ We have three commands:
 
     make test-integration
  
-Before starting integration tests (above) you need to start environment:
+Before starting integration tests (above) you need to start service with environment:
 
-    TEST=yes make run-env
+    TEST=yes make run-full
     
 Environment `TEST=yes` change env file to `deployments/tests/test.env`
       
