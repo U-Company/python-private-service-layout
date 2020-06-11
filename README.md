@@ -3,7 +3,7 @@
 This repository is inspired by the repository of [layout-golang](https://github.com/golang-standards/project-layout). 
 We build template for services of python. We use [FastAPI](https://github.com/tiangolo/fastapi), 
 [uvicorn](https://www.uvicorn.org/), [docker](https://www.docker.com/) and docker-compose. For service creation we use 
-[cookiecutter](https://github.com/cookiecutter/cookiecutter). This tool can init the service  
+[cookiecutter](https://github.com/cookiecutter/cookiecutter). This tool can init your service. After that your service already work
 
 ## Service layout
 
