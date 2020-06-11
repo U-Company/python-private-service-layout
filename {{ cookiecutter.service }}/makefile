@@ -18,7 +18,7 @@ ifndef DOCKER_COMPOSE
 	DOCKER_COMPOSE=docker-compose
 endif
 ifndef DOCKER
-	DOCKER=DOCKER
+	DOCKER=docker
 endif
 ifndef PYTEST
 	PYTEST=pytest
@@ -46,15 +46,16 @@ ENVS_TEST=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE_TEST} VAULT_E
 config:
 	$(ENVS) $(CONDA) create --name {{ cookiecutter.python_package }} python=3.7
 
-build:
-	$(ENVS) $(PYTHON) setup.py bdist_wheel
+build-image:
 	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) build
 
-publish:
-	$(ENVS) $(PYTHON) setup.py bdist_wheel upload -r {{ cookiecutter.pypi_alias }}
+publish-image:
 	$(ENVS) $(DOCKER) login {{ cookiecutter.docker_registry }}
-	$(ENVS) $(DOCKER) tag $(TAG) {{ cookiecutter.docker_image }}/{{ cookiecutter.service }}:$(VERSION)
-	$(ENVS) $(DOCKER) push {{ cookiecutter.docker_image }}/{{ cookiecutter.service }}:$(VERSION)
+	$(ENVS) $(DOCKER) tag $(TAG) {{ cookiecutter.docker_image }}:$(VERSION)
+	$(ENVS) $(DOCKER) push {{ cookiecutter.docker_image }}:$(VERSION)
+
+publish-package:
+	$(ENVS) $(PYTHON) setup.py bdist_wheel upload -r {{ cookiecutter.pypi_alias }}
 
 clean:
 	rm -rf build/
