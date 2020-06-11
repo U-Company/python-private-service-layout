@@ -1,6 +1,6 @@
 PYTHONPATH=.
 SCRIPTS=scripts/
-TESTS_UNIT={{ cookiecutter.service }}/tests/
+TESTS_UNIT={{ cookiecutter.python_package }}/tests/
 TESTS_INTEGRATION=tests/
 REQ=requirements
 REQ_PRIVATE=requirements.private
@@ -44,7 +44,7 @@ ENVS_TEST=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE_TEST} VAULT_E
 
 
 config:
-	$(ENVS) $(CONDA) create --name {{ cookiecutter.service }} python=3.7
+	$(ENVS) $(CONDA) create --name {{ cookiecutter.python_package }} python=3.7
 
 build:
 	$(ENVS) $(PYTHON) setup.py bdist_wheel
@@ -52,21 +52,21 @@ build:
 
 publish:
 	$(ENVS) $(PYTHON) setup.py bdist_wheel upload -r {{ cookiecutter.pypi_alias }}
-	$(ENVS) $(DOCKER) login {{ cookiecutter.docker_host_or_hub }}:{{ cookiecutter.docker_port }}
-	$(ENVS) $(DOCKER) tag $(TAG) {{ cookiecutter.docker_host_or_hub }}:{{ cookiecutter.docker_port }}/{{ cookiecutter.service }}:$(VERSION)
-	$(ENVS) $(DOCKER) push {{ cookiecutter.docker_host_or_hub }}:{{ cookiecutter.docker_port }}/{{ cookiecutter.service }}:$(VERSION)
+	$(ENVS) $(DOCKER) login {{ cookiecutter.docker_registry }}
+	$(ENVS) $(DOCKER) tag $(TAG) {{ cookiecutter.docker_image }}/{{ cookiecutter.service }}:$(VERSION)
+	$(ENVS) $(DOCKER) push {{ cookiecutter.docker_image }}/{{ cookiecutter.service }}:$(VERSION)
 
 clean:
 	rm -rf build/
 	rm -rf dist/
-	rm -rf {{ cookiecutter.service }}.egg-info
+	rm -rf {{ cookiecutter.python_package }}.egg-info
 	rm -rf data/test/temp/
 
 deps:
 	$(ENVS) $(PIP) install -r $(REQUIREMENTS)
 
 run:
-	$(ENVS) $(PYTHON) {{ cookiecutter.service }}/__cmd/http_.py
+	$(ENVS) $(PYTHON) {{ cookiecutter.python_package }}/__cmd/http_.py
 
 run-full:
 	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.service }} up
