@@ -44,7 +44,7 @@ After that, you must restart docker (first time):
 
 Now, login in docker registry with your login and password (first time):
 
-    docker login {% if cookiecutter.docker_port == '-' %}{{cookiecutter.docker_host_or_hub}}{% else %}{{cookiecutter.docker_schema}}://{{cookiecutter.docker_host_or_hub}}:{{cookiecutter.docker_port}}{% endif %}
+    docker login {{cookiecutter.docker_registry}}
     
     
     {% if cookiecutter.docker_port == '-' %}{% cookiecutter.docker_host_or_hub %} cookiecutter.docker_host_or_hub:cookiecutter.docker_port }} -u="<username>" -p="<password>"
