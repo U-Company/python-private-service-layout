@@ -3,7 +3,7 @@
   "email": null,
   "description": null,
   "service": null,
-  "python_package": "{{cookiecutter.service.lower()}}",
+  "python_package": "{{cookiecutter.service.lower().replace(' ', '_').replace('-', '_')}}",
   
   "pypi_alias": "default",
   "pypi_host": "https://pypi.org/simple",
