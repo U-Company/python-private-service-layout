@@ -44,7 +44,10 @@ After that, you must restart docker (first time):
 
 Now, login in docker registry with your login and password (first time):
 
-    docker login http://{{ cookiecutter.docker_host_or_hub if cookiecutter.docker_host_or_hub == '-' else cookiecutter.docker_host_or_hub:cookiecutter.docker_port }} -u="<username>" -p="<password>"
+    docker login {% if cookiecutter.docker_port == '-' %}{{cookiecutter.docker_host_or_hub}}{% else %}{{cookiecutter.docker_schema}}://{{cookiecutter.docker_host_or_hub}}:{{cookiecutter.docker_port}}{% endif %}
+    
+    
+    {% if cookiecutter.docker_port == '-' %}{% cookiecutter.docker_host_or_hub %} cookiecutter.docker_host_or_hub:cookiecutter.docker_port }} -u="<username>" -p="<password>"
     
 If you don't login, while pulling or pushing, make automatically ask you login.
     
