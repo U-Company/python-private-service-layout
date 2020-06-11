@@ -10,7 +10,7 @@ If you said `yes`, cookicutter clonning repo with replace. Othercase (`no`), you
     
 If you said `no`, cookiecutter is finished.
 
-Now, cookiecutter ask you some questions about your environment (`-` donotes not skip variable).
+Now, cookiecutter ask you some questions about your environment.
 
 The first block:
 
