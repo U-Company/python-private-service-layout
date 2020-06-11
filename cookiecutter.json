@@ -10,6 +10,7 @@
   "pypi_port": "-",
   "pypi_registry": "{{('' if cookiecutter.pypi_schema in ['', '-'] else cookiecutter.pypi_schema+'://') + cookiecutter.pypi_host_and_path + ('' if cookiecutter.pypi_port in ['', '-'] else (':'+cookiecutter.pypi_port))}}",
   "pypi_alias": "default",
+  "is_private_registry": false,
   "pypi_login": null,
   "pypi_password": null,
   
