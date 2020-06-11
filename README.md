@@ -19,6 +19,7 @@ Our service has:
 - [vault-client](https://github.com/U-Company/vault-client)
 - healthcheck
 - [docker](https://www.docker.com/) and docker-compose for local development and deploying
+- isolated docker development
 - loguru for logging
 - swagger from FastAPI
 - [FastAPI](https://github.com/tiangolo/fastapi) as service
