@@ -42,12 +42,9 @@ After that, you must restart docker (first time):
 
     sudo service docker restart
 
-Now, login in docker registry with your login and password (first time):
+Now, login in docker registry with your login and password (first time). If you want private :
 
-    docker login {{cookiecutter.docker_registry}}
-    
-    
-    {% if cookiecutter.docker_port == '-' %}{% cookiecutter.docker_host_or_hub %} cookiecutter.docker_host_or_hub:cookiecutter.docker_port }} -u="<username>" -p="<password>"
+    docker login {{cookiecutter.docker_registry}} -u="<username>" -p="<password>"
     
 If you don't login, while pulling or pushing, make automatically ask you login.
     
