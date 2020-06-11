@@ -14,8 +14,7 @@
   "pypi_password": null,
   
   "docker_schema": "-",
-  "docker_host": null,
-  "docker_hub": "-",
+  "docker_host": "-",
   "docker_port": "-",
   "docker_hubname": "-",
   "docker_registry": "{{('' if cookiecutter.docker_schema in ['', '-'] else cookiecutter.docker_schema+'://') + cookiecutter.docker_host + ('' if cookiecutter.docker_port in ['', '-'] else (':'+cookiecutter.docker_port))}}",
