@@ -40,63 +40,15 @@ While installing, cookiecutter ask you with default some values: `-`. It means t
     
 More about our approaches, you can read [here](https://github.com/U-Company/notes).
 
-## Init cookiecutter
-
 Tutorial service creating lays [here](https://github.com/U-Company/python-service-layout/blob/master/docs/tutorial.md).
 
-## Usability
+## Service initialization
 
 Before usage, you need to install:
 
     sudo apt-get install make docker.io docker-compose
-
-Create conda environment
-
-    make config
     
-Build python package and docker container
-
-    make build
-
-Publish python package and docker container
-
-    VERSION=a.b.c TAG=<docker-container-tag> make publish
-    
-Clean source of python package after building and all temporary files
-
-    make clean
-    
-Install all packages dependencies. We suppose that you have not more two registry: [public PyPi-registry](https://pypi.org/project/registry/) and maybe your private pypi-registry (optional). This command install from both or only public
-
-    make deps
-    
-Run service in operation system
-    
-    make run
-
-Run service in docker with environment services
-
-    make run-full
-    
-Run service in docker with environment services
-
-    make run-env
-
-Rebuild docker container
-
-    make run-rebuild
-
-Run integration tests (you must run service and environments before running tests: `TEST=yes make run-full`):
-
-    make test-integration
-    
-Run unit tests
-
-    make test-unit
-    
-Run all tests
-
-    make test
+[Here](https://github.com/U-Company/python-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/docs/commands.md) you cand find all available commands.
 
 ## [Project structure](https://github.com/U-Company/python-service-layout/tree/master/%7B%7B%20cookiecutter.service%20%7D%7D)
 
