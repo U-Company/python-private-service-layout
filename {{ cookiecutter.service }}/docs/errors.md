@@ -14,11 +14,11 @@ You can [install](https://www.anaconda.com/products/individual) anaconda You can
     
 # Some command not found
 
-Please see [this](https://github.com/U-Company/python-private-service-layout#usage) page.
+Please see [this](https://github.com/U-Company/python-private-service-layout#usage) page
     
 # Tag or version not set
 
-Probably you don't set `TAG` or `VERSION` before `make publish-image`. You can see some info [here](https://github.com/U-Company/python-private-service-layout#usage) or [here](https://github.com/U-Company/python-private-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/docs/commands.md).
+Probably you don't set `TAG` or `VERSION` before `make publish-image`. You can see some info [here](https://github.com/U-Company/python-private-service-layout#usage) or [here](https://github.com/U-Company/python-private-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/docs/commands.md)
 
     docker tag  192.168.0.1/<image-name>:
     "docker tag" requires exactly 2 arguments.
@@ -29,3 +29,34 @@ Probably you don't set `TAG` or `VERSION` before `make publish-image`. You can s
     Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
     makefile:53: recipe for target 'publish-image' failed
     make: *** [publish-image] Error 1
+
+# Tag or version not set
+
+Cases:
+
+1. You forget to copy or change the file `./deployments/.secrets/.pypirc` to `~/`.
+2. You forget to add alias to `[distutils]` section into `.pypirc` file after change him.
+3. You forget to add section with alias to `.pypirc` file after change him.
+
+You can find more info [here](https://github.com/U-Company/python-private-service-layout/tree/master/%7B%7B%20cookiecutter.service%20%7D%7D#prepare-config-for-pip-ubuntu) or [here](https://github.com/U-Company/notes/tree/master/deployments).
+
+Error:
+
+    Traceback (most recent call last):
+      File "setup.py", line 38, in <module>
+        '<project-name>_http=<project-name>.__cmd.http_:main',
+      File "/home/username/anaconda3/envs/l/lib/python3.7/site-packages/setuptools/__init__.py", line 161, in setup
+        return distutils.core.setup(**attrs)
+      File "/home/username/anaconda3/envs/l/lib/python3.7/distutils/core.py", line 148, in setup
+        dist.run_commands()
+      File "/home/username/anaconda3/envs/l/lib/python3.7/distutils/dist.py", line 966, in run_commands
+        self.run_command(cmd)
+      File "/home/username/anaconda3/envs/l/lib/python3.7/distutils/dist.py", line 985, in run_command
+        cmd_obj.run()
+      File "/home/username/anaconda3/envs/l/lib/python3.7/distutils/command/upload.py", line 64, in run
+        self.upload_file(command, pyversion, filename)
+      File "/home/username/anaconda3/envs/l/lib/python3.7/distutils/command/upload.py", line 74, in upload_file
+        raise AssertionError("unsupported schema " + schema)
+    AssertionError: unsupported schema 
+    makefile:58: recipe for target 'publish-package' failed
+    make: *** [publish-package] Error 1
