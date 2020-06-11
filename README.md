@@ -1,4 +1,4 @@
-# Template for python service
+# Template for private python service
 
 This repository is inspired by the repository of [layout-golang](https://github.com/golang-standards/project-layout). 
 We build template for services of python. We use [FastAPI](https://github.com/tiangolo/fastapi), 
