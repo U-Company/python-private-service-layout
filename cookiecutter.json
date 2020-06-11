@@ -3,6 +3,7 @@
   "email": null,
   "description": null,
   "service": null,
+  "python_package": "cookiecutter.service.lower()",
   
   "pypi_alias": "default",
   "pypi_host": "https://pypi.org/simple",
@@ -11,9 +12,11 @@
   "pypi_password": null,
   
   "docker_schema": "-",
-  "docker_host": "-",
+  "docker_host": null,
+  "docker_hub": "-",
   "docker_port": "-",
+  "docker_hubname": "-",
   "docker_registry": "{{('' if cookiecutter.docker_schema in ['', '-'] else cookiecutter.docker_schema+'://') + cookiecutter.docker_host + ('' if cookiecutter.docker_port in ['', '-'] else (':'+cookiecutter.docker_port))}}",
-  "docker_hub": "-"
+  "docker_image": "{{(cookiecutter.docker_host if cookiecutter.docker_hubname in ['', '-'] else cookiecutter.docker_hubname) + '/' + cookiecutter.docker_host}}"
 }
 
