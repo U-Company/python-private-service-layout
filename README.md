@@ -20,6 +20,7 @@ Our service has:
 - healthcheck
 - [docker](https://www.docker.com/) and docker-compose for local development and deploying
 - loguru for logging
+- swagger from FastAPI
 - [FastAPI](https://github.com/tiangolo/fastapi) as service
 - [uvicorn](https://www.uvicorn.org/) as asgi server
 - console server
