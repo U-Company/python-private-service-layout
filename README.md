@@ -21,7 +21,7 @@ Our service has:
 - [docker](https://www.docker.com/) and docker-compose for local development and deploying
 - isolated docker development
 - loguru for logging
-- swagger from FastAPI
+- swagger from FastAPI /docs
 - [FastAPI](https://github.com/tiangolo/fastapi) as service
 - [uvicorn](https://www.uvicorn.org/) as asgi server
 - console server
