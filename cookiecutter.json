@@ -1,6 +1,6 @@
 {
   "docker_schema": "",
-  "docker_x": "{{cookiecutter.docker_schema}}+1",
+  "docker_x": "{{1 if cookiecutter.docker_schema == "" else 2}}+1",
   "author": null,
   "email": null,
   "description": null,
