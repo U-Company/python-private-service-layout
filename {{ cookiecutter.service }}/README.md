@@ -29,6 +29,8 @@ After that, you get project name's environment
     PIP_CONFIG_FILE=/path/to/pip.conf pip install {{ cookiecutter.python_package }}
     
 More about pip conf, you can read [here](https://github.com/U-Company/notes/tree/master/deployments).
+
+*Notice*. Probably, if you want to install private package not as dependency, your case is not correctly.
     
 ## Configuration for publishing
 
