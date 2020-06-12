@@ -24,7 +24,7 @@ After that, you get project name's environment
 
 If you want to publish images and packages, you need configure docker and PyPi. You can read short instruction below, or full instruction [here](https://github.com/U-Company/notes/tree/master/deployments).
 
-### Prepare config for pip (Ubuntu)
+### Prepare config for setup.py (Ubuntu)
 
 Before publishing, you need to create file `~/.pypirc`. Copy [this file](deployments/.secrets/.pypirc) to `~/.pypirc`. If you already have such file, you need to mix it like [this](deployments/.secrets/.pypirc_mixed). `.pypirc` is required for publishing python packages.
                    
@@ -45,7 +45,7 @@ If you don't login, while pulling or pushing, make automatically ask you login.
     
 ## Dependencies
 
-Install all package dependencies. We suppose that you have not more two registry: [public PyPi-registry](https://pypi.org/project/registry/) and maybe your private pypi-registry, but not required. This command install from both or only public:
+Install all package dependencies. We suppose that you have not more two registry: [public PyPi-registry](https://pypi.org/project/registry/) and maybe your private pypi-registry (it is optional). This command install from both or only public:
 
     make deps
     
