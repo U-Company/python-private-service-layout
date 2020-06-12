@@ -11,7 +11,7 @@ We build template for services of python. We use [FastAPI](https://github.com/ti
 
 Upper you see struct of modules. Red is not public source. Green is public source. Package consists public and not public sources.
 
-You can read about all the principles that underlie this repository [here](https://github.com/U-Company/python-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/docs/structure.md).
+You can read about all the principles that underlie this repository [here](%7B%7B%20cookiecutter.service%20%7D%7D/docs/structure.md).
 
 ## Service
 
@@ -43,15 +43,15 @@ If you want to use our layout, you must use [cookiecutter](https://github.com/co
     
 More about our approaches, you can read [here](https://github.com/U-Company/notes).
 
-Tutorial service creating lays [here](https://github.com/U-Company/python-service-layout/blob/master/docs/tutorial.md).
+Tutorial service creating lays [here](docs/tutorial.md).
 
 Before usage service, you need to install:
 
     sudo apt-get install make docker.io docker-compose
     
-[Here](https://github.com/U-Company/python-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/docs/commands.md) you cand find all available commands for communicate with service with a command line.
+[Here]({{ cookiecutter.service }}/docs/commands.md) you cand find all available commands for communicate with service with a command line.
 
-If you have some errors, you can read about [common errors](https://github.com/U-Company/python-private-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/docs/errors.md) doc. Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
+If you have some errors, you can read about [common errors]({{ cookiecutter.service }}/docs/errors.md) doc. Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
 
 ## Infrastructure
 
