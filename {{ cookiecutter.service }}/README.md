@@ -1,5 +1,9 @@
 # {{ cookiecutter.service }}
 
+{{ cookiecutter.description }}
+
+This service is built with a [python-private-service-layout](https://github.com/U-Company/python-private-service-layout)
+
 ## Installing
 
 Before work with our storage, you need to install:
