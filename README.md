@@ -51,7 +51,7 @@ Before usage service, you need to install:
     
 [Here]({{ cookiecutter.service }}/docs/commands.md) you cand find all available commands for communicate with service with a command line.
 
-If you have some errors, you can read about [common errors]({{ cookiecutter.service }}/docs/errors.md) doc. Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
+If you have some errors, you can read about [common errors](%7B%7B%20cookiecutter.service%20%7D%7D/docs/errors.md) doc. Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
 
 ## Infrastructure
 
