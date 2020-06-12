@@ -49,7 +49,7 @@ Install all package dependencies. We suppose that you have not more two registry
 
     make deps
     
-We automatically create file to installing packages from repository (private or public). You can see this file [here](https://github.com/U-Company/python-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/deployments/.secrets/pip_private.conf). If your repo is [common](https://pypi.org/), then set cookiecutter's default settings while init procedure. Othercase set your custom repositroy.
+We automatically create file to installing packages from repository (private or public). You can see this file [here](deployments/.secrets/pip_private.conf). If your repo is [common](https://pypi.org/), then set cookiecutter's default settings while init procedure. Othercase set your custom repositroy.
     
 ## Publishing
     
@@ -152,4 +152,4 @@ deployments
 ## Common errors
 
 If you have some errors, you can read [this](
-[Common errors](https://github.com/U-Company/python-private-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/docs/errors.md)) doc. Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
+[Common errors](%7B%7B%20cookiecutter.service%20%7D%7D/docs/errors.md)) doc. Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
