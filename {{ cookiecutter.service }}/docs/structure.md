@@ -1,6 +1,6 @@
-## [Project structure](https://github.com/U-Company/python-service-layout/tree/master/%7B%7B%20cookiecutter.service%20%7D%7D)
+## [Project structure]({{ cookiecutter.service }}/docs/structure.md)
 
-### [data/](https://github.com/U-Company/python-service-layout/tree/master/%7B%7B%20cookiecutter.service%20%7D%7D/data)
+### [data/]({{ cookiecutter.service }}/data)
 
 This folder must consists the data of service. We think to a large data file must dumps to any storage (
 databases, file storage, git LFS, docs and other). Most part of data here is test's data.
@@ -13,7 +13,7 @@ Files for tests
 
 Design and user documents.
 
-### [deployments/](https://github.com/U-Company/python-service-layout/tree/master/%7B%7B%20cookiecutter.service%20%7D%7D/deployments)
+### [deployments/]({{ cookiecutter.service }}/deployments)
 
 IaaS, PaaS, system and container orchestration deployment configurations and templates (docker-compose, kubernetes/helm,
 mesos, terraform, bosh).
@@ -29,13 +29,13 @@ We have environment file into `./.envs` directory.
 
 **Notice**: we configure compose with `network_mode: host` (in) therefore, our image links with localhost (no mapping ports, for example)
 
-You can read about publishing packages [here](%7B%7B%20cookiecutter.service%20%7D%7D/deployments).
+You can read about publishing packages [here]({{ cookiecutter.service }}/deployments).
 
 ### data/logs/
 
 Folder for logs files 
 
-### service_name/ 
+### {{ cookiecutter.service }}/ 
 
 Library code that's ok to use by external applications (e.g., /service_name/mypubliclib). Other projects will
 import these libraries expecting them to work, so think twice before you put something here :-) Note that catalogs with prefix `__` is a better way to ensure your private packages. In python this fact denotes private structures. The 
@@ -43,11 +43,11 @@ import these libraries expecting them to work, so think twice before you put som
 for use by others.
 
 This package's name has the same name as repo name (_ instead of -). This package (folder) publish to pypi-registry.
-### [service_name/__cmd/](%7B%7B%20cookiecutter.service%20%7D%7D/__cmd/)
+### [{{ cookiecutter.service }}/__cmd/]({{ cookiecutter.service }}/__cmd/)
  
 Main applications for this project.
 
-The directory name for each application should match the name of the executable you want to have (e.g., /__cmd/cli.py).
+The directory name for each application should match the name of the executable you want to have (e.g., {{ cookiecutter.service }}/__cmd/cli.py).
 
 For example, you have service (`http_.py`), CLI runner `cli.py`.
 
@@ -63,19 +63,19 @@ See the `/__cmd` directory for examples.
 
 We save `__cmd` into package therefore `__cmd` must be include into package to cli works. But cmd is not part of library.
 
-### [service_name/tests/](%7B%7B%20cookiecutter.service%20%7D%7D/tests/)
+### [{{ cookiecutter.service }}/tests]({{ cookiecutter.service }}/tests/)
 
 This repo consists unit tests. Unit tests is used to test functions
 
-### [service_name/generators/](%7B%7B%20cookiecutter.service%20%7D%7D/generators/)
+### [{{ cookiecutter.service }}/generators]({{ cookiecutter.service }}/generators/)
 
 Each service works with data. Therefore a good practice is build generators for data creation of each method. This generators is part of package for using in tests of other packages.
 
-### [service_name/methods](%7B%7B%20cookiecutter.service%20%7D%7D/generators/)
+### [{{ cookiecutter.service }}/methods]({{ cookiecutter.service }}/generators/)
 
-Here we save methods for connect to our service. Example of usage, you can find [here](%7B%7B%20cookiecutter.service%20%7D%7D/%7B%7B%20cookiecutter.service%20%7D%7D/methods.py)
+Here we save methods for connect to our service. Example of usage, you can find [here]({{ cookiecutter.service }}/methods.py)
 
-### service/
+### {{ cookiecutter.service }}/
  
 Implementation of service with unit tests for internal functions. We think that service is part of package, 
 therefore we include this folder from package. But you must not import this module. We save service and cli here to add 
@@ -83,7 +83,7 @@ availability to them from console
 
 Internal functions, models of REST API, server, data transformers, utils etc.
 
-### [tests/](%7B%7B%20cookiecutter.service%20%7D%7D/tests)
+### [tests/](tests)
 
 This directory consists only integration tests. In this directory cannot import files from another directories except 
 package directory (python_service_layout). We tests our service as block box method. Therefore we cannot use common 
