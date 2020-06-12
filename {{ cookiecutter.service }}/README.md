@@ -22,7 +22,7 @@ After that, you get project name's environment
     
 ## Configuration for publishing
 
-If you want to publish images and packages, you need configure docker and PyPi. You can read short instruction below, or full instruction [here](https://github.com/U-Company/notes/tree/master/deployments).
+If you want to publish images and packages, you need configure docker and PyPi. You can read short instruction below, or full instruction [here](deployments).
 
 ### Prepare config for setup.py (Ubuntu)
 
@@ -152,4 +152,4 @@ deployments
 ## Common errors
 
 If you have some errors, you can read
-[Common errors]({%7B%7B%20cookiecutter.service%20%7D%7D/docs/errors.md) doc. Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
+[Common errors]({{ cookiecutter.service }}/docs/errors.md) doc. Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
