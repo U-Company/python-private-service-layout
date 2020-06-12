@@ -11,6 +11,8 @@ We build template for services of python. We use [FastAPI](https://github.com/ti
 
 Upper you see struct of modules. Red is not public source. Green is public source. Package consists public and not public sources.
 
+You can read about all the principles that underlie this repository [here](https://github.com/U-Company/python-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/docs/structure.md).
+
 ## Service
 
 Our service has:
@@ -45,8 +47,6 @@ Tutorial service creating lays [here](https://github.com/U-Company/python-servic
 Before usage service, you need to install:
 
     sudo apt-get install make docker.io docker-compose
-
-You can read about all the principles that underlie this repository [here](https://github.com/U-Company/python-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/docs/structure.md).
     
 [Here](https://github.com/U-Company/python-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/docs/commands.md) you cand find all available commands for communicate with service with a command line.
 
