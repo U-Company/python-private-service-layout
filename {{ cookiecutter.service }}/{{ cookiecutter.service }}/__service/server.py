@@ -9,7 +9,8 @@ import info
 class ThreadMutex:
     def __init__(self, message):
         """
-        This is server mutex for handlers
+        This is server mutex for handlers. This object can block event loop from another requests. Careful about 
+        synchronization, if you use nginx
 
         :param message: message of exception
         """
