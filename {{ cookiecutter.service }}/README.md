@@ -151,5 +151,5 @@ deployments
 
 ## Common errors
 
-If you have some errors, you can read [this](
-[Common errors](%7B%7B%20cookiecutter.service%20%7D%7D/docs/errors.md)) doc. Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
+If you have some errors, you can read
+[Common errors]({{ cookiecutter.service }}/docs/errors.md) doc. Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
