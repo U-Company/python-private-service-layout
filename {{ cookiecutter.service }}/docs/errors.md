@@ -2,8 +2,8 @@
 
 Probably you don't set `TAG` or `VERSION` before `make publish-image`. Please, add `daemon.json` to `/etc/docker/daemon.json`. You can read more [here](https://github.com/U-Company/python-private-service-layout/tree/master/%7B%7B%20cookiecutter.service%20%7D%7D) or [here](https://github.com/U-Company/notes/tree/master/deployments)
 
-    The push refers to repository [84.201.149.110:443/l]
-    Get https://84.201.149.110:443/v2/: http: server gave HTTP response to HTTPS client
+    The push refers to repository [{{ cookiecutter.docker_registry }}/{{ cookiecutter.service }}]
+    Get {{ cookiecutter.docker_registry }}/v2/: http: server gave HTTP response to HTTPS client
     
  # Anaconda not found
  
@@ -20,7 +20,7 @@ Please see [this](https://github.com/U-Company/python-private-service-layout#usa
 
 Probably you don't set `TAG` or `VERSION` before `make publish-image`. You can see some info [here](https://github.com/U-Company/python-private-service-layout#usage) or [here](https://github.com/U-Company/python-private-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/docs/commands.md)
 
-    docker tag  192.168.0.1/<image-name>:
+    docker tag  {{ cookiecutter.docker_registry }}/{{ cookiecutter.docker_image }}:
     "docker tag" requires exactly 2 arguments.
     See 'docker tag --help'.
 
@@ -46,7 +46,7 @@ Error:
 
     Traceback (most recent call last):
       File "setup.py", line 38, in <module>
-        '<project-name>_http=<project-name>.__cmd.http_:main',
+        '{{ cookiecutter.python_package }}_http={{ cookiecutter.python_package }}.__cmd.http_:main',
       File "/home/username/anaconda3/envs/l/lib/python3.7/site-packages/setuptools/__init__.py", line 161, in setup
         return distutils.core.setup(**attrs)
       File "/home/username/anaconda3/envs/l/lib/python3.7/distutils/core.py", line 148, in setup
