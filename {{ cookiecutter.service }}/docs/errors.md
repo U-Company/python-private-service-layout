@@ -85,3 +85,4 @@ It means that, this package already exists. Please change version or remove old 
     
 Or you can change make file rule `deps`. Add `--ignore-installed` for pip. You can read [some](https://pip.pypa.io/en/stable/reference/pip_install/#cmdoption-i) [topics](https://stackoverflow.com/questions/51913361/difference-between-pip-install-options-ignore-installed-and-force-reinstall) [about](https://github.com/pypa/pip/issues/5247) [it](https://github.com/galaxyproject/galaxy/issues/7324).
 
+The second way can break down you application.
