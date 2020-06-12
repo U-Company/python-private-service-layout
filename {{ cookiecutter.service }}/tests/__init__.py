@@ -3,6 +3,8 @@ import os
 from clients import http
 from vault_client.client import VaultClient
 
+import info
+
 
 VAULT_ENV = os.environ.get('VAULT_ENV', 'LOCAL')
 VAULT_ENV_FILE = os.environ.get('VAULT_ENV_FILE', 'deployments/.envs/test.env')
@@ -12,7 +14,7 @@ assert client.is_authenticated, 'Vault client not authenticated'
 assert client.is_initialized, 'Vault client not initialized'
 assert not client.is_sealed, 'Vault client sealed'
 
-namespace = '{{ cookiecutter.service }}'
+namespace = info.name.upper()
 {{ cookiecutter.service }}_host = client.get(namespace, 'HOST')
 {{ cookiecutter.service }}_port = client.get(namespace, 'PORT')
 {{ cookiecutter.service }}_schema = client.get(namespace, 'SCHEMA')
