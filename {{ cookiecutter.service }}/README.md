@@ -26,7 +26,7 @@ After that, you get project name's environment
 
 ## Installing 
 
-    pip install version_controller
+    pip install {{ cookiecutter.python_package }}
     
 ## Configuration for publishing
 
