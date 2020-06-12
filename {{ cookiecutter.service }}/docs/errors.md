@@ -1,6 +1,6 @@
 # Not secured connection
 
-Probably you don't set `TAG` or `VERSION` before `make publish-image`. Please, add `daemon.json` to `/etc/docker/daemon.json`. You can read more [here](https://github.com/U-Company/python-private-service-layout/tree/master/%7B%7B%20cookiecutter.service%20%7D%7D) or [here](https://github.com/U-Company/notes/tree/master/deployments)
+Probably you don't set `TAG` or `VERSION` before `make publish-image`. Please, add `daemon.json` to `/etc/docker/daemon.json`. You can read more [here](/{{ cookiecutter.service }}) or [here](/{{ cookiecutter.service }}/deployments)
 
     The push refers to repository [{{ cookiecutter.docker_registry }}/{{ cookiecutter.service }}]
     Get {{ cookiecutter.docker_registry }}/v2/: http: server gave HTTP response to HTTPS client
@@ -18,7 +18,7 @@ Please see [this](https://github.com/U-Company/python-private-service-layout#usa
     
 # Tag or version not set
 
-Probably you don't set `TAG` or `VERSION` before `make publish-image`. You can see some info [here](https://github.com/U-Company/python-private-service-layout#usage) or [here](https://github.com/U-Company/python-private-service-layout/blob/master/%7B%7B%20cookiecutter.service%20%7D%7D/docs/commands.md)
+Probably you don't set `TAG` or `VERSION` before `make publish-image`. You can see some info [here](https://github.com/U-Company/python-private-service-layout#usage) or [here](/{{ cookiecutter.service }}/docs/commands.md)
 
     docker tag  {{ cookiecutter.docker_registry }}/{{ cookiecutter.docker_image }}:
     "docker tag" requires exactly 2 arguments.
@@ -31,16 +31,6 @@ Probably you don't set `TAG` or `VERSION` before `make publish-image`. You can s
     make: *** [publish-image] Error 1
 
 # .pypirc file configuration
-
-Probably you run the `make publish-package`
-
-Cases:
-
-1. You forget to copy or change the file `./deployments/.secrets/.pypirc` to `~/`.
-2. You forget to add alias to `[distutils]` section into `.pypirc` file after change him.
-3. You forget to add section with alias to `.pypirc` file after change him.
-
-You can find more info [here](https://github.com/U-Company/python-private-service-layout/tree/master/%7B%7B%20cookiecutter.service%20%7D%7D#prepare-config-for-pip-ubuntu) or [here](https://github.com/U-Company/notes/tree/master/deployments).
 
 Error:
 
@@ -62,14 +52,36 @@ Error:
     AssertionError: unsupported schema 
     makefile:58: recipe for target 'publish-package' failed
     make: *** [publish-package] Error 1
+
+
+Probably you run the `make publish-package`
+
+Cases:
+
+1. You forget to copy or change the file `./deployments/.secrets/.pypirc` to `~/`.
+2. You forget to add alias to `[distutils]` section into `.pypirc` file after change him.
+3. You forget to add section with alias to `.pypirc` file after change him.
+
+You can find more info [here](/{{ cookiecutter.service }}#prepare-config-for-pip-ubuntu) or [here](/{{ cookiecutter.service }}deployments).
     
 # Duplicate package
-
-Probably you run the `make publish-package` and get this error:
 
     Upload failed (409): Conflict
     error: Upload failed (409): Conflict
     makefile:58: recipe for target 'publish-package' failed
     make: *** [publish-package] Error 1
+    
+Probably you run the `make publish-package` and get this error:
 
 It means that, this package already exists. Please change version or remove old version. You can remove by [this](https://github.com/U-Company/notes/tree/master/deployments#publish-image-into-docker-registry-for-local-development-and-testing) way.
+
+# Problem with uninstall
+
+    Cannot uninstall 'certifi'. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall.
+
+**Best rule**. You can solve this problem with reinitialization anaconda:
+
+    make config
+    
+Or you can change make file rule `deps`. Add `--ignore-installed` for pip. You can read [some](https://pip.pypa.io/en/stable/reference/pip_install/#cmdoption-i) [topics](https://stackoverflow.com/questions/51913361/difference-between-pip-install-options-ignore-installed-and-force-reinstall) [about](https://github.com/pypa/pip/issues/5247) [it](https://github.com/galaxyproject/galaxy/issues/7324).
+
