@@ -26,7 +26,9 @@ After that, you get project name's environment
 
 ## Installing 
 
-    pip install {{ cookiecutter.python_package }}
+    PIP_CONFIG_FILE=/path/to/pip.conf pip install {{ cookiecutter.python_package }}
+    
+More about pip conf, you can read [here](https://github.com/U-Company/notes/tree/master/deployments).
     
 ## Configuration for publishing
 
