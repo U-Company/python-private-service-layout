@@ -37,7 +37,7 @@ After that, you must restart docker (first time):
 
     sudo service docker restart
 
-Now, login in docker registry with your login and password (first time). If you want private :
+Now, login in docker registry with your login and password (first time):
 
     docker login {{cookiecutter.docker_registry}} -u="<username>" -p="<password>"
     
