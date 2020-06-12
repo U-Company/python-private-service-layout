@@ -85,4 +85,51 @@ It means that, this package already exists. Please change version or remove old 
     
 Or you can change make file rule `deps`. Add `--ignore-installed` for pip. You can read [some](https://pip.pypa.io/en/stable/reference/pip_install/#cmdoption-i) [topics](https://stackoverflow.com/questions/51913361/difference-between-pip-install-options-ignore-installed-and-force-reinstall) [about](https://github.com/pypa/pip/issues/5247) [it](https://github.com/galaxyproject/galaxy/issues/7324).
 
-The second way can break down you application.
+The second way can break down you application.    
+    
+# Vault client not authenticated
+
+    Traceback (most recent call last):
+      File "/home/eurvanov/python/version/version/__cmd/http_.py", line 16, in <module>
+        from version.__server import config, models
+      File "/home/eurvanov/python/version/version/__server/config.py", line 13, in <module>
+        assert vault_client.is_authenticated, 'Vault client not authenticated'
+    AssertionError: Vault client not authenticated
+    
+If you use NOT `LOCAL` mode of development, check vault credentials. You need to set these environments for [vault-client](https://github.com/U-Company/vault-client):
+
+    VAULT_TOKEN=
+    VAULT_PORT=
+    VAULT_HOST=
+    VAULT_MOUNT_POINT=
+    VAULT_ENV=
+    
+One way do this: set environments into `.env` file into `deployments/.envs/` or pass another way.
+
+If you use `LOCAL` mode of develop and you get such problem, than probably you use a PyCharm or another IDE. In this case, you can forget change a workdir. Please, set them as root directory of project. PyCharm example:
+
+![](/docs/IDE_workdir.png)
+
+# Not set environments
+
+    Traceback (most recent call last):
+      File "/home/username/python/version/version/__cmd/http_.py", line 16, in <module>
+        from version.__server import config, models
+      File "/home/username/python/version/version/__server/config.py", line 11, in <module>
+        vault_client = VaultClient(environ=VAULT_ENV, env_file=VAULT_ENV_FILE)
+      File "<string>", line 5, in __init__
+      File "/home/eurvanov/anaconda3/envs/version/lib/python3.7/site-packages/vault_client/client.py", line 22, in __post_init__
+        self.environ = self.environ.upper()
+    AttributeError: 'NoneType' object has no attribute 'upper'
+    
+If you start with mode of vault `LOCAL`, probably, you forget set environments: `VAULT_ENV` or `VAULT_ENV_FILE`. Please, check default values by path: ![]({{ cookiecutter.docker_registry }}/__server/config.py):
+
+    VAULT_ENV = os.environ.get('VAULT_ENV')
+    VAULT_ENV_FILE = os.environ.get('VAULT_ENV_FILE')
+    
+Change to 
+
+    VAULT_ENV = os.environ.get('VAULT_ENV', 'LOCAL')
+    VAULT_ENV_FILE = os.environ.get('VAULT_ENV_FILE', 'deployments/.envs/local.env')
+    
+Or set environments by handle.
