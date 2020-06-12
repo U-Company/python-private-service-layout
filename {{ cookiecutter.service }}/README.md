@@ -4,7 +4,7 @@
 
 This service is built with a [python-private-service-layout](https://github.com/U-Company/python-private-service-layout)
 
-## Installing
+## Building from source
 
 Before work with our storage, you need to install:
 
@@ -23,6 +23,10 @@ or, you can do this:
     conda activate
     
 After that, you get project name's environment
+
+## Installing 
+
+    pip install version_controller
     
 ## Configuration for publishing
 
