@@ -55,5 +55,9 @@ If you have some errors, you can read about [common errors](%7B%7B%20cookiecutte
 
 ## Infrastructure
 
-If you need some infrastructure, see our repo with [infrastructure](https://github.com/U-Company/infrastructure)
+If you need a bit infrastructure, see our repo with [infrastructure](https://github.com/U-Company/infrastructure). This is very simple. You need to do only:
+
+    docker-compose up
+    
+That is enough!
 
