@@ -7,9 +7,9 @@ Probably you don't set `TAG` or `VERSION` before `make publish-image`. Please, a
  
  # Anaconda prefix error
  
- Probably, you use `make config` twice
- 
     CondaValueError: prefix already exists: /home/username/anaconda3/envs/environment
+ 
+ Probably, you use `make config` twice. The latest version of anaconda try to replace existed environment.
  
  Probably, you use not latest conda version (conda 4.5.* and lower). You need to update anaconda:
  
