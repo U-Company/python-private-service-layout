@@ -12,6 +12,14 @@ You can [install](https://www.anaconda.com/products/individual) anaconda You can
     Conda command not found
     
     
+You can insert to the file `~/.bashrc` next line:
+
+    export PATH="/path/to/anaconda/bin:$PATH"    
+    
+Example:
+
+    export PATH="/home/username/anaconda3/bin:$PATH"    
+    
 # Some command not found
 
 Please see [this](https://github.com/U-Company/python-private-service-layout#usage) page
