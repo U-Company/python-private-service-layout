@@ -4,7 +4,17 @@ Probably you don't set `TAG` or `VERSION` before `make publish-image`. Please, a
 
     The push refers to repository [{{ cookiecutter.docker_registry }}/{{ cookiecutter.service }}]
     Get {{ cookiecutter.docker_registry }}/v2/: http: server gave HTTP response to HTTPS client
-    
+ 
+ # Anaconda prefix error
+ 
+ Probably, you use `make config` twice
+ 
+    CondaValueError: prefix already exists: /home/username/anaconda3/envs/environment
+ 
+ Probably, you use not latest conda version (conda 4.5.* and lower). You need to update anaconda:
+ 
+    conda update conda    
+ 
  # Anaconda not found
  
 You can [install](https://www.anaconda.com/products/individual) anaconda You can read this answer https://stackoverflow.com/questions/35246386/conda-command-not-found/44319368 
