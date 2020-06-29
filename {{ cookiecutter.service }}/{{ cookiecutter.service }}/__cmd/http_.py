@@ -1,7 +1,7 @@
 import uvicorn
 from loguru import logger
 
-from {{ cookiecutter.service }}.__service import server, config
+from {{ cookiecutter.python_package }}.__service import server, config
 
 from prometheus_client import start_http_server
 
@@ -18,4 +18,4 @@ async def health():
 if __name__ == "__main__":
     start_http_server(config.prometheus_port)
     logger.info(f'prometheus port: {config.prometheus_port}')
-    uvicorn.run(app.app, host='0.0.0.0', port=config.{{ cookiecutter.service }}_port)
+    uvicorn.run(app.app, host='0.0.0.0', port=config.{{ cookiecutter.python_package }}_port)

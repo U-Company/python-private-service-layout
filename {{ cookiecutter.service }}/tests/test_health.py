@@ -1,6 +1,6 @@
 import pytest
 
-from {{ cookiecutter.service }} import methods
+from {{ cookiecutter.python_package }} import methods
 import tests
 
 
