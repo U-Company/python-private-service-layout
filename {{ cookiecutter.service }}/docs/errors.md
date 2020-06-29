@@ -1,8 +1,8 @@
 # Not secured connection
 
-Probably you don't set `TAG` or `VERSION` before `make publish-image`. Please, add `daemon.json` to `/etc/docker/daemon.json`. You can read more [here](/{{ cookiecutter.service }}) or [here](/{{ cookiecutter.service }}/deployments)
+Probably you don't set `TAG` or `VERSION` before `make publish-image`. Please, add `daemon.json` to `/etc/docker/daemon.json`. You can read more [here](/{{ cookiecutter.python_package }}) or [here](/{{ cookiecutter.python_package }}/deployments)
 
-    The push refers to repository [{{ cookiecutter.docker_registry }}/{{ cookiecutter.service }}]
+    The push refers to repository [{{ cookiecutter.docker_registry }}/{{ cookiecutter.python_package }}]
     Get {{ cookiecutter.docker_registry }}/v2/: http: server gave HTTP response to HTTPS client
  
  # Anaconda prefix error
@@ -36,7 +36,7 @@ Please see [this](https://github.com/U-Company/python-private-service-layout#usa
     
 # Tag or version not set
 
-Probably you don't set `TAG` or `VERSION` before `make publish-image`. You can see some info [here](https://github.com/U-Company/python-private-service-layout#usage) or [here](/{{ cookiecutter.service }}/docs/commands.md)
+Probably you don't set `TAG` or `VERSION` before `make publish-image`. You can see some info [here](https://github.com/U-Company/python-private-service-layout#usage) or [here](/{{ cookiecutter.python_package }}/docs/commands.md)
 
     docker tag  {{ cookiecutter.docker_registry }}/{{ cookiecutter.docker_image }}:
     "docker tag" requires exactly 2 arguments.
@@ -80,7 +80,7 @@ Cases:
 2. You forget to add alias to `[distutils]` section into `.pypirc` file after change him.
 3. You forget to add section with alias to `.pypirc` file after change him.
 
-You can find more info [here](/{{ cookiecutter.service }}#prepare-config-for-pip-ubuntu) or [here](/{{ cookiecutter.service }}deployments).
+You can find more info [here](/{{ cookiecutter.python_package }}#prepare-config-for-pip-ubuntu) or [here](/{{ cookiecutter.python_package }}deployments).
     
 # Duplicate package
 

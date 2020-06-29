@@ -11,7 +11,7 @@ We build template for services of python. We use [FastAPI](https://github.com/ti
 
 Upper you see struct of modules. Red is not public source. Green is public source. Package consists public and not public sources.
 
-You can read about all the principles that underlie this repository [here](%7B%7B%20cookiecutter.service%20%7D%7D/docs/structure.md).
+You can read about all the principles that underlie this repository [here](%7B%7B%20cookiecutter.python_package%20%7D%7D/docs/structure.md).
 
 ## Service
 
@@ -49,9 +49,9 @@ Before usage service, you need to install:
 
     sudo apt-get install make docker.io docker-compose
     
-[Here]({{ cookiecutter.service }}/docs/commands.md) you cand find all available commands for communicate with service with a command line.
+[Here]({{ cookiecutter.python_package }}/docs/commands.md) you cand find all available commands for communicate with service with a command line.
 
-If you have some errors, you can read [FAQ](%7B%7B%20cookiecutter.service%20%7D%7D/docs/errors.md) doc. Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
+If you have some errors, you can read [FAQ](%7B%7B%20cookiecutter.python_package%20%7D%7D/docs/errors.md) doc. Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
 
 ## Infrastructure
 
