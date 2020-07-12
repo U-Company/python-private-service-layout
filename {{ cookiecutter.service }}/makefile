@@ -50,7 +50,6 @@ build-image:
 	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) build
 
 publish-image:
-	$(ENVS) $(DOCKER) login --username={{ cookiecutter.docker_login }}
 	$(ENVS) $(DOCKER) tag $(TAG) {{ cookiecutter.docker_image }}:$(VERSION)
 	$(ENVS) $(DOCKER) push {{ cookiecutter.docker_image }}:$(VERSION)
 
