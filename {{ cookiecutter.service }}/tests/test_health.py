@@ -5,7 +5,7 @@ import tests
 
 
 @pytest.mark.asyncio
-async def test_create_answer():
+async def test_health():
     method = methods.Health()
     client = tests.client()
     resp, status = await client.request(method)
