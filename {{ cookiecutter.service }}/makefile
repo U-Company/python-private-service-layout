@@ -70,13 +70,13 @@ run:
 	$(ENVS) $(PYTHON) {{ cookiecutter.python_package }}/__cmd/http_.py
 
 run-full:
-	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.python_service }} up
+	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.service }} up
 
 run-env:
-	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_ENV) -p local_{{ cookiecutter.python_service }} up
+	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_ENV) -p local_{{ cookiecutter.service }} up
 
 run-rebuild:
-	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.python_service }} up --build
+	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.service }} up --build
 
 test-integration:
 	$(ENVS_TEST) $(PYTEST) -v -l --disable-warnings ${TESTS_INTEGRATION}${TEST_SUBFOLDER}
