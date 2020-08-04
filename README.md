@@ -1,21 +1,19 @@
 # Template for private python service
-
-This repository is inspired by the repository of [layout-golang](https://github.com/golang-standards/project-layout). 
-We build template for services of python. We use [FastAPI](https://github.com/tiangolo/fastapi), 
-[uvicorn](https://www.uvicorn.org/), [docker](https://www.docker.com/) and docker-compose. For service creation we use 
-[cookiecutter](https://github.com/cookiecutter/cookiecutter). This tool can init your service. After that your service already work
+ 
+This is a [cookiecutter](https://github.com/cookiecutter/cookiecutter) template for an internal RESTAPI service, written in Python, inspired by [layout-golang](https://github.com/golang-standards/project-layout). The stack is based on [FastAPI](https://github.com/tiangolo/fastapi) and [uvicorn](https://www.uvicorn.org/) and runs on [docker](https://www.docker.com/) and docker-compose.
 
 ## Service layout
 
+Below is the 1000ft structure of project's modules. Here, red ones are private, green ones are public. Package consists of  both public and private sources.
+
 ![](docs/structure.png)
 
-Upper you see struct of modules. Red is not public source. Green is public source. Package consists public and not public sources.
-
-You can read about all the principles that underlie this repository [here](%7B%7B%20cookiecutter.python_package%20%7D%7D/docs/structure.md).
+Read more on the project's main principles [here](%7B%7B%20cookiecutter.service%20%7D%7D/docs/structure.md).
+you can also read more on our approach [here](https://github.com/U-Company/notes).
 
 ## Service
 
-Our service has:
+Our service has built-in:
 
 - [prometheus endpoint](https://github.com/prometheus/client_python)
 - [vault-client](https://github.com/U-Company/vault-client)
@@ -36,26 +34,32 @@ Our service has:
 
 ## Usage
 
-If you want to use our layout, you must use [cookiecutter](https://github.com/cookiecutter/cookiecutter). This is a very simple:
+To use this project, you need to install [cookiecutter](https://github.com/cookiecutter/cookiecutter):
 
-    pip install cookiecutter
-    cookiecutter https://github.com/U-Company/python-private-service-layout.git
-    
-More about our approaches, you can read [here](https://github.com/U-Company/notes).
-
-Tutorial service creating lays [here](docs/tutorial.md).
-
-Before usage service, you need to install:
-
+```bash
+pip install cookiecutter
+cookiecutter https://github.com/U-Company/python-private-service-layout.git
+```
+Next, you need to have `docker` and `docker-compose`:
+```bash
     sudo apt-get install make docker.io docker-compose
 
-If you have some errors, you can read [FAQ](%7B%7B%20cookiecutter.python_package%20%7D%7D/docs/errors.md) doc. Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
+```
+
+[Here]({{ cookiecutter.service }}/docs/commands.md) you cand find all available commands for communicate with service with a command line.
+
+If you have any errors, you can read about [common errors](%7B%7B%20cookiecutter.service%20%7D%7D/docs/errors.md). Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
+
+For the full tutorial go [here](docs/tutorial.md).
 
 ## Infrastructure
 
-If you need a bit infrastructure, see our repo with [infrastructure](https://github.com/U-Company/infrastructure). This is very simple. You need to do only:
+To deploy service, just run the docker-compose from the root:
 
-    docker-compose up
+```bash
+docker-compose up
+```
+(Default deployment is based on  [infrastructure](https://github.com/U-Company/infrastructure))
     
-That is enough!
+That's it! Enjoy
 
