@@ -17,6 +17,8 @@
   "docker_host": null,
   "docker_port": null,
   "docker_registry": "{{ cookiecutter.docker_schema + '://' + cookiecutter.docker_host + ':' + cookiecutter.docker_port}}",
-  "docker_image": "{{ cookiecutter.docker_host + '/' + cookiecutter.python_package }}"
+  "docker_image": "{{ cookiecutter.docker_host + ':' + cookiecutter.docker_port + '/' + cookiecutter.service }}",
+  "docker_login": null,
+  "docker_password": null
 }
 

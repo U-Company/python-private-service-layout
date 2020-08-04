@@ -43,6 +43,7 @@ cookiecutter https://github.com/U-Company/python-private-service-layout.git
 Next, you need to have `docker` and `docker-compose`:
 ```bash
     sudo apt-get install make docker.io docker-compose
+
 ```
 
 [Here]({{ cookiecutter.service }}/docs/commands.md) you cand find all available commands for communicate with service with a command line.

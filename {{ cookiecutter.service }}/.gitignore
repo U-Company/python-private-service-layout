@@ -112,3 +112,5 @@ data/logs
 # Application test's temporary files
 data/test/temp
 !data/test/temp/.gitkeep
+
+*/.ipynb_checkpoints/
