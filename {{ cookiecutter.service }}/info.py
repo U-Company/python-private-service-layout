@@ -1,5 +1,5 @@
 name = '{{ cookiecutter.python_package }}'
 version = '0.1.0'
-description = '{{ cookiecutter.description }}'
+description = '{{ cookiecutter.description.replace("'", "\'") }}'
 author = '{{ cookiecutter.author }}'
 email = '{{ cookiecutter.email }}'
