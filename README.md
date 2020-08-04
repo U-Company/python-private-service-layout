@@ -48,8 +48,6 @@ Tutorial service creating lays [here](docs/tutorial.md).
 Before usage service, you need to install:
 
     sudo apt-get install make docker.io docker-compose
-    
-[Here]({{ cookiecutter.python_package }}/docs/commands.md) you cand find all available commands for communicate with service with a command line.
 
 If you have some errors, you can read [FAQ](%7B%7B%20cookiecutter.python_package%20%7D%7D/docs/errors.md) doc. Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
 
