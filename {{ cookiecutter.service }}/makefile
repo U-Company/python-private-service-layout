@@ -39,8 +39,7 @@ endif
 
 .PHONY: config build publish clean deps run run-env run-full run-rebuild test-integration test-unit test
 
-ENVS=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE} VAULT_ENV=${VAULT_ENV} PIP_CONFIG_FILE=${PIP_CONFIG_FILE}
-ENVS_TEST=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE_TEST} VAULT_ENV=${VAULT_ENV}
+ENVS=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE} VAULT_ENV=${VAULT_ENV} ENVS_TEST=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE_TEST} VAULT_ENV=${VAULT_ENV}
 
 
 config:
@@ -64,7 +63,7 @@ clean:
 
 deps:
 	$(ENVS) $(PIP) install -r $(REQ)
-	$(ENVS) $(PIP) install -r $(REQ_PRIVATE)
+	$(ENVS) PIP_CONFIG_FILE=${PIP_CONFIG_FILE} $(PIP) install -r $(REQ_PRIVATE)
 
 run:
 	$(ENVS) $(PYTHON) {{ cookiecutter.python_package }}/__cmd/http_.py
