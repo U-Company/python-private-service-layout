@@ -6,7 +6,7 @@ from {{ cookiecutter.python_package }}.__service import server, config
 from prometheus_client import start_http_server
 
 
-app = server.App(env=config.VAULT_ENV, allow_origins=config.allow_origins)
+app = server.App(allow_origins=config.allow_origins)
 
 
 @app.app.get('/health', status_code=204)

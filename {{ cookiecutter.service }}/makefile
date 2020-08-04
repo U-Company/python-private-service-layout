@@ -44,13 +44,12 @@ ENVS_TEST=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE_TEST} VAULT_E
 
 
 config:
-	$(ENVS) $(CONDA) create --name {{ cookiecutter.python_package }} python=3.7
+	$(ENVS) $(CONDA) create --name {{ cookiecutter.service }} python=3.7
 
 build-image:
 	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) build
 
 publish-image:
-	$(ENVS) $(DOCKER) login --username={{ cookiecutter.docker_login }}
 	$(ENVS) $(DOCKER) tag $(TAG) {{ cookiecutter.docker_image }}:$(VERSION)
 	$(ENVS) $(DOCKER) push {{ cookiecutter.docker_image }}:$(VERSION)
 
@@ -71,13 +70,13 @@ run:
 	$(ENVS) $(PYTHON) {{ cookiecutter.python_package }}/__cmd/http_.py
 
 run-full:
-	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.python_package }} up
+	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.service }} up
 
 run-env:
-	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_ENV) -p local_{{ cookiecutter.python_package }} up
+	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_ENV) -p local_{{ cookiecutter.service }} up
 
 run-rebuild:
-	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.python_package }} up --build
+	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.service }} up --build
 
 test-integration:
 	$(ENVS_TEST) $(PYTEST) -v -l --disable-warnings ${TESTS_INTEGRATION}${TEST_SUBFOLDER}
