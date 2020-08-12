@@ -75,13 +75,13 @@ run:
 	$(ENVS) $(UVICORN) {{ cookiecutter.python_package }}.__cmd.http_:app --workers=$(WORKERS) --port=$(PORT)
 
 run-full:
-	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.service }} up
+	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) up
 
 run-env:
-	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_ENV) -p local_{{ cookiecutter.service }} up
+	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_ENV) up
 
 run-rebuild:
-	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.service }} up --build
+	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) up --build
 
 test-integration:
 	$(ENVS_TEST) $(PYTEST) -v -l --disable-warnings ${TESTS_INTEGRATION}${TEST_SUBFOLDER}
