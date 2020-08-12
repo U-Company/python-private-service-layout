@@ -14,7 +14,7 @@ Make and docker is not required features. This tools is needed for more useful d
 or another environment manager for safety system interpreter. You can download Anaconda 
 [here](https://www.anaconda.com/). After installing Anaconda please create new environment:
 
-    conda create --name abc-storage python=3.7
+    conda create --name your-name python=3.7
     conda activate
     
 or, you can do this:
