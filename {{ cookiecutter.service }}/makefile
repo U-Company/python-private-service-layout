@@ -10,6 +10,7 @@ DOCKER_COMPOSE_ENV=deployments/docker-compose.env.yml
 VAULT_ENV_FILE_TEST=deployments/.envs/test.env
 VAULT_ENV_FILE=deployments/.envs/local.env
 CONDA=conda
+URVICORN=uvicorn
 
 ifndef PYTHON
 	PYTHON=python
@@ -43,6 +44,10 @@ ENVS=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE} VAULT_ENV=${VAULT
 ENVS_TEST=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE_TEST} VAULT_ENV=${VAULT_ENV}
 
 
+WORKERS=$(shell $(ENVS) $(PYTHON) scripts/variable.py WORKERS)
+PORT=$(shell $(ENVS) $(PYTHON) scripts/variable.py PORT)
+
+
 config:
 	$(ENVS) $(CONDA) create --name {{ cookiecutter.service }} python=3.7
 
@@ -67,7 +72,7 @@ deps:
 	$(ENVS) $(PIP) install -r $(REQ_PRIVATE)
 
 run:
-	$(ENVS) $(PYTHON) {{ cookiecutter.python_package }}/__cmd/http_.py
+	$(ENVS) $(UVICORN) {{ cookiecutter.python_package }}.__cmd.http_:app --workers=$(WORKERS) --port=$(PORT)
 
 run-full:
 	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.service }} up
