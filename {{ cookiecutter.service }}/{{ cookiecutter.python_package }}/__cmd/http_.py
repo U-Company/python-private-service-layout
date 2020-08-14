@@ -6,10 +6,10 @@ from {{ cookiecutter.python_package }}.__service import server, config
 from prometheus_client import start_http_server
 
 
-app = server.App(allow_origins=config.allow_origins)
+app = server.build_app(config.allow_origins)
 
 
-@app.app.get('/health', status_code=204)
+@app.get('/health', status_code=204)
 async def health():
     # TODO: is need to check auth?
     return

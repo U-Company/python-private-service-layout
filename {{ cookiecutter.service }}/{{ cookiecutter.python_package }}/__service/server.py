@@ -44,13 +44,12 @@ def check_mutex(l):
         m.check()
 
 
-class App:
-    def __init__(self, allow_origins):
-        self.app = fastapi.FastAPI(version=info.version, title=' '.join(info.name.split('_')))
-        self.app.add_middleware(
-            cors.CORSMiddleware,
-            allow_origins=allow_origins,
-            allow_credentials=True,
-            allow_methods=["*"],
-            allow_headers=["*"]
-        )
+def build_app(allow_origins):
+    app = fastapi.FastAPI(version=info.version, title=' '.join(info.name.split('_')))
+    app.add_middleware(
+        cors.CORSMiddleware,
+        allow_origins=allow_origins,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"]
+    )
