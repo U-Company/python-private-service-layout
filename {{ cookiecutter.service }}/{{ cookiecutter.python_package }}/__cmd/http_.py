@@ -9,7 +9,10 @@ from prometheus_client import start_http_server
 app = server.build_app(config.allow_origins)
 
 
-@app.get('/health', status_code=204)
+path = '/health'
+desc = 'Health checks health of service'
+code = 204
+@app.get(path, status_code=code, description=desc)
 async def health():
     # TODO: is need to check auth?
     return
