@@ -26,9 +26,9 @@ async def info_method():
     return {"version": info.version, "name": info.name}
 
 
+logger.info(f'app: {info.name}; version: {info.version}')
+logger.info(f'environment: {info.VAULT_ENV}')
 if __name__ == "__main__":
     start_http_server(config.prometheus_port)
-    logger.info(f'App: {info.name}; Version: {info.version}')
-    logger.info(f'Environment: {info.VAULT_ENV}')
     logger.info(f'prometheus port: {config.prometheus_port}')
     uvicorn.run(app.app, host='0.0.0.0', port=config.{{ cookiecutter.python_package }}_port)
