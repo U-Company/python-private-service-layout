@@ -20,6 +20,12 @@ async def health():
     return
 
 
+@app.get('/info')
+async def info_method():
+    # TODO: is need to check auth?
+    return {"version": info.version, "name": info.name}
+
+
 if __name__ == "__main__":
     start_http_server(config.prometheus_port)
     logger.info(f'App: {info.name}; Version: {info.version}')
