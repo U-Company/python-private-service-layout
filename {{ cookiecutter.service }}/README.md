@@ -158,7 +158,12 @@ If you want to configure testing environment, you need change file `deployments/
 
 ## Swagger
 
-If you want to use Swagger. You need to go 
+If you want to use Swagger, you need go to `http://<your-host>/api-key?access_token=<your-token>` (by default, 
+`<your-token>=1234567890ABCDEFG`, `<your-host>=0.0.0.0`). After that, browser save your token and use them. You can see
+token in environment variable [file]({{ cookiecutter.service }}/deployments/.envs/local.env). You can change query param
+name in the same file.
+
+If you want to say browser forget api-key, you need request `DELETE /api-key` method.  
     
 ## Notice
 
