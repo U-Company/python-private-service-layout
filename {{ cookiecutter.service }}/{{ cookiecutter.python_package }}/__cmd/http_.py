@@ -13,8 +13,8 @@ app.include_router(service.router)
 
 
 logger.info(f'app: {info.name}; version: {info.version}')
-logger.info(f'environment: {info.VAULT_ENV}')
+logger.info(f'environment: {config.VAULT_ENV}')
 if __name__ == "__main__":
     start_http_server(config.prometheus_port)
     logger.info(f'prometheus port: {config.prometheus_port}')
-    uvicorn.run(app.app, host=config.{{ cookiecutter.python_package }}_host, port=config.{{ cookiecutter.python_package }}_port)
+    uvicorn.run(app, host=config.{{ cookiecutter.python_package }}_host, port=config.{{ cookiecutter.python_package }}_port)
