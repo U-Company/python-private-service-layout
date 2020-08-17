@@ -8,7 +8,7 @@ from starlette.responses import JSONResponse
 from starlette.middleware import cors
 
 import info
-from {{ cookiecutter.python_package }}.__server.routeres import service, auth
+from {{ cookiecutter.python_package }}.__server.router import service, auth
 
 
 class ThreadMutex:

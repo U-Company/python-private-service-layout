@@ -4,7 +4,7 @@ from fastapi.security import api_key
 from starlette.responses import RedirectResponse
 
 from {{ cookiecutter.python_package }}.__server import config
-from {{ cookiecutter.python_package }}.__server.routeres import auth
+from {{ cookiecutter.python_package }}.__server.router import auth
 
 router = APIRouter()
 
@@ -17,9 +17,9 @@ summary = 'Create API token'
 async def create_token(api_key: api_key.APIKey = fastapi.Depends(auth.get_api_key)):
     response = RedirectResponse(url="/docs")
     response.set_cookie(
-        config.API_KEY_NAME,
+        config.{{ cookiecutter.python_package }}_api_key_name,
         value=api_key,
-        domain=config.GRADER_V2_TILDA_SERVICE_HOST,
+        domain=config.{{ cookiecutter.python_package }}_host,
         httponly=True,
         max_age=1800,
         expires=1800,
