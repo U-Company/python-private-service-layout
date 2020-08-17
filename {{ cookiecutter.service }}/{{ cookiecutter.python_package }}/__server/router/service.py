@@ -33,7 +33,7 @@ summary = 'Delete API token'
 @router.delete(handler, summary=summary, description=desc, tags=[tag])
 async def delete_token():
     response = RedirectResponse(url="/")
-    response.delete_cookie(config.API_KEY_NAME, domain=config.GRADER_V2_TILDA_SERVICE_HOST)
+    response.delete_cookie(config{{ cookiecutter.python_package }}_api_key_name, domain=config{{ cookiecutter.python_package }}_host)
     return response
 
 

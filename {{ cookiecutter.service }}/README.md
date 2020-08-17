@@ -155,6 +155,10 @@ All tests:
     make test
 
 If you want to configure testing environment, you need change file `deployments/.envs/test.env`.
+
+## Swagger
+
+If you want to use Swagger. You need to go 
     
 ## Notice
 

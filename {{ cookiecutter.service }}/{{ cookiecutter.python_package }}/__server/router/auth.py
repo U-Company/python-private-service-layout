@@ -16,11 +16,11 @@ async def get_api_key(
     :param api_key_cookie: cookie authorization
     :return:
     """
-    if api_key_query == config.API_KEY:
+    if api_key_query == config.{{ cookiecutter.python_package }}_api_key:
         return api_key_query
-    elif api_key_header == config.API_KEY:
+    elif api_key_header == config.{{ cookiecutter.python_package }}_api_key:
         return api_key_header
-    elif api_key_cookie == config.API_KEY:
+    elif api_key_cookie == config.{{ cookiecutter.python_package }}_api_key:
         return api_key_cookie
     else:
         # TODO: здесь нужно добавить стандартный assertor с контекстами
