@@ -10,6 +10,7 @@ DOCKER_COMPOSE_ENV=deployments/docker-compose.env.yml
 VAULT_ENV_FILE_TEST=deployments/.envs/test.env
 VAULT_ENV_FILE=deployments/.envs/local.env
 CONDA=conda
+UVICORN=uvicorn
 
 ifndef PYTHON
 	PYTHON=python
@@ -39,8 +40,13 @@ endif
 
 .PHONY: config build publish clean deps run run-env run-full run-rebuild test-integration test-unit test
 
-ENVS=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE} VAULT_ENV=${VAULT_ENV} 
+
+ENVS=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE} VAULT_ENV=${VAULT_ENV}
 ENVS_TEST=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE_TEST} VAULT_ENV=${VAULT_ENV}
+
+
+WORKERS=$(shell $(ENVS) $(PYTHON) scripts/variable.py WORKERS)
+PORT=$(shell $(ENVS) $(PYTHON) scripts/variable.py PORT)
 
 
 config:
@@ -67,16 +73,16 @@ deps:
 	$(ENVS) PIP_CONFIG_FILE=${PIP_CONFIG_FILE} $(PIP) install -r $(REQ_PRIVATE)
 
 run:
-	$(ENVS) $(PYTHON) {{ cookiecutter.python_package }}/__cmd/http_.py
+	$(ENVS) $(UVICORN) {{ cookiecutter.python_package }}.__cmd.http_:app --workers=$(WORKERS) --port=$(PORT) --host=0.0.0.0
 
 run-full:
-	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.service }} up
+	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) up
 
 run-env:
-	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_ENV) -p local_{{ cookiecutter.service }} up
+	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_ENV) up
 
 run-rebuild:
-	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) -p local_{{ cookiecutter.service }} up --build
+	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) up --build
 
 test-integration:
 	$(ENVS_TEST) $(PYTEST) -v -l --disable-warnings ${TESTS_INTEGRATION}${TEST_SUBFOLDER}

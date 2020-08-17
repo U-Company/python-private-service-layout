@@ -1,6 +1,6 @@
 # Template for private python service
  
-This is a [cookiecutter](https://github.com/cookiecutter/cookiecutter) template for an internal RESTAPI service, written in Python, inspired by [layout-golang](https://github.com/golang-standards/project-layout). The stack is based on [FastAPI](https://github.com/tiangolo/fastapi) and [uvicorn](https://www.uvicorn.org/) and runs on [docker](https://www.docker.com/) and docker-compose.
+This is a [cookiecutter](https://github.com/cookiecutter/cookiecutter) template for an internal REST API service, written in Python, inspired by [layout-golang](https://github.com/golang-standards/project-layout). The stack is based on [FastAPI](https://github.com/tiangolo/fastapi) and [uvicorn](https://www.uvicorn.org/) and runs on [docker](https://www.docker.com/) and docker-compose.
 
 ## Service layout
 
@@ -24,13 +24,14 @@ Our service has built-in:
 - autogeneration of README.md for your service
 - swagger from FastAPI /docs
 - [FastAPI](https://github.com/tiangolo/fastapi) as service
-- [uvicorn](https://www.uvicorn.org/) as asgi server
+- [Uvicorn](https://www.uvicorn.org/) as asgi server
 - console server
 - console cli with [Fire](https://github.com/google/python-fire) framework for google
 - templates for unit and integration tests
 - interface for control your service via makefile
 - completely to publishing package (private pypi-registry)
 - completely to publishing dockerfile (private docker-registry)
+- basic token (api-key) [authentication](https://medium.com/data-rebels/fastapi-authentication-revisited-enabling-api-key-authentication-122dc5975680)
 
 ## Usage
 

@@ -83,6 +83,12 @@ availability to them from console
 
 Internal functions, models of REST API, server, data transformers, utils etc.
 
+### [scripts/](scripts)
+
+Service scripts are stored here. Default scripts:
+
+- Getting variables from Vault or file (variable.py). This script it need for `make run` command
+
 ### [tests/](tests)
 
 This directory consists only integration tests. In this directory cannot import files from another directories except 

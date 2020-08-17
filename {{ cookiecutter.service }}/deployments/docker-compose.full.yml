@@ -1,8 +1,8 @@
 version: '3'
 services:
     {{ cookiecutter.service }}:
-      volumes:
-        - .envs/local.env:/app/deployments/.envs/local.env
+      env_file:
+        - ../${VAULT_ENV_FILE}
       build:
         context: ..
         dockerfile: deployments/Dockerfile
