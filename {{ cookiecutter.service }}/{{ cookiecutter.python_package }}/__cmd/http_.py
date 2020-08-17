@@ -14,6 +14,8 @@ app.include_router(service.router)
 
 logger.info(f'app: {info.name}; version: {info.version}')
 logger.info(f'environment: {config.VAULT_ENV}')
+swagger_endpoint = f'{config.{{ cookiecutter.python_package }}_schema}://{config.{{ cookiecutter.python_package }}_host}:{config.new_template_port}/api-key?{config.{{ cookiecutter.python_package }}_api_key_name}={config.{{ cookiecutter.python_package }}_api_key}'
+logger.info(f'swagger: {swagger_endpoint}')
 if __name__ == "__main__":
     start_http_server(config.prometheus_port)
     logger.info(f'prometheus port: {config.prometheus_port}')
