@@ -10,7 +10,7 @@ DOCKER_COMPOSE_ENV=deployments/docker-compose.env.yml
 VAULT_ENV_FILE_TEST=deployments/.envs/test.env
 VAULT_ENV_FILE=deployments/.envs/local.env
 CONDA=conda
-URVICORN=uvicorn
+UVICORN=uvicorn
 
 ifndef PYTHON
 	PYTHON=python
