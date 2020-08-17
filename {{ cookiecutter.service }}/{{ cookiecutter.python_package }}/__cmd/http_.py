@@ -2,12 +2,14 @@ import uvicorn
 from loguru import logger
 
 from {{ cookiecutter.python_package }}.__server import server, config
+from {{ cookiecutter.python_package }}.__server.router import service
 import info
 
 from prometheus_client import start_http_server
 
 
 app = server.build_app(config.allow_origins)
+app.include_router(service.router)
 
 
 logger.info(f'app: {info.name}; version: {info.version}')

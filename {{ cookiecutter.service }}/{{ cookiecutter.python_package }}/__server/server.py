@@ -60,7 +60,6 @@ def build_app(allow_origins):
         allow_methods=["*"],
         allow_headers=["*"]
     )
-    app.include_router(service.router)
 
     tag = 'documentation'
 
