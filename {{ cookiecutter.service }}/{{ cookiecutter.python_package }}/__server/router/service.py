@@ -5,6 +5,7 @@ from starlette.responses import RedirectResponse
 
 from {{ cookiecutter.python_package }}.__server import config
 from {{ cookiecutter.python_package }}.__server.router import auth
+import info
 
 router = APIRouter()
 
@@ -49,5 +50,5 @@ desc = 'This method returns info about service. Version, service name and enviro
 handler = '/info'
 summary = 'Information about service'
 @router.get(handler, summary=summary, description=desc, status_code=204, tags=[tag])
-async def info(api_key: api_key.APIKey = fastapi.Depends(auth.get_api_key)):
+async def info_method(api_key: api_key.APIKey = fastapi.Depends(auth.get_api_key)):
     return {'version': info.version, 'name': info.name, 'environment': config.VAULT_ENV}

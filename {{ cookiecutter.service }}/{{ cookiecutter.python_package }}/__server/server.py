@@ -1,14 +1,9 @@
 import threading
 
 import fastapi
-from fastapi.openapi import docs
-from fastapi.openapi.models import APIKey
-from fastapi.openapi.utils import get_openapi
-from starlette.responses import JSONResponse
 from starlette.middleware import cors
 
 import info
-from {{ cookiecutter.python_package }}.__server.router import service, auth
 
 
 class ThreadMutex:
