@@ -44,9 +44,13 @@ def check_mutex(l):
         m.check()
 
 
+def service_name():
+    return ' '.join(info.name.split('_'))
+
+
 def build_app(allow_origins):
     app = fastapi.FastAPI(
-        version=info.version, title=' '.join(info.name.split('_')), docs_url=None, redoc_url=None, openapi_url=None,
+        version=info.version, title=service_name(), docs_url=None, redoc_url=None, openapi_url=None,
     )
     app.add_middleware(
         cors.CORSMiddleware,

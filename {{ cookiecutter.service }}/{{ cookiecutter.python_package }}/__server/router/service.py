@@ -7,6 +7,7 @@ from {{ cookiecutter.python_package }}.__server import config
 from {{ cookiecutter.python_package }}.__server.router import auth
 import info
 
+
 router = APIRouter()
 
 tag = 'service'

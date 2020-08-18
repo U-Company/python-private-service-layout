@@ -23,7 +23,7 @@ handler = '/openapi.json'
 summary = 'Open API'
 @app.get(handler, summary=summary, description=desc, tags=[tag])
 async def open_api_endpoint(api_key: APIKey = fastapi.Depends(auth.get_api_key)):
-    open_api = get_openapi(title=info.name, version=info.version, routes=app.routes)
+    open_api = get_openapi(title=server.service_name(), version=info.version, routes=app.routes)
     return JSONResponse(open_api)
 
 desc = 'This method returns info about service. Version, service name and environment'
