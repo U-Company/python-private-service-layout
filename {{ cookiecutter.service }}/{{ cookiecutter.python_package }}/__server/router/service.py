@@ -17,7 +17,7 @@ summary = 'Create API token'
 async def create_token(api_key: api_key.APIKey = fastapi.Depends(auth.get_api_key)):
     response = RedirectResponse(url="/docs")
     response.set_cookie(
-        config.{{ cookiecutter.python_package }}_api_key_name,
+        config.api_key_name,
         value=api_key,
         domain=config.{{ cookiecutter.python_package }}_host,
         httponly=True,
@@ -33,7 +33,7 @@ summary = 'Delete API token'
 @router.delete(handler, summary=summary, description=desc, tags=[tag])
 async def delete_token():
     response = RedirectResponse(url="/")
-    response.delete_cookie(config{{ cookiecutter.python_package }}_api_key_name, domain=config{{ cookiecutter.python_package }}_host)
+    response.delete_cookie(config.api_key_name, domain=config.{{ cookiecutter.python_package }}_host)
     return response
 
 
