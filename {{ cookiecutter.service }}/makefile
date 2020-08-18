@@ -68,8 +68,8 @@ clean:
 	rm -rf data/test/temp/
 
 deps:
-	$(ENVS) $(PIP) install -r $(REQ)
-	$(ENVS) PIP_CONFIG_FILE=${PIP_CONFIG_FILE} $(PIP) install -r $(REQ_PRIVATE)
+	$(ENVS) $(PIP) install -r $(REQ) --use-feature=2020-resolver
+	$(ENVS) PIP_CONFIG_FILE=${PIP_CONFIG_FILE} $(PIP) install -r $(REQ_PRIVATE) --use-feature=2020-resolver
 
 run:
 	$(ENVS) $(UVICORN) {{ cookiecutter.python_package }}.__cmd.http_:app --workers=$(WORKERS) --port=$(PORT) --host=0.0.0.0
