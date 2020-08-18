@@ -60,23 +60,4 @@ def build_app(allow_origins):
         allow_methods=["*"],
         allow_headers=["*"]
     )
-
-    tag = 'documentation'
-
-    desc = 'This method returns openAPI json with service configuration'
-    handler = '/openapi.json'
-    summary = 'Open API'
-    @app.get(handler, summary=summary, description=desc, tags=[tag])
-    async def open_api_endpoint(api_key: APIKey = fastapi.Depends(auth.get_api_key)):
-        open_api = get_openapi(title=info.name, version=info.version, routes=app.routes)
-        return JSONResponse(open_api)
-
-    desc = 'This method returns info about service. Version, service name and environment'
-    handler = '/docs'
-    summary = 'Service documentation'
-    @app.get(handler, summary=summary, description=desc, tags=[tag])
-    async def documentation(api_key: APIKey = fastapi.Depends(auth.get_api_key)):
-        response = docs.get_swagger_ui_html(openapi_url='/openapi.json', title='docs')
-        return response
-
     return app
