@@ -23,16 +23,9 @@ namespace = info.name.upper()
 {{ cookiecutter.python_package }}_backend_url = {{ cookiecutter.python_package }}_schema + '://' + {{ cookiecutter.python_package }}_host + ':' + {{ cookiecutter.python_package }}_port
 
 
-def set_auth(m):
-    if m.headers is None:
-        m.headers = {}
-    m.headers['Authorization'] = f'Basic '+{{ cookiecutter.python_package }}_token
-    return m
-
-
 def client():
     """
     client_storage creates individual client for each test. This is very famous for aiohttp event loop in tests
     :return:
     """
-    return http.AsyncClient({{ cookiecutter.python_package }}_backend_url, mdws_nc=[set_auth])
+    return http.AsyncClient({{ cookiecutter.python_package }}_backend_url)
