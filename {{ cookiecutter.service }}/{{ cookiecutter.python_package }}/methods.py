@@ -32,8 +32,35 @@ class APIKey(http.Method):
             self.params[api_key_name] = api_key
 
 
+class OpenAPI(APIKey):
+    url_ = "/openapi.json"
+    m_type = "GET"
+    headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+    }
+
+
+class Docs(APIKey):
+    url_ = "/docs"
+    m_type = "GET"
+    headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+    }
+
+
 class Health(APIKey):
     url_ = "/health"
+    m_type = "GET"
+    headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+    }
+
+
+class Info(APIKey):
+    url_ = "/info"
     m_type = "GET"
     headers = {
         'Content-Type': 'application/json',
