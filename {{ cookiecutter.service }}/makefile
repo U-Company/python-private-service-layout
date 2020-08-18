@@ -40,6 +40,7 @@ endif
 
 .PHONY: config build publish clean deps run run-env run-full run-rebuild test-integration test-unit test
 
+
 ENVS=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE} VAULT_ENV=${VAULT_ENV}
 ENVS_TEST=PYTHONPATH=${PYTHONPATH} VAULT_ENV_FILE=${VAULT_ENV_FILE_TEST} VAULT_ENV=${VAULT_ENV}
 
