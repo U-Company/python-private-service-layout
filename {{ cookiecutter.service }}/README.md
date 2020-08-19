@@ -121,7 +121,7 @@ For fast start our service we use command:
 ## Environment variables
 
 Our service takes all environments variables from config: `deployments/.envs/local.env`. More about it you can read into
-this file: `abc_storage/__service/config.py`. You can add new variables there and here: `deployments/.envs/local.env`. If you want to configure testing environment, you need change file `deployments/.envs/test.env`.
+this file: `{{ cookiecutter.service }}/__service/config.py`. You can add new variables there and here: `deployments/.envs/local.env`. If you want to configure testing environment, you need change file `deployments/.envs/test.env`.
 
 We separates variables by namespaces, therefore we set prefix before variable name. You can see in files, which we 
 denote above. 
