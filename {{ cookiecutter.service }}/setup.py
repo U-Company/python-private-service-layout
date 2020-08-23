@@ -31,11 +31,4 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=install_reqs,
-    package_data={'': ['{{ cookiecutter.python_package }}/__cmd/*', '{{ cookiecutter.python_package }}/__service/*']},
-    entry_points={
-        'console_scripts': [
-            '{{ cookiecutter.python_package }}_cli={{ cookiecutter.python_package }}.__cmd.cli:main',
-            '{{ cookiecutter.python_package }}_http={{ cookiecutter.python_package }}.__cmd.http_:main',
-        ],
-    },
 )
