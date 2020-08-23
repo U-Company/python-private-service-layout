@@ -26,7 +26,6 @@ Our service has built-in:
 - [FastAPI](https://github.com/tiangolo/fastapi) as service
 - [Uvicorn](https://www.uvicorn.org/) as asgi server
 - console server
-- console cli with [Fire](https://github.com/google/python-fire) framework for google
 - templates for unit and integration tests
 - interface for control your service via makefile
 - completely to publishing package (private pypi-registry)
