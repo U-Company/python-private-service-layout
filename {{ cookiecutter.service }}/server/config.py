@@ -17,6 +17,7 @@ assert not vault_client.is_sealed, 'Vault client sealed'
 api_key_name = 'access_token'
 
 namespace = info.name.upper()
+{{ cookiecutter.python_package }}_schema = vault_client.get(namespace, 'SCHEMA')
 {{ cookiecutter.python_package }}_host = vault_client.get(namespace, 'HOST')
 {{ cookiecutter.python_package }}_port = int(vault_client.get(namespace, 'PORT'))
 {{ cookiecutter.python_package }}_api_key = vault_client.get(namespace, 'API_KEY')
