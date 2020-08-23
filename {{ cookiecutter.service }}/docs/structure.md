@@ -43,25 +43,6 @@ import these libraries expecting them to work, so think twice before you put som
 for use by others.
 
 This package's name has the same name as repo name (_ instead of -). This package (folder) publish to pypi-registry.
-### [{{ cookiecutter.python_package }}/__cmd/]({{ cookiecutter.python_package }}/__cmd/)
- 
-Main applications for this project.
-
-The directory name for each application should match the name of the executable you want to have (e.g., {{ cookiecutter.python_package }}/__cmd/cli.py).
-
-For example, you have service (`http_.py`), CLI runner `cli.py`.
-
-Don't put a lot of code in the application directory. If you think the code can be imported and used in other projects, 
-then it should live in the `/service_name` directory. If the code is not reusable or if you don't want others 
-to reuse it, put that code in the /internal directory. You'll be surprised what others will do, so be explicit about 
-your intentions!
-
-It's common to have a small main function that imports and invokes the code from the `/internal` and `/pkg` directories 
-and nothing else.
-
-See the `/__cmd` directory for examples.
-
-We save `__cmd` into package therefore `__cmd` must be include into package to cli works. But cmd is not part of library.
 
 ### [{{ cookiecutter.python_package }}/tests]({{ cookiecutter.python_package }}/tests/)
 
@@ -78,8 +59,7 @@ Here we save methods for connect to our service. Example of usage, you can find 
 ### {{ cookiecutter.python_package }}/
  
 Implementation of service with unit tests for internal functions. We think that service is part of package, 
-therefore we include this folder from package. But you must not import this module. We save service and cli here to add 
-availability to them from console  
+therefore we include this folder from package. But you must not import this module
 
 Internal functions, models of REST API, server, data transformers, utils etc.
 
