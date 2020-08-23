@@ -3,8 +3,8 @@ from fastapi import APIRouter
 from fastapi.security import api_key
 from starlette.responses import RedirectResponse
 
-from {{ cookiecutter.python_package }}.__server import config
-from {{ cookiecutter.python_package }}.__server.router import auth
+from server import config
+from server.router import auth
 import info
 
 

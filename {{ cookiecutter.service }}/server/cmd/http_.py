@@ -7,8 +7,8 @@ from fastapi.openapi.utils import get_openapi
 from starlette.responses import JSONResponse
 from prometheus_client import start_http_server
 
-from {{ cookiecutter.python_package }}.__server.router import service, auth
-from {{ cookiecutter.python_package }}.__server import server, config
+from server.router import service, auth
+from server import server, config
 import info
 
 
