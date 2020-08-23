@@ -4,11 +4,11 @@
 
 This service is built with a [python-private-service-layout](https://github.com/U-Company/python-private-service-layout)
 
-## Building from source
+## Installing
 
 Before work with our storage, you need to install:
 
-    sudo apt-get install docker.io make docker-compose
+    sudo apt-get install make docker.io make docker-compose
     
 Make and docker is not required features. This tools is needed for more useful development. We recommend to use Anaconda
 or another environment manager for safety system interpreter. You can download Anaconda 
@@ -22,19 +22,14 @@ or, you can do this:
     make config
     conda activate
     
-After that, you get project name's environment
+After that, you get project name's environment:
 
-## Installing 
-
-    PIP_CONFIG_FILE=/path/to/pip.conf pip install {{ cookiecutter.python_package }}
-    
-More about pip conf, you can read [here](https://github.com/U-Company/notes/tree/master/deployments).
-
-*Notice*. Probably, if you want to install private package not as dependency, your case is not correctly.
+    make deps
     
 ## Configuration for publishing
 
-If you want to publish images and packages, you need configure docker and PyPi. You can read short instruction below, or full instruction [here](deployments).
+If you want to publish images and packages, you need configure docker and PyPi. You can read short instruction below, or
+full instruction [here](deployments)
 
 ### Prepare config for setup.py (Ubuntu)
 

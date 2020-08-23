@@ -36,15 +36,12 @@ Our service has built-in:
 
 To use this project, you need to install [cookiecutter](https://github.com/cookiecutter/cookiecutter):
 
-```bash
-pip install cookiecutter
-cookiecutter https://github.com/U-Company/python-private-service-layout.git
-```
-Next, you need to have `docker` and `docker-compose`:
-```bash
-    sudo apt-get install make docker.io docker-compose
+    pip install cookiecutter
+    cookiecutter https://github.com/U-Company/python-private-service-layout.git
 
-```
+Next, you need to have `docker` and `docker-compose`:
+
+    sudo apt-get install make docker.io docker-compose
 
 [Here]({{ cookiecutter.service }}/docs/commands.md) you cand find all available commands for communicate with service with a command line.
 
@@ -54,11 +51,10 @@ For the full tutorial go [here](docs/tutorial.md).
 
 ## Infrastructure
 
-To deploy service, just run the docker-compose from the root:
+To deploy service with dependencies, just run the docker-compose from the root via make:
 
-```bash
-docker-compose up
-```
+    make run-full
+    
 (Default deployment is based on  [infrastructure](https://github.com/U-Company/infrastructure))
     
 That's it! Enjoy
