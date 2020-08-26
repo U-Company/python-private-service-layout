@@ -1,4 +1,6 @@
 # Template for private python service
+
+![](%7B%7B%20cookiecutter.service%20%7D%7D/docs/swagger.png)
  
 This is a [cookiecutter](https://github.com/cookiecutter/cookiecutter) template for an internal REST API service, written in Python, inspired by [layout-golang](https://github.com/golang-standards/project-layout). The stack is based on [FastAPI](https://github.com/tiangolo/fastapi) and [uvicorn](https://www.uvicorn.org/) and runs on [docker](https://www.docker.com/) and docker-compose.
 
