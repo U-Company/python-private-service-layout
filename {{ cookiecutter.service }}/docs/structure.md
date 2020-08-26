@@ -87,7 +87,7 @@ Here we save methods for connect to our service. Example of usage, you can find 
 
 ### [server/tests](server/tests/)
 
-This repo consists unit tests. Unit tests is used to test functions
+This repo consists unit tests. Unit tests is used to test functions, not services
 
 ### [scripts/](scripts)
 
@@ -98,8 +98,10 @@ Service scripts are stored here. Default scripts:
 ### [tests/](tests)
 
 This directory consists only integration tests. In this directory cannot import files from another directories except 
-package directory (python_service_layout). We tests our service as block box method. Therefore we cannot use common 
+package directory. We tests our service as block box method. Therefore we cannot use common 
 functions or scripts with tested sources.
+
+More details about testing, you can find [here](tests.md)
 
 ### makefile
 

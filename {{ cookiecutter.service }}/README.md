@@ -4,7 +4,7 @@
 
 This service is built with a [python-private-service-layout](https://github.com/U-Company/python-private-service-layout)
 
-You can read about service here
+You can read about service [here](docs/service.md) or abouts structure project [here](docs/structure.md)
 
 ## Installing
 
