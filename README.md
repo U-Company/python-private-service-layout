@@ -14,7 +14,7 @@ We have some modules:
 
 - **Package**. Publish to pypi registry
 - **Server**. Server has some submodules for configuration handlers, logging and exceptions. Server has all business logic.
-- **Integration tests**. Integration tests communicate with server as black box.
+- **Integration tests**. Integration tests communicate with server as black box. You can read differences between unit and integration tests [here](%7B%7B%20cookiecutter.service%20%7D%7D/docs/tests.md)  
 
 **Notice**. Bad practice import any function from server module.  
 
