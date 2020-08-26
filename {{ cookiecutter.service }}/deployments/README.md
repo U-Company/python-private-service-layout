@@ -1,6 +1,6 @@
 # /deployments
 
-You can deploy applications with different docker-compose files and different environment files. Our docker files are built by a make file, which uses as API interface for commutication building of any programm.
+You can deploy applications with different docker-compose files and different environment files. Our docker files are built by a make file, which uses as API interface for commutication building of any program.
 
 Type of docker files:
 

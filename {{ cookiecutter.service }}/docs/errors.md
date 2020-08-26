@@ -5,7 +5,7 @@ Probably you don't set `TAG` or `VERSION` before `make publish-image`. Please, a
     The push refers to repository [{{ cookiecutter.docker_registry }}/{{ cookiecutter.python_package }}]
     Get {{ cookiecutter.docker_registry }}/v2/: http: server gave HTTP response to HTTPS client
  
- # Anaconda prefix error
+# Anaconda prefix error
  
     CondaValueError: prefix already exists: /home/username/anaconda3/envs/environment
  
@@ -15,12 +15,11 @@ Probably you don't set `TAG` or `VERSION` before `make publish-image`. Please, a
  
     conda update conda    
  
- # Anaconda not found
+# Anaconda not found
  
 You can [install](https://www.anaconda.com/products/individual) anaconda You can read this answer https://stackoverflow.com/questions/35246386/conda-command-not-found/44319368 
 
     Conda command not found
-    
     
 You can insert to the file `~/.bashrc` next line:
 
@@ -108,9 +107,9 @@ The second way can break down you application.
 # Vault client not authenticated
 
     Traceback (most recent call last):
-      File "/home/eurvanov/python/version/version/__cmd/http_.py", line 16, in <module>
+      File "/home/username/python/version/version/__cmd/http_.py", line 16, in <module>
         from version.__server import config, models
-      File "/home/eurvanov/python/version/version/__server/config.py", line 13, in <module>
+      File "/home/username/python/version/version/__server/config.py", line 13, in <module>
         assert vault_client.is_authenticated, 'Vault client not authenticated'
     AssertionError: Vault client not authenticated
     
@@ -136,7 +135,7 @@ If you use `LOCAL` mode of develop and you get such problem, than probably you u
       File "/home/username/python/version/version/__server/config.py", line 11, in <module>
         vault_client = VaultClient(environ=VAULT_ENV, env_file=VAULT_ENV_FILE)
       File "<string>", line 5, in __init__
-      File "/home/eurvanov/anaconda3/envs/version/lib/python3.7/site-packages/vault_client/client.py", line 22, in __post_init__
+      File "/home/username/anaconda3/envs/version/lib/python3.7/site-packages/vault_client/client.py", line 22, in __post_init__
         self.environ = self.environ.upper()
     AttributeError: 'NoneType' object has no attribute 'upper'
     

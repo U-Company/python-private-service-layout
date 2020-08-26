@@ -4,9 +4,11 @@
 
 This service is built with a [python-private-service-layout](https://github.com/U-Company/python-private-service-layout)
 
+You can read about service here
+
 ## Installing
 
-Before work with our storage, you need to install:
+Before work with our service, you need to install:
 
     sudo apt-get install make docker.io make docker-compose
     
@@ -33,7 +35,7 @@ full instruction [here](deployments)
 
 ### Prepare config for setup.py (Ubuntu)
 
-Before publishing, you need to create file `~/.pypirc`. Copy [this file](deployments/.secrets/.pypirc) to `~/.pypirc`. If you already have such file, you need to mix it like [this](deployments/.secrets/.pypirc_mixed). `.pypirc` is required for publishing python packages.
+**Before publishing package**, you need to create file `~/.pypirc`. Copy [this file](deployments/.secrets/.pypirc) to `~/.pypirc`. If you already have such file, you need to mix it like [this](deployments/.secrets/.pypirc_mixed). `.pypirc` is required for publishing python packages.
                    
 ### Configure docker
 
@@ -48,25 +50,36 @@ Now, login in docker registry with your login and password (first time):
 
     docker login {{cookiecutter.docker_registry}} -u="<username>" -p="<password>"
     
-If you don't login, while pulling or pushing, make automatically ask you login.
+If you don't login, while pulling or pushing, do this by handle before pushing.
     
 ## Dependencies
 
-Install all package dependencies. We suppose that you have not more two registry: [public PyPi-registry](https://pypi.org/project/registry/) and maybe your private pypi-registry (it is optional). This command install from both or only public:
+Install all package dependencies. We suppose that you have not more two registry: 
+    
+- [public PyPi-registry](https://pypi.org/project/registry/) and 
+- your private pypi-registry (it is optional)
+ 
+This command install from both or only public:
 
     make deps
     
 We automatically create file to installing packages from repository (private or public). You can see this file [here](deployments/.secrets/pip_private.conf). If your repo is [common](https://pypi.org/), then set cookiecutter's default settings while init procedure. Othercase set your custom repositroy.
     
-## Publishing
+## Publishing image
     
-If you want to publish package into registry, you need to do this:
+If you want to publish docker image into registry, you need to do this:
 
     make build
     
-Copy tag from console:
+Copy tag from console and do this:
 
-    VERSION=x.y.z TAG=<tag-from-make-build-log> make publish
+    VERSION=x.y.z TAG=<tag-from-make-build-log> make publish-image
+    
+## Publishing package
+    
+If you want to publish docker image into registry, you need to do this:
+
+    make publish-package
     
 ## Clean
 

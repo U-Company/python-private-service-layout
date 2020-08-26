@@ -43,15 +43,20 @@ Next, you need to have `docker` and `docker-compose`:
 
     sudo apt-get install make docker.io docker-compose
 
-[Here]({{ cookiecutter.service }}/docs/commands.md) you cand find all available commands for communicate with service with a command line.
+[Here](%7B%7B%20cookiecutter.service%20%7D%7D/docs/commands.md) you cand find all available commands for communicate with service with a command line.
 
-If you have any errors, you can read about [common errors](%7B%7B%20cookiecutter.service%20%7D%7D/docs/errors.md). Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
+If you have any errors, you can read about in documentary after project generation. You can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
 
-For the full tutorial go [here](docs/tutorial.md).
+For the full tutorial of service generation you can read [here](docs/tutorial.md).
 
-## Infrastructure
 
-To deploy service with dependencies, just run the docker-compose from the root via make:
+## Execution and infrastructure
+
+To deploy service **WITHOUT** dependencies, just run the docker-compose from the root via make:
+
+    make run
+
+To deploy service **WITH** dependencies, just run the docker-compose from the root via make:
 
     make run-full
     
