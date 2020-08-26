@@ -1,5 +1,37 @@
 ## [Project structure]({{ cookiecutter.python_package }}/docs/structure.md)
 
+We provide a very simple interface for running your server (**after installation dependencies**):
+
+    make run
+    
+Or, if you have some service dependencies, you can do this:
+
+    make run-full
+
+## Installation dependencies
+
+You need to use: 
+
+- docker
+- docker-compose
+- make
+- Anaconda
+
+Before work with service, you need to install:
+
+    sudo apt-get install make docker.io make docker-compose
+    
+Make and docker is not required features. This tools is needed for more useful development. We recommend to use Anaconda
+or another environment manager for safety system interpreter. You can download Anaconda 
+[here](https://www.anaconda.com/). After installing Anaconda please create new environment:
+
+    make config
+    conda activate {{ cookiecutter.python_package }}
+    
+Now, you can install all python dependencies
+    
+## Project structure
+
 ### [data/]({{ cookiecutter.python_package }}/data)
 
 This folder must consists the data of service. We think to a large data file must dumps to any storage (
@@ -11,7 +43,11 @@ Files for tests
 
 ### data/docs/
 
-Design and user documents.
+Design and user documents
+
+### data/logs/
+
+Folder for logs files 
 
 ### [deployments/]({{ cookiecutter.python_package }}/deployments)
 
@@ -31,57 +67,27 @@ We have environment file into `./.envs` directory.
 
 You can read about publishing packages [here]({{ cookiecutter.python_package }}/deployments).
 
-### data/logs/
-
-Folder for logs files 
-
 ### {{ cookiecutter.python_package }}/ 
 
-Library code that's ok to use by external applications (e.g., /service_name/mypubliclib). Other projects will
-import these libraries expecting them to work, so think twice before you put something here :-) Note that catalogs with prefix `__` is a better way to ensure your private packages. In python this fact denotes private structures. The 
-/service_name directory is still a good way to explicitly communicate that the code in that directory is safe 
-for use by others.
+Library code that's ok to use by external applications (e.g., /{{ cookiecutter.python_package }}/mypubliclib). Other projects will
+import these libraries expecting them to work, so think twice before you put something here :-) 
 
-This package's name has the same name as repo name (_ instead of -). This package (folder) publish to pypi-registry.
-### [{{ cookiecutter.python_package }}/__cmd/]({{ cookiecutter.python_package }}/__cmd/)
- 
-Main applications for this project.
+We have only two type modules in python package of service:
 
-The directory name for each application should match the name of the executable you want to have (e.g., {{ cookiecutter.python_package }}/__cmd/cli.py).
-
-For example, you have service (`http_.py`), CLI runner `cli.py`.
-
-Don't put a lot of code in the application directory. If you think the code can be imported and used in other projects, 
-then it should live in the `/service_name` directory. If the code is not reusable or if you don't want others 
-to reuse it, put that code in the /internal directory. You'll be surprised what others will do, so be explicit about 
-your intentions!
-
-It's common to have a small main function that imports and invokes the code from the `/internal` and `/pkg` directories 
-and nothing else.
-
-See the `/__cmd` directory for examples.
-
-We save `__cmd` into package therefore `__cmd` must be include into package to cli works. But cmd is not part of library.
-
-### [{{ cookiecutter.python_package }}/tests]({{ cookiecutter.python_package }}/tests/)
-
-This repo consists unit tests. Unit tests is used to test functions
+- generators
+- public API methods for service
 
 ### [{{ cookiecutter.python_package }}/generators]({{ cookiecutter.python_package }}/generators/)
 
 Each service works with data. Therefore a good practice is build generators for data creation of each method. This generators is part of package for using in tests of other packages.
 
-### [{{ cookiecutter.python_package }}/methods]({{ cookiecutter.python_package }}/generators/)
+### [{{ cookiecutter.python_package }}/methods.py]({{ cookiecutter.python_package }}/methods.py)
 
 Here we save methods for connect to our service. Example of usage, you can find [here]({{ cookiecutter.python_package }}/methods.py)
 
-### {{ cookiecutter.python_package }}/
- 
-Implementation of service with unit tests for internal functions. We think that service is part of package, 
-therefore we include this folder from package. But you must not import this module. We save service and cli here to add 
-availability to them from console  
+### [server/tests](server/tests/)
 
-Internal functions, models of REST API, server, data transformers, utils etc.
+This repo consists unit tests. Unit tests is used to test functions, not services
 
 ### [scripts/](scripts)
 
@@ -92,8 +98,10 @@ Service scripts are stored here. Default scripts:
 ### [tests/](tests)
 
 This directory consists only integration tests. In this directory cannot import files from another directories except 
-package directory (python_service_layout). We tests our service as block box method. Therefore we cannot use common 
+package directory. We tests our service as block box method. Therefore we cannot use common 
 functions or scripts with tested sources.
+
+More details about testing, you can find [here](tests.md)
 
 ### makefile
 

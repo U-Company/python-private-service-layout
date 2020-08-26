@@ -3,8 +3,10 @@ from fastapi import APIRouter
 from fastapi.security import api_key
 from starlette.responses import RedirectResponse
 
-from {{ cookiecutter.python_package }}.__server import config
-from {{ cookiecutter.python_package }}.__server.router import auth
+from server import config
+from server.router import auth
+import info
+
 
 router = APIRouter()
 
@@ -17,7 +19,7 @@ summary = 'Create API token'
 async def create_token(api_key: api_key.APIKey = fastapi.Depends(auth.get_api_key)):
     response = RedirectResponse(url="/docs")
     response.set_cookie(
-        config.{{ cookiecutter.python_package }}_api_key_name,
+        config.api_key_name,
         value=api_key,
         domain=config.{{ cookiecutter.python_package }}_host,
         httponly=True,
@@ -33,7 +35,7 @@ summary = 'Delete API token'
 @router.delete(handler, summary=summary, description=desc, tags=[tag])
 async def delete_token():
     response = RedirectResponse(url="/")
-    response.delete_cookie(config{{ cookiecutter.python_package }}_api_key_name, domain=config{{ cookiecutter.python_package }}_host)
+    response.delete_cookie(config.api_key_name, domain=config.{{ cookiecutter.python_package }}_host)
     return response
 
 
@@ -48,6 +50,6 @@ async def health(api_key: api_key.APIKey = fastapi.Depends(auth.get_api_key)):
 desc = 'This method returns info about service. Version, service name and environment'
 handler = '/info'
 summary = 'Information about service'
-@router.get(handler, summary=summary, description=desc, status_code=204, tags=[tag])
-async def info(api_key: api_key.APIKey = fastapi.Depends(auth.get_api_key)):
+@router.get(handler, summary=summary, description=desc, status_code=200, tags=[tag])
+async def info_method(api_key: api_key.APIKey = fastapi.Depends(auth.get_api_key)):
     return {'version': info.version, 'name': info.name, 'environment': config.VAULT_ENV}

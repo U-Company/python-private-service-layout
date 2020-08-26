@@ -9,5 +9,6 @@ WORKDIR /app
 ENV PIP_CONFIG_FILE /app/deployments/.secrets/pip_private.conf
 ENV VAULT_ENV ${VAULT_ENV}
 
+RUN PIP=pip PYTHON=python3.7 make clean
 RUN PIP=pip PYTHON=python3.7 make deps
 CMD PIP=pip PYTHON=python3.7 VAULT_ENV=${VAULT_ENV} make run

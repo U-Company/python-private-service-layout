@@ -10,6 +10,16 @@ Below is the 1000ft structure of project's modules. Here, red ones are private, 
 
 ![](docs/structure.png)
 
+We have some modules:
+
+- **Package**. Publish to pypi registry
+- **Server**. Server has some submodules for configuration handlers, logging and exceptions. Server has all business logic.
+- **Integration tests**. Integration tests communicate with server as black box. You can read differences between unit and integration tests [here](%7B%7B%20cookiecutter.service%20%7D%7D/docs/tests.md)  
+
+**Notice**. Bad practice import any function from server module.  
+
+Package consists
+
 Read more on the project's main principles [here](%7B%7B%20cookiecutter.service%20%7D%7D/docs/structure.md).
 you can also read more on our approach [here](https://github.com/U-Company/notes).
 
@@ -28,7 +38,6 @@ Our service has built-in:
 - [FastAPI](https://github.com/tiangolo/fastapi) as service
 - [Uvicorn](https://www.uvicorn.org/) as asgi server
 - console server
-- console cli with [Fire](https://github.com/google/python-fire) framework for google
 - templates for unit and integration tests
 - interface for control your service via makefile
 - completely to publishing package (private pypi-registry)
@@ -39,29 +48,30 @@ Our service has built-in:
 
 To use this project, you need to install [cookiecutter](https://github.com/cookiecutter/cookiecutter):
 
-```bash
-pip install cookiecutter
-cookiecutter https://github.com/U-Company/python-private-service-layout.git
-```
+    pip install cookiecutter
+    cookiecutter https://github.com/U-Company/python-private-service-layout.git
+
 Next, you need to have `docker` and `docker-compose`:
-```bash
+
     sudo apt-get install make docker.io docker-compose
 
-```
+[Here](%7B%7B%20cookiecutter.service%20%7D%7D/docs/commands.md) you cand find all available commands for communicate with service with a command line.
 
-[Here]({{ cookiecutter.service }}/docs/commands.md) you cand find all available commands for communicate with service with a command line.
+If you have any errors, you can read about in documentary after project generation. You can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
 
-If you have any errors, you can read about [common errors](%7B%7B%20cookiecutter.service%20%7D%7D/docs/errors.md). Or you can communicate with Egor Urvanov by UrvanovCompany@yandex.ru or in telegram (@egor_urvanov)
+For the full tutorial of service generation you can read [here](docs/tutorial.md).
 
-For the full tutorial go [here](docs/tutorial.md).
 
-## Infrastructure
+## Execution and infrastructure
 
-To deploy service, just run the docker-compose from the root:
+To deploy service **WITHOUT** dependencies, just run the docker-compose from the root via make:
 
-```bash
-docker-compose up
-```
+    make run
+
+To deploy service **WITH** dependencies, just run the docker-compose from the root via make:
+
+    make run-full
+    
 (Default deployment is based on  [infrastructure](https://github.com/U-Company/infrastructure))
     
 That's it! Enjoy

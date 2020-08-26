@@ -1,14 +1,9 @@
 import threading
 
 import fastapi
-from fastapi.openapi import docs
-from fastapi.openapi.models import APIKey
-from fastapi.openapi.utils import get_openapi
-from starlette.responses import JSONResponse
 from starlette.middleware import cors
 
 import info
-from {{ cookiecutter.python_package }}.__server.router import service, auth
 
 
 class ThreadMutex:
@@ -49,9 +44,13 @@ def check_mutex(l):
         m.check()
 
 
+def service_name():
+    return ' '.join(info.name.split('_'))
+
+
 def build_app(allow_origins):
     app = fastapi.FastAPI(
-        version=info.version, title=' '.join(info.name.split('_')), docs_url=None, redoc_url=None, openapi_url=None,
+        version=info.version, title=service_name(), docs_url=None, redoc_url=None, openapi_url=None,
     )
     app.add_middleware(
         cors.CORSMiddleware,
@@ -60,23 +59,4 @@ def build_app(allow_origins):
         allow_methods=["*"],
         allow_headers=["*"]
     )
-
-    tag = 'documentation'
-
-    desc = 'This method returns openAPI json with service configuration'
-    handler = '/openapi.json'
-    summary = 'Open API'
-    @app.get(handler, summary=summary, description=desc, tags=[tag])
-    async def open_api_endpoint(api_key: APIKey = fastapi.Depends(auth.get_api_key)):
-        open_api = get_openapi(title=info.name, version=info.version, routes=app.routes)
-        return JSONResponse(open_api)
-
-    desc = 'This method returns info about service. Version, service name and environment'
-    handler = '/docs'
-    summary = 'Service documentation'
-    @app.get(handler, summary=summary, description=desc, tags=[tag])
-    async def documentation(api_key: APIKey = fastapi.Depends(auth.get_api_key)):
-        response = docs.get_swagger_ui_html(openapi_url='/openapi.json', title='docs')
-        return response
-
     return app

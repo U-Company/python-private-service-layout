@@ -1,7 +1,7 @@
 import fastapi
 from starlette.status import HTTP_403_FORBIDDEN
 
-from {{ cookiecutter.python_package }}.__server import config
+from server import config
 
 
 async def get_api_key(
