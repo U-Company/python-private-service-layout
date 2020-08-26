@@ -50,6 +50,6 @@ async def health(api_key: api_key.APIKey = fastapi.Depends(auth.get_api_key)):
 desc = 'This method returns info about service. Version, service name and environment'
 handler = '/info'
 summary = 'Information about service'
-@router.get(handler, summary=summary, description=desc, status_code=204, tags=[tag])
+@router.get(handler, summary=summary, description=desc, status_code=200, tags=[tag])
 async def info_method(api_key: api_key.APIKey = fastapi.Depends(auth.get_api_key)):
     return {'version': info.version, 'name': info.name, 'environment': config.VAULT_ENV}
