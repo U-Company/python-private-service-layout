@@ -16,9 +16,7 @@ We have some modules:
 - **Server**. Server has some submodules for configuration handlers, logging and exceptions. Server has all business logic.
 - **Integration tests**. Integration tests communicate with server as black box. You can read differences between unit and integration tests [here](%7B%7B%20cookiecutter.service%20%7D%7D/docs/tests.md)  
 
-**Notice**. Bad practice import any function from server module.  
-
-Package consists
+**Notice**. Bad practice to import any function from server module.  
 
 Read more on the project's main principles [here](%7B%7B%20cookiecutter.service%20%7D%7D/docs/structure.md).
 you can also read more on our approach [here](https://github.com/U-Company/notes).
