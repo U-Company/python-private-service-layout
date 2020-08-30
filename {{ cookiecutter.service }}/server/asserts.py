@@ -33,7 +33,6 @@ class Context:
             'handler': Variable(value=handler, deleted=False),
             'request': Variable(
                 value={
-                    'endpoint': body,
                     'method': method,
                     'body': body,
                     'query_params': query_params,
