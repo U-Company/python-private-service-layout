@@ -1,6 +1,6 @@
 PYTHONPATH=.
 SCRIPTS=scripts/
-TESTS_UNIT={{ cookiecutter.python_package }}/tests/
+TESTS_UNIT=server/tests/
 TESTS_INTEGRATION=tests/
 REQ=requirements/public/
 REQ_PRIVATE=requirements/private/
