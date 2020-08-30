@@ -2,8 +2,8 @@ PYTHONPATH=.
 SCRIPTS=scripts/
 TESTS_UNIT={{ cookiecutter.python_package }}/tests/
 TESTS_INTEGRATION=tests/
-REQ=requirements
-REQ_PRIVATE=requirements.private
+REQ=requirements/public/
+REQ_PRIVATE=requirements/private/
 PIP_CONFIG_FILE=deployments/.secrets/pip_private.conf
 DOCKER_COMPOSE_FULL=deployments/docker-compose.full.yml
 DOCKER_COMPOSE_ENV=deployments/docker-compose.env.yml
@@ -68,9 +68,17 @@ clean:
 	rm -rf {{ cookiecutter.python_package }}.egg-info
 	rm -rf data/test/temp/
 
+deps-docker:
+	$(ENVS) $(PIP) install -r $(REQ)server --use-feature=2020-resolver
+	$(ENVS) PIP_CONFIG_FILE=${PIP_CONFIG_FILE} $(PIP) install -r $(REQ_PRIVATE)server --use-feature=2020-resolver
+
 deps:
-	$(ENVS) $(PIP) install -r $(REQ) --use-feature=2020-resolver
-	$(ENVS) PIP_CONFIG_FILE=${PIP_CONFIG_FILE} $(PIP) install -r $(REQ_PRIVATE) --use-feature=2020-resolver
+	$(ENVS) $(PIP) install -r $(REQ)server --use-feature=2020-resolver
+	$(ENVS) PIP_CONFIG_FILE=${PIP_CONFIG_FILE} $(PIP) install -r $(REQ_PRIVATE)server --use-feature=2020-resolver
+	$(ENVS) $(PIP) install -r $(REQ)test --use-feature=2020-resolver
+	$(ENVS) PIP_CONFIG_FILE=${PIP_CONFIG_FILE} $(PIP) install -r $(REQ_PRIVATE)test --use-feature=2020-resolver
+	$(ENVS) $(PIP) install -r $(REQ)package --use-feature=2020-resolver
+	$(ENVS) PIP_CONFIG_FILE=${PIP_CONFIG_FILE} $(PIP) install -r $(REQ_PRIVATE)package --use-feature=2020-resolver
 
 run:
 	$(ENVS) $(UVICORN) http_:app --workers=$(WORKERS) --port=$(PORT) --host=0.0.0.0
