@@ -221,7 +221,7 @@ def _exception_service(ctx: Context, *, pcode, icode, detail=True, msg=None):
         'variables': ctx['variables'],  # state's variables
         'public_status_code': pcode,  # status code of response (HTTP status code)
         'wanted_code': ctx['wcode'],  # wanted code from service
-        'internal_code': pcode,  # status code of response (internal code)
+        'internal_code': icode,  # status code of response (internal code)
     }
     logger.exception(log_msg)
     msg = f'Code: {icode}. {msg}'
