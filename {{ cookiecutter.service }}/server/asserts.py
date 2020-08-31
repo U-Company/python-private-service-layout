@@ -124,7 +124,7 @@ class AssertorValidation:
     def __call__(self, ctx: Context, **kwargs):
         """
         :param ctx: dict with some fields. You can see these fields into `def exception(ctx, status_code, msg=None)`
-        :param kwargs: params for validate
+        :param kwargs: params for print
         :return:
         """
         if self._validate(ctx, **kwargs):
@@ -250,15 +250,23 @@ class AssertorCode:
         if self.wcode is None:
             self.wcode = pcode
 
-    def __call__(self, ctx: Context, *, req, resp, code):
+    @staticmethod
+    def __add_variables(ctx, kwargs):
+        if ctx['variables'] is None:
+            ctx['variables'] = {'_': kwargs}
+            return
+        ctx['variables']['_'] = kwargs
+
+    def __call__(self, ctx: Context, *, req, resp, code, **kwargs):
         """
         :param ctx: dict with some fields. You can see these fields into `def exception(ctx, status_code, msg=None)`
         :param req: params for validate
-        :param resp: params for validate
+        :param resp: params for print
         :return:
         """
         if self._validate(ctx, req=req, resp=resp, code=code, wcode=self.wcode):
             ctx_ = copy.deepcopy(ctx)
+            self.__add_variables(ctx_, kwargs)
             ctx_['error_name'] = self.name
             ctx_['service_request'] = req
             ctx_['service_response'] = resp
