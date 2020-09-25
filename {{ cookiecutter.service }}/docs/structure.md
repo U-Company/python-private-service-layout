@@ -74,12 +74,7 @@ import these libraries expecting them to work, so think twice before you put som
 
 We have only two type modules in python package of service:
 
-- generators
 - public API methods for service
-
-### [{{ cookiecutter.python_package }}/generators]({{ cookiecutter.python_package }}/generators/)
-
-Each service works with data. Therefore a good practice is build generators for data creation of each method. This generators is part of package for using in tests of other packages.
 
 ### [{{ cookiecutter.python_package }}/methods.py]({{ cookiecutter.python_package }}/methods.py)
 
