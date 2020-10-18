@@ -6,42 +6,19 @@ from starlette.middleware import cors
 import info
 
 
-class ThreadMutex:
-    def __init__(self, message):
-        """
-        This is server mutex for handlers. This object can block event loop from another requests. Careful about 
-        synchronization, if you use nginx
-
-        :param message: message of exception
-        """
-        self.__flag = False
-        self.__mutex = threading.Lock()
-        self.__message = message
-
-    def check(self):
-        if self.__flag:
-            raise fastapi.HTTPException(409, detail=self.__message)
-
-    def acquire(self):
-        self.__mutex.acquire()
-        if self.__flag:
-            self.__flag = False
-            self.__mutex.release()
-            raise fastapi.HTTPException(409, detail=self.__message)
-        self.__flag = True
-
-    def release(self):
-        self.__flag = False
-        self.__mutex.release()
-
-
-def check_mutex(l):
-    """
-    :param l: list of mutex for check
-    :return:
-    """
-    for m in l:
-        m.check()
+def make_logger():
+    logger.remove()
+    pid = os.getpid()
+    dt = datetime.datetime.now()
+    logger.add(
+        f'data/logs/fastapi-{dt}-{pid}.log',
+        rotation='100 MB',
+        enqueue=True,
+        backtrace=True,
+        level='INFO',
+        format="{time} %s {level} {message}" % pid,
+    )
+    return logger.bind()
 
 
 def service_name():

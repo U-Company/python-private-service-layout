@@ -35,11 +35,11 @@ async def documentation(api_key: APIKey = fastapi.Depends(auth.get_api_key)):
     return response
 
 
-logger.info(f'app: {info.name}; version: {info.version}')
-logger.info(f'environment: {config.VAULT_ENV}')
-swagger_endpoint = f'{config.{{ cookiecutter.python_package }}_schema}://{config.{{ cookiecutter.python_package }}_host}:{config.{{ cookiecutter.python_package }}_port}/api-key?{config.api_key_name}={config.{{ cookiecutter.python_package }}_api_key}'
-logger.info(f'swagger: {swagger_endpoint}')
+logger.info('{"app": "%s", "version": "%s"}' % (info.name, info.version))
+logger.info('{"environment": "%s"}' % (config.VAULT_ENV,))
+swagger_endpoint = f'{config.grader_v2_student_back_schema}://{config.grader_v2_student_back_host}:' \
+    f'{config.grader_v2_student_back_port}/api-key?{config.api_key_name}={config.grader_v2_student_back_api_key}'
 if __name__ == "__main__":
     start_http_server(config.prometheus_port)
-    logger.info(f'prometheus port: {config.prometheus_port}')
+    logger.info('{"prometheus port": "%s"}' % config.prometheus_port)
     uvicorn.run(app, host=config.{{ cookiecutter.python_package }}_host, port=config.{{ cookiecutter.python_package }}_port)
