@@ -1,5 +1,3 @@
-import threading
-
 import fastapi
 from starlette.middleware import cors
 
@@ -19,6 +17,20 @@ def make_logger():
         format="{time} %s {level} {message}" % pid,
     )
     return logger.bind()
+
+
+uvicorn_config.LOGGING_CONFIG['handlers'] = {
+    'default': {
+        'formatter': 'default',
+        'class': 'logging.FileHandler',
+        'filename': f'data/logs/urvicorn-error-{datetime.datetime.utcnow()}.log',
+    },
+    'access': {
+        'formatter': 'access',
+        'class': 'logging.FileHandler',
+        'filename': f'data/logs/uvicorn-requests-{datetime.datetime.utcnow()}.log',
+    },
+}
 
 
 def service_name():

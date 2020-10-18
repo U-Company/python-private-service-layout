@@ -1,9 +1,9 @@
 import os
+import datetime
 
 from fastapi import security
 from vault_client.client import VaultClient
-
-import info
+from uvicorn import config as uvicorn_config
 
 
 VAULT_ENV = os.environ.get('VAULT_ENV', 'LOCAL')
@@ -30,3 +30,17 @@ if VAULT_ENV == 'LOCAL' and allow_origins is None:
 api_key_query = security.APIKeyQuery(name=api_key_name, auto_error=False)
 api_key_header = security.APIKeyHeader(name=api_key_name, auto_error=False)
 api_key_cookie = security.APIKeyCookie(name=api_key_name, auto_error=False)
+
+
+uvicorn_config.LOGGING_CONFIG['handlers'] = {
+    'default': {
+        'formatter': 'default',
+        'class': 'logging.FileHandler',
+        'filename': f'data/logs/urvicorn-error-{datetime.datetime.utcnow()}.log',
+    },
+    'access': {
+        'formatter': 'access',
+        'class': 'logging.FileHandler',
+        'filename': f'data/logs/uvicorn-requests-{datetime.datetime.utcnow()}.log',
+    },
+}
