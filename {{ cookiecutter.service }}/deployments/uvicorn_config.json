@@ -16,12 +16,12 @@
         "default": {
             "formatter": "default",
             "class": "logging.FileHandler",
-            "filename": "data/logs/urvicorn-error.log"
+            "filename": "data/logs/{{ cookiecutter.python_service }}_uvicorn-error.log"
         },
         "access": {
             "formatter": "access",
             "class": "logging.FileHandler",
-            "filename": "data/logs/uvicorn-requests.log"
+            "filename": "data/logs/{{ cookiecutter.python_service }}_uvicorn-requests.log"
         }
     },
     "loggers": {

@@ -1,6 +1,8 @@
 import fastapi
 from starlette.middleware import cors
 
+from datetime import datetime
+
 import info
 
 
@@ -8,12 +10,12 @@ def build_logger(rotation_size, level):
     logger.remove()
     pid = os.getpid()
     logger.add(
-        f'data/logs/fastapi-{pid}.log',
+        f'data/logs/{{ cookiecutter.python_service }}_service_{datetime.utcnow()}.log',
         rotation=rotation_size,
         enqueue=True,
         backtrace=True,
         level=level,
-        format="{level}\t-\t{time}\t-\t%s\t-\t{message}" % pid,
+        format="{level}\t-\t{time}\t-\t{message}",
     )
     return logger.bind()
 
