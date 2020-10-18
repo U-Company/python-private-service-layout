@@ -21,6 +21,8 @@ namespace = info.name.upper()
 {{ cookiecutter.python_package }}_host = vault_client.get(namespace, 'HOST')
 {{ cookiecutter.python_package }}_port = int(vault_client.get(namespace, 'PORT'))
 {{ cookiecutter.python_package }}_api_key = vault_client.get(namespace, 'API_KEY')
+{{ cookiecutter.python_package }}_log_rotation_size = vault_client.get(namespace, 'LOG_ROTATION_SIZE')
+{{ cookiecutter.python_package }}_log_level = vault_client.get(namespace, 'LOG_LEVEL')
 prometheus_port = int(vault_client.get(namespace, 'PROMETHEUS_PORT'))
 allow_origins = vault_client.get(namespace, 'ALLOW_ORIGINS')
 if VAULT_ENV == 'LOCAL' and allow_origins is None:
@@ -30,17 +32,3 @@ if VAULT_ENV == 'LOCAL' and allow_origins is None:
 api_key_query = security.APIKeyQuery(name=api_key_name, auto_error=False)
 api_key_header = security.APIKeyHeader(name=api_key_name, auto_error=False)
 api_key_cookie = security.APIKeyCookie(name=api_key_name, auto_error=False)
-
-
-uvicorn_config.LOGGING_CONFIG['handlers'] = {
-    'default': {
-        'formatter': 'default',
-        'class': 'logging.FileHandler',
-        'filename': f'data/logs/urvicorn-error-{datetime.datetime.utcnow()}.log',
-    },
-    'access': {
-        'formatter': 'access',
-        'class': 'logging.FileHandler',
-        'filename': f'data/logs/uvicorn-requests-{datetime.datetime.utcnow()}.log',
-    },
-}

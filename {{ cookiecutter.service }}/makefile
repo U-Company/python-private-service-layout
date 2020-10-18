@@ -81,7 +81,7 @@ deps:
 	$(ENVS) PIP_CONFIG_FILE=${PIP_CONFIG_FILE} $(PIP) install -r $(REQ_PRIVATE)package --use-feature=2020-resolver
 
 run:
-	$(ENVS) $(UVICORN) http_:app --workers=$(WORKERS) --port=$(PORT) --host=0.0.0.0
+	$(ENVS) $(UVICORN) http_:app --workers=$(WORKERS) --port=$(PORT) --host=0.0.0.0 --log-config=deployments/uvicorn_config.json
 
 run-full:
 	$(ENVS) $(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FULL) up

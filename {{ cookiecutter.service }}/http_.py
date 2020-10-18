@@ -12,7 +12,7 @@ from server import server, config
 import info
 
 
-app = server.build_app(config.allow_origins)
+app = server.build_app(config.allow_origins, config.{{ cookiecutter.python_package }}_log_rotation_size, {{ cookiecutter.python_package }}_log_level)
 app.include_router(service.router)
 
 
@@ -33,6 +33,13 @@ summary = 'Service documentation'
 async def documentation(api_key: APIKey = fastapi.Depends(auth.get_api_key)):
     response = docs.get_swagger_ui_html(openapi_url='/openapi.json', title='docs')
     return response
+
+
+with open('deployments/uvicorn_config.json') as fd:
+    import yaml
+    uconfig = yaml.load(fd)
+    for k, v in uconfig.items():
+        uvicorn_config.LOGGING_CONFIG[k] = v
 
 
 logger.info('{"app": "%s", "version": "%s"}' % (info.name, info.version))
