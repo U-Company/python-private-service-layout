@@ -2,5 +2,5 @@ loguru>=0.5.1
 fastapi>=0.61.0
 uvicorn>=0.11.8
 vault-client>=0.3.4
-prometheus_client>=0.8.0
 msgpack>=1.0.0
+prometheus-fastapi-instrumentator>=5.3.0

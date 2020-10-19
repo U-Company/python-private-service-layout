@@ -1,6 +1,7 @@
 import fastapi
 from starlette.middleware import cors
 
+
 from datetime import datetime
 
 import info
@@ -8,7 +9,6 @@ import info
 
 def build_logger(rotation_size, level):
     logger.remove()
-    pid = os.getpid()
     logger.add(
         f'data/logs/{{ cookiecutter.python_service }}_service_{datetime.utcnow()}.log',
         rotation=rotation_size,
@@ -36,4 +36,5 @@ def build_app(allow_origins, rotation_size, level):
         allow_headers=["*"]
     )
     build_logger(rotation_size, level)
+    Instrumentator().instrument(app).expose(app)
     return app
